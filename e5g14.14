@@ -1,0 +1,73 @@
+%!PS
+%%BoundingBox: -55 -22 55 46 
+%%HiResBoundingBox: -54.28369 -21.87033 54.28369 45.63303 
+%%Creator: MetaPost 0.901
+%%CreationDate: 2008.01.29:1401
+%%Pages: 1
+%*Font: cmr10 9.96265 9.96265 32:8000000000000000038
+%*Font: cmmi10 9.96265 9.96265 15:80000000000000000008
+%*Font: cmsy10 9.96265 9.96265 00:8
+%%BeginProlog
+%%EndProlog
+%%Page: 1 1
+44.61967 -20.56273 moveto
+(x) cmr10 9.96265 fshow
+3 41.34352 moveto
+(y) cmr10 9.96265 fshow
+-49.04747 -20.56273 moveto
+(z) cmr10 9.96265 fshow
+ 0 0.5 dtransform truncate idtransform setlinewidth pop [] 0 setdash
+ 1 setlinecap 1 setlinejoin 10 setmiterlimit
+newpath 0 0 moveto
+42.51968 -14.17323 lineto stroke
+newpath 38.52966 -14.45683 moveto
+42.51968 -14.17323 lineto
+39.49783 -11.55235 lineto
+ closepath
+gsave fill grestore stroke
+ 0.5 0 dtransform exch truncate exch idtransform pop setlinewidth
+newpath 0 0 moveto
+0 42.51968 lineto stroke
+ 0 0.5 dtransform truncate idtransform setlinewidth pop
+newpath 1.5307 38.82433 moveto
+0 42.51968 lineto
+-1.5307 38.82433 lineto
+ closepath
+gsave fill grestore stroke
+newpath 0 0 moveto
+-42.51968 -14.17323 lineto stroke
+newpath -39.49783 -11.55235 moveto
+-42.51968 -14.17323 lineto
+-38.52966 -14.45683 lineto
+ closepath
+gsave fill grestore stroke
+ 0 1 dtransform truncate idtransform setlinewidth pop
+newpath 0 -17.92761 moveto
+53.78369 0 lineto stroke
+newpath -53.78369 0 moveto
+0 17.92761 lineto stroke
+15.02182 -21.87033 moveto
+(\025) cmmi10 9.96265 fshow
+-42.63622 9.80598 moveto
+(\000) cmsy10 9.96265 fshow
+-34.88751 9.80598 moveto
+(\025) cmmi10 9.96265 fshow
+ 0 0.5 dtransform truncate idtransform setlinewidth pop
+newpath 43.02711 -3.58548 moveto
+-10.75658 14.34213 lineto stroke
+newpath -6.76657 14.62578 moveto
+-10.75658 14.34213 lineto
+-7.73471 11.7213 lineto
+ closepath
+gsave fill grestore stroke
+newpath 39.03711 -3.86913 moveto
+43.02711 -3.58548 lineto
+40.00525 -0.96465 lineto
+ closepath
+gsave fill grestore stroke
+18.23526 7.47832 moveto
+(2) cmr10 9.96265 fshow
+23.21655 7.47832 moveto
+(a) cmmi10 9.96265 fshow
+showpage
+%%EOF

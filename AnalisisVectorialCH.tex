@@ -1,0 +1,1045 @@
+\chapter{Análisis Vectorial}
+
+En ciencia e ingeniería usualmente se encuentran cantidades como la temperatura, la masa, el tiempo, etc. que se determinan con sólo una magnitud. Esas cantidades se denominan escalares. También existen otras variables de interés, llamadas vectores, que tienen magnitud y dirección. Algunos ejemplos son: velocidad, aceleración, fuerza, momentum.
+
+Para distinguir los vectores de los escalares, se sigue la siguiente convención: los vectores se denotan con letras en $\mathbf{negrilla}$ y los escalares sin negrilla. Así $\mathbf{v}$ representa el vector velocidad y $v$ (la magnitud del vector velocidad) la rapidez. 
+
+La representación de un vector $\mathbf{p}$ en $R^3$ como una flecha naciendo en el origen del sistema de coordenadas y terminando en el punto de coordenadas $(p_x,p_y,p_z)$, permite establecer una relación biunívoca entre vectores y tripletas de números reales.
+\begin{figure}[ht]
+	\centering
+		\includegraphics{1g1.1}
+	\caption{Representación de un vector en $R^3$.}
+	\label{fig:1g1}
+\end{figure}
+
+Un vector que será particularmente importante es el vector posición, denotado por $\mathbf{r}$ y asociado al punto $(x,y,z)$ de $R^3$. 
+\begin{equation}
+\mathbf{r}\leftrightarrow(x,y,z)\;.
+\end{equation}
+
+Al usar $r$ como la magnitud de $\mathbf{r}$, las coordenadas quedan establecidas así:
+\begin{equation}
+P_x=r\cos\alpha\qquad,\qquad P_y=r\cos\beta\qquad,\qquad P_z=r\cos\gamma\;.
+\end{equation}
+
+Donde $\alpha$, $\beta$, y $\gamma$ son los cosenos directores de $\mathbf{r}$. Ángulos formados entre el vector $\mathbf{r}$ y los semiejes cartesianos positivos $x,y,z$; respectivamente. Las cantidades $p_x$, $p_y$, y $p_z$ son las \textit{componentes} (cartesianas) de $\mathbf{p}$ o las \textit{proyecciones} de $\mathbf{p}$; como se observa en la figura \ref{fig:1g1}. 
+
+\section{Operaciones con vectores}
+
+\subsection{Vectores unitarios}
+
+Por definición un vector unitario es un vector que tiene magnitud igual a la unidad. El vector unitario que tiene la misma dirección que el vector $\mathbf{p}$ es: 
+\begin{equation}
+\hat{\mathbf{p}}=\frac{\mathbf{p}}{p}\;.
+\end{equation}
+Los vectores unitarios de los ejes del sistema de coordenadas cartesiano son denotados así: 
+\begin{equation*}
+\begin{aligned}
+		&\hat{\mathbf{x}}: \text{Vector unitario para el eje } x=(1,0,0)\;,\\
+		&\hat{\mathbf{y}}: \text{Vector unitario para el eje } y=(0,1,0)\;,\\
+		&\hat{\mathbf{z}}: \text{Vector unitario para el eje } z=(0,0,1)\;.
+\end{aligned}
+\end{equation*}
+
+Se puede escribir el vector $\mathbf{p}$ como: 
+\begin{equation}
+\begin{gathered}
+	\hat{\mathbf{p}}=p_x\hat{\mathbf{x}}+p_y\hat{\mathbf{y}}+p_z\hat{\mathbf{z}}\;,\\
+	\text{donde}\quad p_x=\hat{\mathbf{p}}\cdot\hat{\mathbf{x}}\quad,\quad p_y=\hat{\mathbf{p}}\cdot\hat{\mathbf{y}}\quad,\quad
+			pz=\hat{\mathbf{p}}\cdot\hat{\mathbf{z}}\;,
+\end{gathered}
+\end{equation}
+
+y por el teorema de Pitágoras: 
+\begin{equation}
+p=(p_x^2+p_y^2+p_z^2)^{1/2}\;.
+\end{equation}
+
+Al denotar un vector con sus componentes respecto de un sistema de coordenadas se presentan infinidad de posibilidades, las más simples serán tratadas en el capítulo \ref{cap_SistCoord}.
+
+Todo vector en $R^3$ se puede escribir como una combinación lineal de los vectores unitarios $\hat{\mathbf{x}}$, $\hat{\mathbf{y}}$ y $\hat{\mathbf{z}}$; que son linealmente independientes. Esto implica que la triada $\hat{\mathbf{x}}$, $\hat{\mathbf{y}}$ y $\hat{\mathbf{z}}$ forma una base en $R^3$. 
+
+\subsection{Operaciones básicas}
+
+Definimos la \textit{suma} de los vectores $\mathbf{A}=(A_1,A_2,\ldots,A_n)$ y $\mathbf{B}=(B_1,B_2,\ldots,B_n)$ como: 
+\begin{equation}
+\mathbf{A}+\mathbf{B}=(A_1+B_1,A_2+B_2,\ldots,A_n+B_n)\;.
+\end{equation}
+
+Para cualquier número real $r$ y el vector $\mathbf{A}=(A_1,A_2,\ldots,A_n)$ se define el Múltiplo escalar como: 
+\begin{equation}
+r\mathbf{A}=(rA_1,rA_2,\ldots,rA_n)\;.
+\end{equation}
+
+Las fórmulas dadas a continuación son válidas para cualquiera $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$ en $R^n$ y los números $r$ y $s$ en $R$. 
+\begin{equation}\label{1ec8}
+\begin{split}
+	\mathbf{A}+\mathbf{B}&=\mathbf{B}+\mathbf{A}\;,\\
+	(\mathbf{A}+\mathbf{B})+\mathbf{C}&=\mathbf{A}+(\mathbf{B}+\mathbf{C})\;,\\
+	\mathbf{A}+0&=\mathbf{A}\;,\\
+	\mathbf{A}+(-\mathbf{A})&=0\;,\\
+	r(\mathbf{A}+\mathbf{B})&=r\mathbf{A}+r\mathbf{B}\;,\\
+	(r+s)\mathbf{A}&=r\mathbf{A}+s\mathbf{A}\;,\\
+	r(s\mathbf{A})&=(sr)\mathbf{A}\;,\\
+	1\mathbf{A}&=\mathbf{A}\;.
+\end{split}
+\end{equation}
+
+Estas leyes expresan la conmutatividad, distributividad y asosiatividad de las operaciones suma y múltiplo escalar para los vectores. 
+
+\subsubsection{Producto Escalar}
+
+El producto escalar o producto punto es una forma de operar los vectores que tiene mucho interés para la Física. Se define como: 
+\begin{equation}
+	\mathbf{A}\cdot\mathbf{B}=A_1B_1+A_2B_2+\cdots+A_nB_n=\sum\limits_i^n{A_i\,B_i}\;.
+\end{equation}
+
+Este producto satisface las siguientes propiedades:
+\begin{equation}
+\begin{aligned}
+		&\text{No negatividad:} & &\mathbf{A}\cdot\mathbf{A}\geq0\;.\\
+		&\text{Conmutatividad o simetría:} & &\mathbf{A}\cdot\mathbf{B}=\mathbf{B}\cdot\mathbf{A}\;.\\
+		&\text{Distributividad:} & &(\mathbf{A}+\mathbf{B})\cdot\mathbf{C}=\mathbf{A}\cdot\mathbf{C}+\mathbf{B}\cdot\mathbf{C}\;.\\
+		&\text{Homogeneidad:} & &(r\mathbf{A})\cdot\mathbf{B}=r(\mathbf{A}\cdot\mathbf{B})\;.
+\end{aligned}
+\end{equation}
+
+En particular para $\R^3$, la magnitud de un vector se define con el producto punto de el sobre si mismo, así: 
+\begin{equation}
+	|\mathbf{A}| = A = \sqrt{\mathbf{A}\cdot\mathbf{A}}=(A_x^2+A_y^2+A_z^2)^{1/2}\;.
+\end{equation}
+
+Las propiedades de la longitud, norma o magnitud de un vector son:\par\smallskip
+No negatividad: $|\mathbf{A}|\geq0$.\par
+Homogeneidad: $|r\mathbf{A}|=|r||\mathbf{A}|$.\par
+Desigualdad triangular: $|\mathbf{A}+\mathbf{B}|\leq|\mathbf{A}|+|\mathbf{B}|$.\par
+Desigualdad de Cauchy-Schwarz: $|\mathbf{A}\cdot\mathbf{B}|\leq|\mathbf{A}||\mathbf{B}|$.\par\smallskip
+
+El ángulo que forma un vector con otro se define usando el producto punto así: \\
+Si $\theta$ es el ángulo entre $\mathbf{A}$ y $\mathbf{B}$, entonces: 
+\begin{equation}
+	\cos\theta=\frac{\mathbf{A}\cdot\mathbf{B}}{|\mathbf{A}||\mathbf{B}|}\;.
+\end{equation}
+
+\subsubsection{Producto vectorial}
+
+
+El producto vectorial o producto cruz en $\R^3$ se define como:
+
+\begin{equation}
+\begin{aligned}
+&\mathbf{A}\times\mathbf{B}=(A_x\hat{\mathbf{x}}+A_y\hat{\mathbf{y}}+A_z\hat{\mathbf{z}})\times(B_x\hat{\mathbf{x}}+B_y\hat{\mathbf{y}}+B_z\hat{\mathbf{z}})=\mathbf{C}\\
+&=(A_yB_z-A_zB_y)\,\hat{\mathbf{x}}+(A_zB_x-A_xB_z)\,\hat{\mathbf{y}}+(A_xB_y-A_yB_x)\,\hat{\mathbf{z}}\;,
+\end{aligned}
+\end{equation}
+
+ó 
+\begin{equation}
+	C_i=A_jB_k+A_kB_j\;,
+\end{equation}
+con $i$, $j$, $k$ diferentes y en orden \footnote{El orden es por rotación:\\\centerline{\includegraphics{1g2.2}}}.
+
+Una forma de recordar este resultado es utilizando el siguiente pseudodeterminante: 
+\begin{equation}
+\mathbf{A}\times\mathbf{B}=\mathbf{C}=\begin{vmatrix}
+\hat{\mathbf{x}} & \hat{\mathbf{y}} & \hat{\mathbf{z}} \\
+A_x & A_y & A_z \\
+B_x & B_y & B_z \\
+\end{vmatrix}\;.
+\end{equation}
+
+Al desarrollar $\mathbf{A}\cdot\mathbf{C}$ y $\mathbf{B}\cdot\mathbf{C}$, se puede demostrar que el vector $\mathbf{C}$ es perpendicular tanto a $\mathbf{A}$ como a $\mathbf{B}$, o dicho de otra forma, $\mathbf{C}$ es perpendicular al plano que forman $\mathbf{A}$ y $\mathbf{B}$. 
+
+De una forma similar, al desarrollar el producto $(\mathbf{A}\times\mathbf{B})\cdot(\mathbf{A}\times\mathbf{B})$ se puede demostrar que: 
+\begin{equation}
+	|\mathbf{A}\times\mathbf{B}|=|\mathbf{C}|=AB\sen{\theta}\;.
+\end{equation}
+
+Donde $\theta$ es el ángulo que forman $\mathbf{A}$ y $\mathbf{B}$. 
+
+Para este producto se satisfacen las siguientes igualdades: 
+\begin{equation}
+	\begin{aligned}
+		&\text{Distributividad derecha: } & 
+				 &\mathbf{A}\times(\mathbf{B}+\mathbf{C})=\mathbf{A}\times\mathbf{B}+\mathbf{A}\times\mathbf{C}\;.\\
+		&\text{Distributividad izquierda: } & 
+				 &(\mathbf{A}+\mathbf{B})\times\mathbf{C}=\mathbf{A}\times\mathbf{C}+\mathbf{B}\times\mathbf{C}\;.\\
+		&\text{Homogeneidad: } & 
+				 &\mathbf{A} \times (r\mathbf{B})=r(\mathbf{A}\times\mathbf{B})=(r\mathbf{A})\times\mathbf{B}\;.\\	
+		&\text{Anticonmutatividad o antisimetría: } & 
+				 &\mathbf{A}\times\mathbf{B}=-\mathbf{B}\times\mathbf{A}\;.
+	\end{aligned}
+\end{equation}
+
+El producto cruz tiene una importante interpretación geométrica. El paralelogramo formado por $\mathbf{A}$ y $\mathbf{B}$ en la figura \ref{1g3}, $B\sen\theta$ es la altura si $\mathbf{A}$ se considera como una de las bases. 
+\begin{figure}[ht]
+	\centering
+		\includegraphics{1g3.3}
+	\caption{Interpretación geométrica del producto cruz.}
+	\label{1g3}
+\end{figure}
+
+Luego $|\mathbf{A}\times\mathbf{B}|=AB\sen\theta$, es el área del paralelogramo. El vector $\mathbf{A}\times\mathbf{B}$ sugiere tratar el área de paralelogramo formado por $\mathbf{A}$ y $\mathbf{B}$ como un vector.
+
+Ahora con la ayuda del triple producto escalar, se puede definir cómo es la orientación de un conjunto de vectores en $R^3$. Definimos el triple producto escalar como: 
+\begin{equation}
+	\mathbf{A}\cdot(\mathbf{B}\times\mathbf{C})\;.
+\end{equation}
+
+Al recordar que $\mathbf{B}\times\mathbf{C}$ representa el área formada por $\mathbf{B}$ y $\mathbf{C}$, se concluye entonces que $\mathbf{A}\cdot(\mathbf{B}\times\mathbf{C})$ representa el volumen del paralelepípedo definido por $\mathbf{A}$, $\mathbf{B}$ y $\mathbf{C}$. Ver figura \ref{1g4}. 
+\begin{figure}[ht]
+	\centering
+  	\includegraphics{1g4.4}
+	\caption{Representación geométrica del triple producto escalar.}
+	\label{1g4}
+\end{figure}
+Se dice que el conjunto ordenado $\left\{\mathbf{A}, \mathbf{B}, \mathbf{C}\right\}$ de vectores en $R^3$ tiene \textbf{orientación positiva} si $\mathbf{A}\cdot(\mathbf{B}\times\mathbf{C})>0$ o tiene \textbf{orientación negativa} si $\mathbf{A}\cdot(\mathbf{B}\times\mathbf{C})<0$. Se puede demostrar rápidamente que el sistema
+\[
+\left\{\hat{\mathbf{x}},\hat{\mathbf{y}},\hat{\mathbf{z}}\right\}=\left\{\left(1,0,0\right);(0,1,0);(0,0,1)\right\}
+\]
+es un conjunto de vectores orientados positivamente. Los sistemas así se denominan dextrógiros o de mano derecha, mientras que los de orientación izquierda se llaman sistemas levógiros o de mano izquierda. 
+
+\section{Campos Vectoriales}
+
+Cuando se tienen funciones vectoriales donde el dominio (conjunto de vectores donde la función está definida) y la imagen o rango (conjunto de valores que toma la función) son los mismos, a menudo es conveniente representar los vectores del dominio como puntos y los vectores de la imagen como flechas con sus colas en los puntos. De esta forma, por ejemplo, se puede representar fácilmente la velocidad en cada punto del flujo, como se muestra en la figura \ref{1g5}. 
+
+Considerada de esta manera, la función vectorial se llama \textbf{campo vectorial} y se representa con vectores que nacen de cada punto del espacio dominio. En consecuencia, dominio e imagen deben tener la misma dimensión. Si a cada punto del espacio dominio se le asocia no un vector sino un escalar, a la función se le denomina \textbf{campo escalar}.
+\begin{figure}[ht]
+	\centering
+		\includegraphics{1g5.5}
+	\caption{Representación de la velocidad de las partículas de un fluido en una tubería.}
+	\label{1g5}
+\end{figure}
+
+\section{Sistema de coordenadas}\label{cap_SistCoord}
+
+A menudo la representación matemática de la realidad física es más entendible o fácil de manipular si se cambia la forma de ubicar los puntos en el espacio. Esto es, al migrar de un sistema de coordenadas a otro mediante una transformación de coordenadas, se puede simplificar el tratamiento matemático y así concentrar la atención en el fenómeno y no en su descripción. 
+
+\subsection{Coordenadas curvilíneas generalizadas}
+En el sistema de coordenadas rectangulares, el vector $(x_0,y_0,z_0)$ representa un punto que está en la intersección de los planos $x=x_0$, $y=y_0$ y $z=z_0$. De igual forma, un punto descrito desde un sistema de coordenadas curvilíneo se considera como la intersección de una triada de superficies no necesariamente planas. De ahora en adelante solo se considerarán los sistemas ortogonales, esto significa que las superficies deben ser mutuamente perpendiculares. Considérense que las formas implícitas de la triada de superficies son: 
+\begin{equation}\label{eq:form_impl_coor_curv}
+	u_1(x,y,z)=u_1\qquad,\qquad u_2(x,y,z)=u_2\qquad,\qquad u_3(x,y,z)=u_3\;.
+\end{equation}
+
+El sistema de ecuaciones en \ref{eq:form_impl_coor_curv} realiza la transformación de coordenadas curvilíneas a coordenadas rectangulares y se conoce como la transformación inversa. La transformación directa es: 
+\begin{equation}
+	x=x(u_1,u_2,u_3)\qquad,\qquad y=y(u_1,u_2,u_3)\qquad,\qquad z=z(u_1,u_2,u_3)\;.
+\end{equation}
+
+En esta última relación se tiene que: 
+\begin{equation}\label{1ec22}
+\begin{aligned}
+	dx&=\frac{\partial x}{\partial u_1}du_1+\frac{\partial x}{\partial u_2}du_2+\frac{\partial x}{\partial u_3}du_3\;,\\
+	dy&=\frac{\partial y}{\partial u_1}du_1+\frac{\partial y}{\partial u_2}du_2+\frac{\partial y}{\partial u_3}du_3\;,\\
+	dz&=\frac{\partial z}{\partial u_1}du_1+\frac{\partial z}{\partial u_2}du_2+\frac{\partial z}{\partial u_3}du_3\;.\\
+\end{aligned}
+\end{equation}
+
+Además el elemento diferencial de línea en coordenadas rectangulares es: 
+\begin{equation}\label{1ec23}
+	dr^2=d\mathbf{r}\cdot d\mathbf{r}=dx^2+dy^2+dz^2\;.
+\end{equation}
+
+Luego de reemplazar \eqref{1ec22} en \eqref{1ec23} se puede escribir todo en forma condensada así: 
+\begin{equation}
+	dr^2=\sum_{i,j}{\frac{\partial\mathbf{r}}{\partial u_i}\cdot}\frac{\partial\mathbf{r}}{\partial u_j}\,du_i\,du_j\;.
+\end{equation}
+
+Donde $\mathbf{r}$ es un vector que señala cualquier punto en el espacio, $\mathbf{r}=(x,y,z)$. 
+
+En los sistemas ortogonales, los vectores $\frac{\partial\mathbf{r}}{\partial u_i}$ y $\frac{\partial\mathbf{r}}{\partial u_j}$, que son tangentes a los ejes $u_i$ y $u_j$, son perpendiculares si $i\neq j$ y por supuesto su producto punto es nulo ($\frac{\partial\mathbf{r}}{\partial u_i}\cdot\frac{\partial\mathbf{r}}{du_j}=0$). Considerando que $i\neq j$, se definen los factores de escala: 
+\begin{equation} 
+	h_i=\left| \frac{\partial\mathbf{r}}{\partial u_i} \right|\;,
+\end{equation}
+
+y el elemento diferencial $dr$ se puede expresar como: 
+\begin{equation}\label{1ec26}
+	dr^2=\sum_i{h_i^2\,du_i^2=h_1^2\,du_1^2+h_2^2\,du_2^2+h_3^2\,du_3^2}\;.
+\end{equation}
+
+Si se considera sólo cambios en $r_i$ al mantener las otras variables constantes, se establece la siguiente relación de \eqref{1ec26}. 
+\begin{equation}
+	dr_i=h_i\,du_i\;.
+\end{equation}
+
+Esto implica que el vector diferencial de posición es: 
+\begin{equation}
+d\mathbf{r}=h_1\,du_1\,\hat{\mathbf{u}}_1+h_2\,du_2\,\hat{\mathbf{u}}_2+h_3\,du_3\,\hat{\mathbf{u}}_3
+	=\sum_i{h_i\,du_i\,\hat{\mathbf{u}}_i}\;.
+\end{equation}
+
+Donde $\hat{\mathbf{u}}_i$ es el vector unitario tangente a la curva formada por el corte de las superficies $u_j=u_{j0}$ y $u_k=u_{k0}$, siendo $u_{j0}$ y $u_{k0}$  los parámetros que definen las superficies. De igual forma, al considerar sólo el cambio en la variable $u_{i}$, dejando fijas $u_j$ y $u_k$ se obtiene: 
+\begin{equation}\label{1ec29}
+	\frac{\partial{\mathbf{r}}}{\partial{u_i}}=h_i\,\hat{\mathbf{u}}_i\;.
+\end{equation}
+
+Además, ya que el sistema es ortogonal y se elige dextrógiro: 
+\begin{equation}
+	\begin{aligned}
+\hat{\mathbf{u}}_1\cdot\hat{\mathbf{u}}_2&=0 & &, 
+&\hat{\mathbf{u}}_2\cdot\hat{\mathbf{u}}_3&=0 & &, 
+&\hat{\mathbf{u}}_3\cdot\hat{\mathbf{u}}_1&=0 & &,\\
+\hat{\mathbf{u}}_1\times\hat{\mathbf{u}}_2&=\hat{\mathbf{u}}_3 & &, &\hat{\mathbf{u}}_2\times\hat{\mathbf{u}}_3&=\hat{\mathbf{u}}_1 & &, &\hat{\mathbf{u}}_3\times\hat{\mathbf{u}}_1&=\hat{\mathbf{u}}_2 & &.
+\end{aligned}
+\end{equation}
+
+También: 
+\begin{equation}
+	dr=(h_1^2\,du_1^2+h_2^2\,du_2^2+h_3^2\,du_3^2)^{1/2}\;.
+\end{equation}
+
+El elemento diferencial de superficie se define:
+\begin{equation}
+	d\mathbf{S}_{ij}=\frac{\partial\mathbf{r}}{\partial u_i}\times\frac{\partial\mathbf{r}}{\partial u_j}\,du_i\,du_j\;.
+\end{equation}
+
+Y aprovechando \eqref{1ec29}, se tiene: 
+\begin{equation}
+	d\mathbf{S}_{ij}=h_ih_j\hat{\mathbf{u}}_i\times\hat{\mathbf{u}}_j\,du_i\,du_j=h_ih_j\,du_i\,du_j\hat{\mathbf{u}}_k\;.
+\end{equation}
+ 
+El diferencial de superficie general es: 
+\begin{equation}
+	d\mathbf{S}=h_2h_3\,du_2\,du_3\,\hat{\mathbf{u}}_1+h_1h_3\,du_1\,du_3\,\hat{\mathbf{u}}_2+h_1h_2\,du_1\,du_2\,\hat{\mathbf{u}}_3\;.
+\end{equation}
+
+El elemento de volumen se consigue a partir de: 
+\begin{equation}
+	dV=\frac{\partial\mathbf{r}}{\partial u_1}\cdot\frac{\partial\mathbf{r}}{\partial u_2}\times\frac{\partial\mathbf{r}}{\partial\;. u_3}\,du_i\,du_j\,du_k\;.
+\end{equation}
+
+Al utilizar \eqref{1ec29}, se tiene: 
+\begin{equation}
+\begin{aligned}
+dV&=h_1\,\hat{\mathbf{u}}_1\cdot h_2\,\hat{\mathbf{u}}_2\times h_3\,\hat{\mathbf{u}}_3\,du_1\,du_2\,du_3\;,\\
+dV&=h_1\,h_2\,h_3\,du_1\,du_2\,du_3\;.
+\end{aligned}
+\end{equation}
+
+Donde se ha utilizado el hecho que $\hat{\mathbf{u}}_1\cdot \hat{\mathbf{u}}_2\times\hat{\mathbf{u}}_3=1$, por ser un sistema dextrógiro. 
+\begin{figure}[ht]
+	\centering
+		\includegraphics{1g6.6}
+	\caption{Sistema de coordenadas generalizadas.}
+	\label{1g6}
+\end{figure}
+
+
+\subsection{Coordenadas cartesianas rectangulares}
+
+
+Como se ha dicho ya, este sistema describe un punto por la tripleta $(x_0,y_0,z_0)$, queriendo significar que el punto está en la intersección de los planos $x=x_0$, $y=y_0$ y $z=z_0$.
+\begin{figure}[ht]
+	\centering
+		\includegraphics{1g7.7}
+	\caption{Sistema de coordenadas cartesianas rectangulares.}
+	\label{1g7}
+\end{figure}
+Al utilizar \eqref{1ec8} y \eqref{1ec29} se deduce que: 
+\begin{equation}
+	h_1=h_x=1\qquad,\qquad h_2=h_y=1\qquad,\qquad h_3=h_z=1\;.
+\end{equation}
+
+Los vectores unitarios en rectangulares llevan la dirección y el sentido en el que se desplaza el punto al incrementar la coordenada correspondiente, se ordenan de manera que el sistema sea dextrógiro y siempre tengan dirección fija. 
+\begin{equation}
+\begin{aligned}
+	\hat{\mathbf{u}}_1=\hat{\mathbf{x}}=(1,0,0)\;,\\
+	\hat{\mathbf{u}}_2=\hat{\mathbf{y}}=(0,1,0)\;,\\
+	\hat{\mathbf{u}}_3=\hat{\mathbf{z}}=(0,0,1)\;.\\
+\end{aligned}
+\end{equation}
+\begin{equation}
+	\hat{\mathbf{x}}\times\hat{\mathbf{y}}=\hat{\mathbf{z}}\qquad,\qquad \hat{\mathbf{y}}\times\hat{\mathbf{z}}=\hat{\mathbf{x}}\qquad,\qquad\hat{\mathbf{z}}\times\hat{\mathbf{x}}=\hat{\mathbf{y}}\;.
+\end{equation}
+
+Los valores de $x$, $y$ y $z$ varían desde $-\infty$ hasta $\infty$. El diferencial de longitud es:
+\begin{equation}
+\begin{split}
+	d\mathbf{r}=dx\,\hat{\mathbf{x}}+dy\,\hat{\mathbf{y}}+dz\,\hat{\mathbf{z}}\;,\\
+	dr=(dx^2+dy^2+dz^2)^{1/2}\;.
+\end{split}
+\end{equation}
+
+Los diferenciales de superficie con $x=x_0$, $y=y_0$ y $z=z_0$ se ilustran en las figuras.  
+
+7\begin{table}
+\centering
+\begin{tabular}{|c|c|}\hline
+  \includegraphics{1g8.8} &  \includegraphics{1g9.9} \\ \hline
+  a) & b) \\ \hline
+  \multicolumn{2}{|c|}{\includegraphics{1g10.10}}  \\ \hline
+  \multicolumn{2}{|c|}{c)}\\ \hline
+\end{tabular}
+\caption{Diferenciales de superficie en coordenadas rectangulares con: a) $x=x_0$ , b) $y=y_0$ y c) $z=z_0$.}
+\label{tab_GraDifSupRec}
+\end{table}
+
+El diferencial de volumen es:
+\begin{equation}
+	dV=dx\,dy\,dz\;.
+\end{equation}
+
+\subsection{Coordenadas cilíndricas circulares}
+
+Las superficies coordenadas del sistema son: cilindros circunferenciales rectos de radios $\rho$ cuyos ejes coinciden con el eje $z$; semiplanos que contienen al eje $z$ y forman un ángulo $\phi$ con el semiplano de referencia $xz$; y planos paralelos al plano $xy$. 
+\begin{figure}[ht]
+	\centering
+		\includegraphics{1g11.11}
+	\caption{Coordenadas cilíndricas circulares.}
+	\label{1g11}
+\end{figure}
+
+El punto $p$ se describe mediante la tripleta $(\rho,\phi,z)$. 
+
+Para pasar de coordenadas cilíndricas a rectangulares se utilizan las siguientes fórmulas. 
+\begin{equation}
+\begin{aligned}
+	&\rho=(x^2+y^2)^{1/2}\;. \\
+	&\phi=\cos^{-1}\left(\frac{x}{\sqrt{x^2+y^2}}\right)\;. \\
+	&z=z\;.
+\end{aligned}
+\end{equation}
+
+La transformación directa es: 
+\begin{equation}
+\begin{aligned}
+	&x=\rho\cos\phi\;, \\
+	&y=\rho\sen\phi\;, \\
+	&z=z\;.
+\end{aligned}
+\end{equation}
+
+Para describir unívocamente a un punto las coordenadas deben variar así: 
+\begin{equation}
+	0\leq\rho<\infty\qquad,\qquad 0\leq\phi<2\pi\qquad,\qquad -\infty< z <\infty\;.
+\end{equation}
+
+Existe una ambigüedad con los puntos sobre el eje $z$, pues quedan definidos por su $z$, por $\rho=0$ y cualquier valor de $\phi$. Los factores de escala son: 
+\begin{equation}
+\begin{aligned}
+	& h_1=h_\rho=1\;, \\
+	& h_2=h_\phi=\rho\;, \\
+	& h_3=h_z=1\;. \\
+\end{aligned}
+\end{equation}
+
+Los vectores unitarios son:
+\begin{equation}
+\text{Tomando}\qquad \mathbf{r}=x\hat{\mathbf{x}}+y\hat{\mathbf{y}}+z\hat{\mathbf{z}}=
+		\rho\cos\phi\,\hat{\mathbf{x}}+\rho\sen\phi\,\hat{\mathbf{y}}+z\,\hat{\mathbf{z}}\;,\\
+\end{equation}
+\begin{equation}
+\begin{aligned}
+\hat{\mathbf{\rho}}&=\frac{1}{h_\rho}\frac{\partial\mathbf{r}}{\partial\rho}=\cos\phi\,\hat{\mathbf{x}}+\sen\phi\,\hat{\mathbf{y}}\;,\\
+\hat{\mathbf{\varphi}}&=\frac{1}{h_\phi}\frac{\partial\mathbf{r}}{\partial\phi}=-\sen\phi\,\hat{\mathbf{x}}+\cos\phi\,\hat{\mathbf{y}}\;,\\
+\hat{\mathbf{z}}&=\frac{1}{h_z}\frac{\partial\mathbf{r}}{\partial z}=\hat{\mathbf{z}}\;.
+\end{aligned}
+\end{equation}
+
+El vector unitario $\hat{\mathbf{\rho}}$ es ortogonal al cilindro $\rho=\rho_0$ en la dirección en que aumenta $\rho$. El vector unitario $\hat{\mathbf{\varphi}}$ es tangente al cilindro $\rho=\rho_0$ y perpendicular al semiplano $\phi=\phi_0$ en la dirección en que aumenta $\phi$. Por último, el vector $\hat{\mathbf{z}}$ es el mismo vector unitario cartesiano. 
+
+Y las ecuaciones para los unitarios: 
+\begin{equation}
+\begin{aligned}
+	&\hat{\mathbf{x}}=\cos\phi\,\hat{\mathbf{\rho}}-\sen\phi\,\hat{\mathbf{\varphi}}\;, \\
+	&\hat{\mathbf{y}}=\sen\phi\,\hat{\mathbf{\rho}}+\cos\phi\,\hat{\mathbf{\varphi}}\;, \\
+	&\hat{\mathbf{z}}=\hat{\mathbf{z}}\;.
+\end{aligned}
+\end{equation}
+
+El vector posición es: 
+\begin{equation}
+\begin{aligned}
+\mathbf{r}&=\underbrace{\rho\cos\phi}_{x}\underbrace{\left(\cos\phi\,\hat{\mathbf{\rho}}-\sen\phi\,\hat{\mathbf{\varphi}}\right)}_{\hat{\mathbf{x}}}+\underbrace{\rho\sen\phi}_{y}\underbrace{\left(\sen\phi\,\hat{\mathbf{\rho}}+\cos\phi\,\hat{\mathbf{\varphi}}\right)}_{\hat{\mathbf{y}}}+z\,\hat{\mathbf{z}}\;, \\
+	\mathbf{r}&=\rho\hat{\mathbf{\rho}}+z\mathbf{z}\;.
+\end{aligned}
+\end{equation}
+
+Nótese que $\mathbf{r}$ no depende explícitamente de $\phi$. La dependencia de $\phi$ está en $\hat{\mathbf{\rho}}=\cos\phi\,\hat{\mathbf{x}}+\sen\phi\,\hat{\mathbf{x}}$. 
+
+El diferencial de longitud es: 
+\begin{equation}
+	d\mathbf{r}=d\rho\,\hat{\mathbf{\rho}}+d\phi\,\hat{\mathbf{\varphi}}+dz\,\hat{\mathbf{z}}\;,
+\end{equation}
+\begin{equation}
+	dr=(d\rho^2+\rho^2d\phi^2+dz^2)^{1/2}\;.
+\end{equation}
+
+Los diferenciales de superficie con $\rho=\rho_0$, $\phi=\phi_0$ y $z=z_0$ se ilustran en las figuras.
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|}\hline
+  \includegraphics{1g12.12} &  \includegraphics{1g13.13} \\ \hline
+  a) & b) \\ \hline
+  \multicolumn{2}{|c|}{\includegraphics{1g14.14}}  \\ \hline
+  \multicolumn{2}{|c|}{c)}\\ \hline
+\end{tabular}
+\caption{Diferenciales de superficie en coordenadas cilíndricas con: a) $\rho=\rho_0$ , b) $\phi=\phi_0$ y c) $z=z_0$.}
+\label{tab_GraDifSupCil}
+\end{table}
+
+El diferencial de volumen es:
+\begin{equation}
+	dV=\rho\,d\rho\,d\phi\,dz\;.
+\end{equation}
+
+\subsection{Coordenadas esféricas}
+
+En este sistema, cualquier punto se localiza mediante la tripleta $(r,\theta,\phi)$ y significa que el punto $(r_0,\theta_0,\phi_0)$ está en la intersección de la esfera de radio $r_0$ centrada en el origen; el cono circular recto de ángulo $\theta_0$ con el eje $z$ y vértice en el origen; y el semiplano que contiene al eje $z$ y que forma un ángulo $\phi_0$ con el semiplano $xz$. Para mayor claridad obsérvese la figura a) en cuadro  \ref{tab_GraDifSupEsf1}. 
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|}\hline
+  \includegraphics{1g15.15} &  \includegraphics{1g16.16} \\ \hline
+  a) & b) \\ \hline
+  \end{tabular}
+\caption{a) Punto $P$ en coordenadas esféricas. b) Punto $P=(r_0,\phi_0,\theta_0)$.}
+\label{tab_GraDifSupEsf1}
+\end{table}
+
+La transformación inversa de coordenadas se realiza así: 
+\begin{equation}
+	r=\left( x^2+y^2+z^2 \right)^{1/2}\;.
+\end{equation}
+\begin{equation}
+	\theta=\cos^{-1}\left( \frac{z}{\left( x^2+y^2+z^2 \right)^{1/2}} \right)\;.
+\end{equation}
+\begin{equation}
+	\phi=\tan^{-1}\left(\frac{y}{x}\right)\;.
+\end{equation}
+
+la transformación directa es:
+\begin{equation}
+	x=r\sen\theta\cos\phi\;.
+\end{equation}
+\begin{equation}
+	y=r\sen\theta\sen\phi\;.
+\end{equation}
+\begin{equation}
+	z=r\cos\theta\;.
+\end{equation}
+
+Para hacer una descripción unívoca de los puntos, las coordenadas deben tener la siguiente variación: 
+\begin{equation}
+	0\leq r<\infty \qquad,\qquad 0\leq\theta\leq\pi\qquad,\qquad 0\leq\phi< 2\pi\qquad\;.
+\end{equation}
+
+Existen dos ambigüedades; la primera ocurre con los puntos del eje $z$ que quedan definidos por su valor de $r,\theta=0$ ó $\pi$, y $\phi$ puede ser cualquier ángulo; la segunda está en el origen al ser determinado por $r=0$, independientemente de los valores de $\theta$ y $\phi$.
+
+Los factores de escala son:
+\begin{equation}
+	h_1=h_r=1 \qquad,\qquad h_2=h_\theta=r \qquad,\qquad h_3=h_\phi=r\sen\theta\;.
+\end{equation}
+
+Los vectores unitarios son: 
+\begin{gather}
+	\mathbf{r}=r\sen\theta\cos\phi\,\hat{\mathbf{x}}+r\sen\theta\sen\phi\,\hat{\mathbf{y}}+r\cos\theta\,\hat{\mathbf{z}}\;.\\
+\hat{\mathbf{r}}=\frac{1}{h_r}\frac{\partial\mathbf{r}}{\partial r}=\sen\theta\cos\phi\,\hat{\mathbf{x}}+\sen\theta\sen\phi\,\hat{\mathbf{y}}+\cos\theta\,\hat{\mathbf{z}}\;.\\
+\,\hat{\mathbf{\theta}}=\frac{1}{h_\theta}\frac{\partial\mathbf{r}}{\partial\theta}=\cos\theta\cos\phi\,\hat{\mathbf{x}}+\cos\theta\sen\phi\,\hat{\mathbf{y}}-\sen\theta\,\hat{\mathbf{z}}\;.\\
+\,\hat{\mathbf{\varphi}}=\frac{1}{h_\phi}\frac{\partial\mathbf{r}}{\partial\phi}=-\sen\phi\,\hat{\mathbf{x}}+\cos\phi\,\hat{\mathbf{y}}\;.
+\end{gather}
+
+El vector unitario $\hat{\mathbf{r}}$ es ortogonal a la esfera $r=r_0$ en la dirección en la que aumenta $r$. Asimismo, el vector $\hat{\mathbf{\theta}}$ es tangente a la esfera y perpendicular al cono $\theta=\theta_0$ en la dirección en la que aumenta $\theta$. Finalmente, $\hat{\mathbf{\varphi}}$ es tangente tanto a la esfera como al cono y es perpendicular al semiplano $\phi=\phi_0$ en la dirección en que aumenta $\phi$. 
+
+Las relaciones para los unitarios son: 
+\begin{gather}
+\,\hat{\mathbf{x}}=\sen\theta\cos\phi\,\hat{\mathbf{r}}+\cos\theta\cos\phi\,\hat{\mathbf{\theta}}-\sen\phi\,\hat{\mathbf{\varphi}}\;.\\
+\,\hat{\mathbf{y}}=\sen\theta\sen\phi\,\hat{\mathbf{r}}+\cos\theta\sen\phi\,\hat{\mathbf{\theta}}+\cos\theta\,\hat{\mathbf{\varphi}}\;.\\
+\,\hat{\mathbf{z}}=\cos\theta\,\hat{\mathbf{r}}-\sen\theta\,\hat{\mathbf{\theta}}\;.
+\end{gather}
+
+El vector de posición es:
+\begin{equation}
+	\mathbf{r}=r\left[ \sen\theta\left( \cos\phi\,\hat{\mathbf{x}}+\sen\phi\,\hat{\mathbf{y}} \right) +\cos\theta\,\hat{\mathbf{z}} \right]=r\,\hat{\mathbf{r}}\;.
+\end{equation}
+
+Nótese que este vector no depende explícitamente de $\theta$ ni de $\phi$, pero evidentemente depende de esos ángulos en $\hat{\mathbf{r}}=\sen\theta\cos\phi\hat{\mathbf{x}}+\sen\theta\sen\phi\hat{\mathbf{y}}+\cos\theta\hat{\mathbf{z}}$. 
+
+El diferencial de longitud es:
+\begin{equation}\label{1ec69}
+\begin{aligned}
+	d\mathbf{r}&=dr\,\hat{\mathbf{r}}+r\,d\theta\,\hat{\mathbf{\theta}}+r\,\sen\theta\,d\phi\,\hat{\mathbf{\varphi}}\;,\\
+	dr&=(dr^2+r^2\,d\theta^2+r^2\sen^2\theta\,d\phi^2)^{1/2}\;.
+\end{aligned}
+\end{equation}
+
+En \eqref{1ec69} $dr$, $d\theta$ y $d\phi$ dependen implícitamente de un parámetro desconocido. 
+
+Los diferenciales de superficie con $r=r_0$, $\theta=\theta_0$ y $\phi=\phi_0$ se ilustran en las siguientes figur
+
+\begin{center}
+\begin{table}
+\begin{tabular}{|c|c|}\hline
+  \includegraphics{1g17.17} &  \includegraphics{1g18.18} \\ \hline
+  a) & b) \\ \hline
+  \multicolumn{2}{|c|}{\includegraphics{1g19.19}}  \\ \hline
+  \multicolumn{2}{|c|}{c)}\\ \hline
+\end{tabular}
+\caption{Diferenciales de superficie en coordenadas esféricas con: a) $r=r_0$ , b) $\theta=\theta_0$ y c) $\phi=\phi_0$}
+\label{tab_GraDifSupEsf}
+\end{table}
+\end{center}
+
+El diferencial del volumen es:
+\begin{equation}
+	dV=r^2\sen\theta\,d\theta\,d\phi\,dr\;.
+\end{equation}
+
+\section{Operadores vectoriales y teoremas fundamentales}
+Existen dos grupos de operadores vectoriales; los operadores diferenciales y los operadores integrales. Entre los primeros están, por ejemplo, el gradiente ($\nabla$), la divergencia ($\nabla\cdot$), el rotacional ($\nabla\times$) y el laplaciano ($\nabla^2$). Entre los segundos están la integral de línea y la integral de superficie. Los operadores integrales aplicados a unos casos especiales generan los teoremas de Gauss y de Stokes. 
+
+\subsection{El gradiente ($\nabla)$}
+
+Considérese la función $\phi(u_1,u_2,u_3)$ en coordenadas curvilíneas ortogonales. Se sabe que: 
+\begin{equation}
+\begin{aligned}
+	& & d\phi &=\frac{\partial \phi}{\partial u_1}\,du_1+\frac{\partial \phi}{\partial u_2}\,du_2+\frac{\partial \phi}{\partial u_3}\,du_3\;,\\
+	&y & d\mathbf{r}&=h_1\,du_1\,\hat{\mathbf{u}}_1+h_2\,du_2\,\hat{\mathbf{u}}_2+h_3\,du_3\,\hat{\mathbf{u}}_3\;.
+\end{aligned}
+\end{equation}
+
+El $d\phi$ se puede escribir de esta forma:
+\begin{equation}
+	d\phi=\left( \frac{1}{h_1}\frac{\partial\phi}{\partial u_1}\hat{\mathbf{u}}_1+\frac{1}{h_2}\frac{\partial\phi}{\partial u_2}\hat{\mathbf{u}}_2+\frac{1}{h_3}\frac{\partial\phi}{\partial u_3}\hat{\mathbf{u}}_3 \right)\cdot\left( h_1\,du_1\,\hat{\mathbf{u}}_1+h_2\,du_2\,\hat{\mathbf{u}}_2+h_3\,du_3\,\hat{\mathbf{u}}_3 \right)\;.
+\end{equation}
+
+Por definición se establece que $\nabla\phi$ es el gradiente de la función $\phi$:
+\begin{equation}
+	\nabla\phi=\frac{1}{h_1}\frac{\partial\phi}{\partial u_1}\hat{\mathbf{u}}_1+\frac{1}{h_2}\frac{\partial\phi}{\partial u_2}\hat{\mathbf{u}}_2+\frac{1}{h_3}\frac{\partial\phi}{\partial u_3}\hat{\mathbf{u}}_3\;.
+\end{equation}
+
+Luego:
+\begin{equation}\label{1ec74}
+	d\phi=\nabla\phi\cdot d\mathbf{r}\;.
+\end{equation}
+
+Si ahora se consideran dos puntos $P$ y $Q$ en la superficie $\phi(u_1,u_2,u_3)=C$ (siendo $C$ una constante) de manera que $P$ esté a una distancia $dr$ de $Q$; el cambio en la función $\phi$ debido al movimiento del punto $P$ a $Q$ es:
+\begin{equation}
+	d\phi=\nabla\phi\cdot d\mathbf{r}=0\;,
+\end{equation}
+
+con lo cual se concluye que $\nabla\phi$ es perpendicular a $d\mathbf{r}$, el vector diferencial que va de $P$ a $Q$, como se observa en la figura \ref{1g20}. 
+\begin{figure}[ht]
+	\centering
+		\includegraphics{1g20.20}
+	\caption{Perpendicularidad entre $\nabla\phi$ y $d\mathbf{r}$.}	
+	\label{1g20}
+\end{figure}
+
+En consecuencia, el vector $\nabla\phi$ es ortogonal a la superficie $\phi(u_1,u_2,u_3)=C$, ya que $d\mathbf{r}$ es un vector tangente a ella. 
+
+Ahora se consideran los puntos $P$ y $Q$ en diferentes superficies $\phi(u_1,u_2,u_3)=C_1$ y $\phi(u_1,u_2,u_3)=C_2$ respectivamente y de nuevo se asigna el vector $d\mathbf{r}$ como el vector que nace en $P$ (en algún lugar de $\phi=C_1$) y que termina en $Q$ (en otro lugar de $\phi=C_2$). Tomando fijo el punto $P$ y dejando libre $Q$, el máximo valor de $d\phi$ se logra cuando $\nabla\phi$ y $d\mathbf{r}$ son paralelos (ver figura \ref{1g21}), según \eqref{1ec74}. 
+\begin{figure}[ht]
+	\centering
+		\includegraphics{1g21.21}
+	\caption{El valor máximo de $d\phi$ se logra cuando $\nabla\phi$ y $d\mathbf{r}$ son paralelos.}	
+	\label{1g21}
+\end{figure}
+
+Se asocia en consecuencia a la dirección $\nabla\phi$, la dirección de máximo crecimiento de $\phi(u_1,u_2,u_3)$.
+
+\subsection{La divergencia $\nabla\cdot$}
+
+Se presentará el operador divergencia desde la óptica de su significado físico, considerando la divergencia del vector densidad de flujo de masa $\mathbf{J}$\footnote{$\mathbf{J}$ es la cantidad de masa por unidad de área por unidad de tiempo.}. Supóngase un elemento de volumen en coordenadas curvilíneas como se muestra en la figura \ref{1g22}, por el cual pasa un fluido sin ninguna dirección de preferencia. 
+\begin{figure}[ht]
+	\centering
+		\includegraphics{1g22.22}
+	\caption{Elemento de volumen en coordenadas curvilíneas.}	
+	\label{1g22}
+\end{figure}
+
+El fluido circula en direcciones arbitrarias y atraviesa el elemento de volumen. La superficie límite en $u_1=u_{10}+\Delta u_1$ se llamará $S_1$; la superficie en $u_1=u_{10}$ se denominará $S_1'$; $S_2$ y $S_2'$ estarán en $u_2=u_{20}+\Delta u_2$ y $u_2=u_{20}$ respectivamente; y $S_3$ y $S_3'$ estarán en $u_3=u_{30}+\Delta u_3$ y $u_3=u_{30}$. Ver figura \ref{1g23}. 
+\begin{figure}[ht]
+	\centering
+		\includegraphics{1g23.23}
+	\caption{Superficies límites del elemento de volumen en coordenadas curvilíneas.}	
+	\label{1g23}
+\end{figure}
+
+El fluido que atraviesa la cara $S_1$ hacia afuera del volumen en la unidad de tiempo es:
+\begin{equation}
+	\left.\mathbf{J}\cdot\hat{\mathbf{u}}_1\,h_2\,h_3\,\Delta u_2\,\Delta u_3\,\right|_{u_1=u_{10}+\Delta u_1}\;.
+\end{equation}
+
+Asimismo para la cara $S'_1$ es:
+\begin{equation}
+	\left.-\mathbf{J}\cdot \hat{\mathbf{u}}_1\,h_2\,h_3\,\Delta u_2\,\Delta u_3\,\right|_{u_1=\Delta u_1}\;.
+\end{equation}
+
+Nótese que las componentes de $\mathbf{J}$ en $\hat{\mathbf{u}}_2$ y $\hat{\mathbf{u}}_3$ no se toman en cuenta para las caras $S_1$ y $S'_1$ ya que son tangenciales a las superficies y no aportan al flujo. El flujo neto de salida en la unidad de tiempo, debido exclusivamente a las superficies $S_1$ y $S'_1$ es:
+\begin{equation}\label{1ec78}
+	\left.J_1\,h_2\,h_3\,\Delta u_2\,\Delta u_3\,\right|_{u_1=u_{10}+\Delta u_1}-\left.J_1\,h_2\,h_3\,\Delta u_2\,\Delta u_3\,\right|_{u_1=u_{10}}\;.
+\end{equation}
+
+Ahora el flujo neto de salida por unidad de tiempo por unidad de volumen, debido a $S_1$ y $S'_1$ es:
+\begin{equation}
+\left.
+\begin{aligned}
+	&\text{Rata de flujo}\\
+	&\text{de salida}\\
+	&\text{por unidad}\\
+	&\text{de volumen}
+\end{aligned}
+\right|_{S_1S'_1}
+\begin{aligned}
+	=\frac{\left.J_1h_2h_3\Delta u_2 \Delta u_3\right|_{u_1=u_{10}+\Delta u_1} - \left.J_1h_2h_3\Delta u_2 \Delta u_3\right|_{u_1=\Delta u_1}}{h_1h_2h_3\Delta u_1 \Delta u_2 \Delta u_2}
+\end{aligned}\;.
+\end{equation}
+
+En el paso al límite $(\Delta u_1,\Delta u_2,\Delta u_3\rightarrow0)$ se obtiene:
+\begin{equation}
+\left.
+\begin{aligned}
+	&\text{Rata de flujo de salida}\\
+	&\text{por unidad de volumen}
+\end{aligned}
+\right|_{S_1S'_1}
+\begin{aligned}
+	=\frac{1}{h_1h_2h_3}\frac{\partial h_2h_3J_1}{\partial u_1}
+\end{aligned}\;.
+\end{equation}
+
+En consecuencia, la rata de flujo de salida por unidad de volumen para todo el elemento de volumen (al considerarse todas las caras) es: 
+\begin{equation}
+	\frac{1}{h_1h_2h_3}\left( \frac{\partial h_2h_3J_1}{\partial u_1}+\frac{\partial h_1h_3J_2}{\partial u_2}+\frac{\partial h_1h_2J_3}{\partial u_3} \right)=\nabla\cdot\mathbf{J}\;.
+\end{equation}
+
+A la anterior operación sobre $\mathbf{J}$ se le asigna el nombre de ``divergencia de $\mathbf{J}$'' o $\nabla\cdot\mathbf{J}$. 
+
+Si $\nabla\cdot\mathbf{J}$ evaluada en un punto $\mathbf{r}_0$ es mayor que cero ($\left.\nabla\cdot\mathbf{J}\right|_{\mathbf{r}_0}>0$) entonces del volumen diferencial $\mathbf{r}_0$ está saliendo más fluido del que entra y se afirma que $\mathbf{r}_0$ es un punto fuente de $\mathbf{J}$. Si por el contrario $\nabla\cdot\mathbf{J}$ en $\mathbf{r}_0$ es menor que cero ($\left.\nabla\cdot\mathbf{J}\right|_{\mathbf{r}_0}<0$), al volumen diferencial $\mathbf{r}_0$ está entrando más fluido del que sale y se denomina a $\mathbf{r}_0$ como punto sumidero de $\mathbf{J}$. 
+
+Resumiendo: 
+\begin{equation}
+\begin{aligned}
+	\left.\nabla\cdot\mathbf{J}\right|_{\mathbf{r}_0}=
+\end{aligned}
+\left\{\begin{aligned}
+	&<0;\qquad \mathbf{r}_0\text{ es una fuente de }\mathbf{J}.\\
+	&>0;\qquad \mathbf{r}_0\text{ es un sumidero de }\mathbf{J}.\\
+	&=0;\qquad \mathbf{r}_0\text{ no es ni fuente ni sumidero de }\mathbf{J}.
+\end{aligned}\right.
+\end{equation}
+
+El tercer caso se da cuando al volumen diferencial entra la misma cantidad de fluido de la que sale. 
+
+La operación divergencia también se puede definir utilizando la integral de superficie así:
+\begin{equation}\label{1ec83}
+	\nabla\cdot{J}=\lim_{\Delta V\to0}\frac{\oiint\limits_{\mathbf{S}}\mathbf{J}\cdot d\mathbf{S}}{\Delta V}\;.
+\end{equation}
+
+Nótese que sólo hay que interpretar \eqref{1ec78} como el resultado parcial de la integral de superficie sobre la frontera del elemento de volumen, luego el flujo de $\mathbf{J}$ sobre la frontera del elemento de volumen es: 
+\begin{equation}
+\begin{aligned}
+	\oiint\limits_{\mathbf{S}}\mathbf{J}\cdot d\mathbf{S}=
+	&\left.J_1h_2h_3\right|_{u_1=-\Delta u_10}-
+	\left.J_1h_2h_3\right|_{u_1=0}+
+	\left.J_2h_1h_3\right|_{u_2=-\Delta u_2}\\
+	&-\left.J_2h_1h_3\right|_{u_2=0}+
+	\left.J_3h_1h_2\right|_{u_3=-\Delta u_3}-
+	\left.J_3h_1h_2\right|_{u_3=0}\;.
+\end{aligned}
+\end{equation}
+
+Al sacar el límite se concluye \eqref{1ec83}.
+
+\subsection{El teorema de la divergencia}
+
+Para integrar $\mathbf{J}$ sobre una superficie cerrada $S$ se puede utilizar el siguiente procedimiento: sea la superficie cerrada $S$, la frontera del volumen $V$ que está fragmentado en pequeñas porciones $\Delta V_i$. Cada $\Delta V_i$ está limitado por una superficie $S_i$ como se muestra en la figura \ref{1g24}.
+\begin{figure}[ht]
+	\centering
+		\includegraphics{1g24.24}
+	\caption{$S_i$ es la frontera del volumen $\Delta V_i$ que consta de 6 superficies abiertas.}	
+	\label{1g24}
+\end{figure}
+
+La integral buscada es:
+\begin{equation}
+	\oiint\limits_{\mathbf{S}}\mathbf{J}\cdot d\mathbf{S}=\lim_{N\to\infty}\sum_{i=1}^{N}\iint\limits_{S_i}\mathbf{J}\cdot d\mathbf{S}_i\;.
+\end{equation}
+
+Cada superficie común interior entre los volúmenes diferenciales tiene el flujo saliendo de un volumen (contribución positiva), y entrando exactamente al volumen adyacente (contribución negativa). La contribución neta al flujo de la integral de superficie $\iint\limits_{S}\mathbf{J}\cdot d\mathbf{S}$ es cero para todas las superficies interiores. Contribuciones al flujo diferentes de cero, se obtienen únicamente para aquellas superficies que pertenecen a la superficie exterior $S$ de $V$. Pero de \eqref{1ec83} se sabe que: 
+\begin{equation}
+	\nabla\cdot\mathbf{J}\;\Delta V_i=\iint\limits_{S_i}\mathbf{J}\cdot d\mathbf{S}_i\;.
+\end{equation}
+
+Luego:
+\begin{equation}
+	\oiint\limits_{\mathbf{S}}\mathbf{J}\cdot d\mathbf{S}=\lim_{N\to\infty}\sum_{i=1}^{N}\nabla\cdot\mathbf{J}\;\Delta V_i=\iiint\limits_{V}\nabla\cdot\mathbf{J}\,dV\;.
+\end{equation}
+
+De la adición de todas las contribuciones de cada volumen diferencial, se obtiene el teorema de la divergencia. 
+\begin{equation}
+\oiint\limits_{S}\mathbf{J}\cdot d\mathbf{S}=\iiint\limits_{V}\nabla\cdot\mathbf{J}\,dV\;.
+\end{equation}
+
+Este poderoso teorema convierte una integral se superficie en una integral de volumen equivalente. El resultado aquí expuesto será muy útil en el desarrollo de la Teoría Electromagnética. 
+
+\subsection{El rotacional $\nabla\times$}
+Se presentará el rotacional desde su significado físico, de manera análoga como se hizo con la divergencia. Considérese un fluido, y asociada a cada partícula del fluido una fuerza $\mathbf{F}$ que se considera como un campo de fuerzas. Se estudiará la integral de línea sobre una curva cerrada (la circulación de $\mathbf{F}$) así:
+\begin{equation}\label{1ec89}
+	C_1=\int\limits_{abcda}\mathbf{F}\cdot d\mathbf{r}=\oint\limits_{C}\mathbf{F}\cdot d\mathbf{r}\;,
+\end{equation}
+
+donde \eqref{1ec89} es el trabajo hecho por el campo en la trayectoria cerrada $C$, formada por las líneas paralelas a las líneas coordenadas en el plano $u_1=\Delta u_1$.
+\begin{figure}[ht]
+	\centering
+		\includegraphics{1g25.25}
+	\caption{Curva cerrada $C$ en coordenadas curvilíneas.}	
+	\label{1g25}
+\end{figure}
+\begin{equation}
+\begin{aligned}
+	C_1=&\left.\int\limits_{u_{20}}^{u_{20}+\Delta u_2}\mathbf{F}\cdot h_2\,du_2\,\hat{\mathbf{u}}_2\right|_{u_3=\Delta u_{3}}+
+	\left.\int\limits_{u_{30}}^{u_{30}+\Delta u_3}\mathbf{F}\cdot h_3\,du_3\,\hat{\mathbf{u}}_3\right|_{u_2=u_{20}+\Delta u_{2}}\\
+	&+\left.\int\limits_{u_{20}+\Delta u_2}^{u_{20}}\mathbf{F}\cdot h_2\,du_2\,\hat{\mathbf{u}}_2\right|_{u_3=u_{30}+\Delta u_{3}}+
+	\left.\int\limits^{u_{30}}_{u_{30}+\Delta u_3}\mathbf{F}\cdot h_3\,du_3\,\hat{\mathbf{u}}_3\right|_{u_2=u_{20}}\;.
+\end{aligned}
+\end{equation}
+
+Se observa que:
+\begin{equation}
+\begin{aligned}
+	C_1=&\left.\int\limits_{u_{20}}^{u_{20}+\Delta u_2}\mathbf{F}\cdot h_2\,du_2\,\hat{\mathbf{u}}_2\right|_{u_3=\Delta u_{3}}-
+	\left.\mathbf{F}\cdot h_2\,du_2\,\hat{\mathbf{u}}_2\right|_{u_3=u_{30}+\Delta u_{3}}\\
+	&+\left.\int\limits^{u_{30}+\Delta u_3}_{u_{30}}\mathbf{F}\cdot h_3\,du_3\,\hat{\mathbf{u}}_2\right|_{u_2=\Delta u_{2}}-
+	\left.\mathbf{F}\cdot h_3\,du_3\,\hat{\mathbf{u}}_3\right|_{u_2=u_{20}}\;.
+\end{aligned}
+\end{equation}
+
+Al evaluar las integrales se obtiene:
+\begin{equation}
+\begin{aligned}
+	C_1\approx 
+	&\left.F_3\cdot h_3\,du_3\right|_{u_2=u_{20}+\Delta u_{2}}-
+	\left.F_3\cdot h_3\,du_3\right|_{u_2=u_{20}}\\
+	&-\left.F_2\cdot h_2\,du_2\right|_{u_3=u_{30}+\Delta u_{3}}-
+	\left.F_2\cdot h_2\,du_2\right|_{u_3=u_{30}}\;,
+\end{aligned}
+\end{equation}
+
+que es igual a:
+\begin{equation}
+\begin{aligned}
+	C_1\approx 
+	&\left[\frac{\left.F_3\cdot h_3\,du_3\right|_{u_2=u_{20}+\Delta u_{2}}-
+	\left.F_3\cdot h_3\,du_3\right|_{u_2=u_{20}}}{h_2\,h_3\Delta u_2\Delta u_3}\right]h_2\,h_3\,\Delta u_2\Delta u_3 \\
+	&-\left[\frac{\left.F_2\cdot h_2\,du_2\right|_{u_3=u_{30}+\Delta u_{3}}-
+	\left.F_2\cdot h_2\,du_2\right|_{u_3=u_{30}}}{h_2\,h_3\,\Delta u_2\Delta u_3}\right]h_2\,h_3\,\Delta u_2\Delta u_3\;.
+\end{aligned}
+\end{equation}
+
+En el límite se tiene: 
+\begin{equation}
+	\lim_{C_1\to0}C_1\approx \frac{1}{h_2\,h_3}\left[ \frac{\partial F_3\,h_3}{\partial u_2}-\frac{\partial F_2\,h_2}{\partial u_3} \right]h_2\,h_3\,\Delta u_2 \Delta u_3\;.
+\end{equation}
+
+Y se admite por definición que la componente en $u_1$ del rotacional de $\mathbf{F}$ es:
+\begin{equation}\label{1ec95}
+	\left.\nabla\times\mathbf{F}\right|_1=\nabla\times\mathbf{F}\cdot\hat{\mathbf{u}}_1=
+	\lim_{\Delta u_2 \Delta u_3\to0}\frac{\oint\limits_{C}\mathbf{F}\cdot d\mathbf{r}}{h_2\,h_3\,\Delta u_2 \Delta u_3}\;.
+\end{equation}
+
+Finalmente: 
+\begin{equation}
+	\left.\nabla\times\mathbf{F}\,\right|_1=\frac{1}{h_2\,h_3}\left[ \frac{\partial F_3\,h_3}{\partial u_2}-\frac{\partial F_2\,h_2}{\partial u_3} \right]\;.
+\end{equation}
+
+El rotacional completo se puede escribir así: 
+\begin{equation}
+\nabla\times\mathbf{F}=\frac{1}{h_1h_2h_3}
+\begin{vmatrix}
+h_1\hat{\mathbf{u}}_1 & h_2\hat{\mathbf{u}}_2 & h_3\hat{\mathbf{u}}_3\\
+\partial/\partial u_1 & \partial/\partial u_2 & \partial/\partial u_3\\
+h_1F_1 & h_2F_2 & h_3F_3
+\end{vmatrix}\;.
+\end{equation}
+
+¿Qué significa todo esto?
+
+Si en la figura \ref{1g25} se reemplaza la trayectoria $C$ por una manguera que no oponga resistencia al flujo, el fluido circulará en la dirección considerada convencionalmente positiva (es decir, al utilizar la regla de la mano derecha para la orientación de la superficie cuya frontera es la curva $C$) si la componente del rotacional en $u_1$ es también positiva. Ver figura \ref{1g26}.
+\begin{figure}[ht]
+	\centering
+		\includegraphics{1g26.26}
+	\caption{El flujo va en la dirección positiva 1234, según la regla de la mano derecha.}	
+	\label{1g26}
+\end{figure}
+
+El rotacional de $\mathbf{F}$ puede tener componentes en $\hat{\mathbf{u}}_1$, $\hat{\mathbf{u}}_2$ y $\hat{\mathbf{u}}_3$ y puede escribirse como:
+\begin{equation}
+	\nabla\times\mathbf{F}=\Gamma_1\hat{\mathbf{u}}_1+\Gamma_2\hat{\mathbf{u}}_2+\Gamma_3\hat{\mathbf{u}}_3\;.
+\end{equation}
+
+Este rotacional se puede interpretar como un vector perpendicular a un elemento de superficie, que determina la dirección del flujo en una manguera colocada en la frontera límite del elemento. Debe utilizarse la forma convencional de orientar superficies abiertas por medio de sus vectoress normales y la aplicación de la regla de la mano derecha; adicionalmente, la manguera debe considerarse ideal, es decir, que no oponga resistencia al flujo. Ver figura \ref{1g27}.
+\begin{figure}[ht]
+	\centering
+		\includegraphics{1g27.27}
+	\caption{El flujo va en la dirección positiva 1234, según la regla de la mano derecha.}	
+	\label{1g27}
+\end{figure}
+
+\subsection{El teorema de Stokes}
+
+Al integrar la función $\mathbf{F}$ sobre una trayectoria cerrada para calcular su circulación, es posible realizar lo siguiente: una de las superficies sugeridas por $\mathbf{C}$ se subdivide en pedazos. Ver figura \ref{1g28}.
+\begin{figure}[ht]
+	\centering
+		\includegraphics{1g28.28}
+	\caption{Partición de la curva cerrada $C_l$  límite de la superficie $S_l$.}	
+	\label{1g28}
+\end{figure}
+
+La circulación de $\mathbf{F}$ sobre $C$ es:
+\begin{equation}
+	\oint\limits_{C}\mathbf{F}\cdot d\mathbf{r}=\lim_{N\to\infty}\sum\limits_{l=1}^{N}\oint\limits_{C}\mathbf{F}\cdot d\mathbf{r}_1\;.
+\end{equation}
+
+Donde la trayectoria cerrada $C_l$ es la frontera del elemento de superficie $S_l$. Obsérvese que las trayectorias $C_{l-1}$ y $C_l$ comparten el camino $12$ y cuando se realiza la suma de las circulaciones. El aporte de la trayectoria $C_{l-1}$ allí se anula con el aporte de $C_l$. Sólo existe un aporte no nulo para las trayectorias que contienen puntos de la frontera de $S$. 
+
+El elemento de superficie $S_l$ se puede escribir como: 
+\begin{equation}
+d\mathbf{S}_1=h_1\,h_2\,du_1\,du_2\,\hat{\mathbf{u}}_3
+	+h_1\,h_3\,du_1\,du_3\,\hat{\mathbf{u}}_2
+	+h_2\,h_3\,du_2\,du_3\hat{\mathbf{u}}_1\;.
+\end{equation}
+
+De \eqref{1ec95} se sabe que:
+\begin{equation}
+	\nabla\times\mathbf{F}\cdot\hat{\mathbf{u}}_i\,h_j\,h_k\,\Delta u_j\Delta u_k=\oint\limits_{C_{li}}\mathbf{F}\cdot d\mathbf{r}\;.
+\end{equation}
+
+Siendo $C_{li}$ la trayectoria $C_l$ proyectada sobre $u_i=0$, y:
+\begin{equation}
+	\oint\limits_{C_{l1}}\mathbf{F}\cdot d\mathbf{r}
+	+\oint\limits_{C_{l2}}\mathbf{F}\cdot d\mathbf{r}
+	+\oint\limits_{C_{l3}}\mathbf{F}\cdot d\mathbf{r}
+	=\oint\limits_{C_{l}}\mathbf{F}\cdot d\mathbf{r}\;.
+\end{equation}
+
+Se sigue que:
+\begin{equation}
+\begin{aligned}
+	\oint\limits_{C_{l}}\mathbf{F}\cdot d\mathbf{r}&= 
+	\nabla\times\mathbf{F}\cdot\hat{\mathbf{u}}_1\,h_2\,h_3\,\Delta u_2\Delta u_3+
+	\nabla\times\mathbf{F}\cdot\hat{\mathbf{u}}_2\,h_1\,h_3\,\Delta u_1\Delta u_3+\\
+	&\nabla\times\mathbf{F}\cdot\hat{\mathbf{u}}_3\,h_1\,h_2\,\Delta u_1\Delta u_2
+	=\nabla\times\mathbf{F}\cdot\Delta\mathbf{S}_l\;.
+\end{aligned}
+\end{equation}
+
+En consecuencia:
+\begin{equation}
+	\oint\limits_{C}\mathbf{F}\cdot d\mathbf{r}
+	=\lim_{N\to\infty}\sum\limits_{l=1}^{N}{\nabla\times\mathbf{F}\cdot\Delta\mathbf{S}_l}
+	=\iint\limits_{S}\nabla\times\mathbf{F}\cdot d\mathbf{S}\;.
+\end{equation}
+
+El resultado del teorema de Stokes es:
+\begin{equation}
+	\oint\limits_{C}\mathbf{F}\cdot d\mathbf{r}=
+	\iint\limits_{S}\nabla\times\mathbf{F}\cdot d\mathbf{S}\;.
+\end{equation}
+
+Con este útil teorema se pueden realizar integrales de superficie haciendo la integral de línea adecuada.
+
+\section{El Ángulo Sólido}
+
+Sea $dS$ un elemento de superficie en $R^3$ de una superficie $S$. Si se unen todos los puntos del contorno de $dS$ con un punto $p$ resulta un cono como se muestra en la figura \ref{1g29}.
+\begin{figure}[ht]
+	\centering
+		\includegraphics{1g29.29}
+	\caption{Base del cono $dW$ producto de la proyección de los puntos de la curva límite de $dS$ al punto $P$.}	
+	\label{1g29}
+\end{figure}
+
+Ahora trácese una esfera de radio r centrada en $p$. La porción de esfera interceptada por el cono es $dW$. El ángulo sólido con que se ``ve'' a $dS$ desde $p$ es, por definición, $d\Omega=\frac{dW}{r^2}$ y es el valor del área de la porción de esfera unitaria interceptada por el cono. 
+
+Si $\hat{\mathbf{n}}$ es el vector normal unitario exterior a $dS$ y $\alpha$ el ángulo formador por $\hat{\mathbf{n}}$ y $\mathbf{r}$, se tiene:
+\begin{equation*}
+\begin{aligned}
+	&d\Omega=\frac{dW}{r^2}=\frac{dS\cos\alpha}{r^2}=\frac{dS}{r^2}\cdot\frac{\mathbf{r}\cdot\hat{\mathbf{n}}}{r}\\
+	&d\Omega=\frac{\mathbf{r}\cdot\hat{\mathbf{n}}\,dS}{r^3}=\frac{\mathbf{r}\cdot d\mathbf{S}}{r^3}
+\end{aligned}
+\end{equation*}
+
+Luego, el ángulo sólido subtentido por $S$ en $p$ es:
+\begin{equation}
+	\Omega=\iint\limits_{S}d\Omega=\iint\limits_{S}\frac{\mathbf{r}\cdot d\mathbf{S}}{r^3}\;.
+\end{equation}
+
+\subsection{Ilustración}
+
+Halle el ángulo sólido subtendido por una superficie cerrada  
+
+\subsubsection{Origen no contenido en el volumen.}
+\label{sec:OrigNoContVol}
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics{1g30.30}
+	\caption{El origen está fuera de la superficie cerrada $S$.}	
+	\label{1g30}
+\end{figure}
+
+El ángulo sólido subtendido por $S$ desde $O$ es:
+\begin{equation}
+	\Omega=\iint\limits_{S}\frac{\mathbf{r}\cdot d\mathbf{S}}{r^3}
+\end{equation}
+
+Siendo $\mathbf{r}$ un vector que va desde $O$ a cualquier punto de la superficie. Aplicando el teorema de la divergencia,
+\begin{equation}
+	\iint\limits_{S}\frac{\mathbf{r}\cdot d\mathbf{S}}{r^3}=
+	\iiint\limits_{V}\nabla\cdot\frac{\mathbf{r}}{r^3}\,dV
+\end{equation}
+
+Luego,
+
+\begin{equation*}
+	\begin{aligned}\medskip
+		\nabla\cdot\left(\frac{\mathbf{r}}{r^3}\right)=&\nabla\cdot\left( \frac{x\hat{\mathbf{x}}+y\hat{\mathbf{y}}+z\hat{\mathbf{z}}}{(x^2+y^2+z^2)^{3/2}} \right)\\ \medskip
+\nabla\cdot\left(\frac{\mathbf{r}}{r^3}\right)=&\frac{1}{(x^2+y^2+z^2)^{3/2}}+\frac{x(-3/2)(2x)}{(x^2+y^2+z^2)^{5/2}}\\ \medskip
++&\frac{1}{(x^2+y^2+z^2)^{3/2}}+\frac{y(-3/2)(2y)}{(x^2+y^2+z^2)^{5/2}}\\ \medskip
++&\frac{1}{(x^2+y^2+z^2)^{3/2}}+\frac{z(-3/2)(2z)}{(x^2+y^2+z^2)^{5/2}}
+	\end{aligned}
+\end{equation*}
+
+\begin{equation*}
+\nabla\cdot\left(\frac{\mathbf{r}}{r^3}\right)=\frac{3(x^2+y^2+z^2)-3x^2-3y^2-3z^2}{(x^2+y^2+z^2)^{5/2}}=0
+\end{equation*}
+
+\begin{equation}
+	\nabla\cdot\left(\frac{\mathbf{r}}{r^3}\right)=0
+\end{equation}
+Siempre y cuando el origen ($x=y=z=0$) no sea un punto del volumen. A continuación se sigue que $\Omega=0$.
+
+\subsubsection{Origen contenido en el volumen.}
+
+Ahora considérese el caso en que el origen del ángulo sólido está encerrado por $S$. Inicialmente se coloca una esfera centrada en $O$ que esté completamente contenida en el volumen sugerido por $S$. 
+\begin{figure}[ht]
+	\centering
+		\includegraphics{1g31.31}
+	\caption{El origen está dentro de la superficie cerrada $S$.}	
+	\label{1g31}
+\end{figure}
+
+
+Se define la región $V^*$ como el volumen exterior a la esfera que está encerrado por $S$. Es decir, $V^*=V-V'$; siendo $V$ el volumen encerrado por $S$ y $V'$ el volumen encerrado por la esfera $S'$. Sea $S^*$ la superficie límite de $V^*: S^*=S+S'$. Se necesita conocer el ángulo $\Omega$ (ángulo sólido subtendido por $S$ desde $O$) y para ello se calcula inicialmente $\Omega^*$ (ángulo sólido subtendido por $S^*$). Atendiendo el resultado de (\ref{sec:OrigNoContVol}) ese ángulo es nulo ($\Omega^*=0$) ya que el volumen $V^*$ no contiene a $O$.
+
+
+\begin{equation*}
+\Omega^*=\iint\limits_{S^*}\frac{\mathbf{r}\cdot d\mathbf{S}}{r^3}=0=\iint\limits_{S}\frac{\mathbf{r}\cdot d\mathbf{S}}{r^3}+\iint\limits_{S'}\frac{\mathbf{r}\cdot d\mathbf{S}}{r^3}
+\end{equation*}
+
+Luego:
+\begin{equation*}
+\begin{aligned}
+	\iint\limits_{S}\frac{\mathbf{r}\cdot d\mathbf{S}}{r^3}=&-\iint\limits_{S'}\frac{\mathbf{r}\cdot d\mathbf{S}}{r^3}\\
+	\iint\limits_{S}\frac{\mathbf{r}\cdot d\mathbf{S}}{r^3}=&-\iint\limits_{S'}\frac{a\hat{\mathbf{r}}\cdot -a^2\sen\theta\,d\theta\,d\phi\,\hat{\mathbf{r}}}{a^3}=-\iint\limits_{S'}-\sen\theta\,d\theta\,d\phi  \\
+	\Omega=&\iint\limits_{S}\frac{\mathbf{r}\cdot d\mathbf{S}}{r^3}=2\pi\int\limits_{0}^{\pi}\sen\theta\,d\theta=4\pi
+\end{aligned}
+\end{equation*}
+
+Se concluye que el ángulo sólido subtendido por una superficie cerrada es: nulo si el origen del ángulo no está encerrado por la superficie o $4\pi$ si el origen está contenido en el volumen sugerido por la superficie. 
+
+
+
+

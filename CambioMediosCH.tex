@@ -1,0 +1,262 @@
+\chapter{Condiciones de contorno en las interfases.}
+
+
+En la realidad se presentan cambios suaves en el promedio de alguna propiedad local en una región determinada. En la idealización de un mundo continuo (física para los medios continuos) se consideran cambios abruptos de las propiedades, como se ilustra en la figura \ref{g_CamMed}; es decir, $\Delta h$ es nulo. 
+\begin{figure}[ht]
+	\centering
+		\includegraphics{6g1.1}
+	\caption{Cambio de medio real e ideal de una propiedad local. En $x=x_0$ está la interfase.}
+	\label{g_CamMed}
+\end{figure}
+
+Además:
+\begin{itemize}
+	\item Las ecuaciones diferenciales no son válidas en las interfases entre medios diferentes. Es necesario obtener y aplicar condiciones de contorno que permitan el salto de un medio a otro. 
+	\item El procedimiento general consiste en suponer que la transición entre medios se produce de forma suave en un intervalo $\Delta h$, se aplica la ecuación integral correspondiente y después se hace tender $\Delta h$ a cero. 
+\end{itemize}
+
+Conociendo la divergencia de un campo se puede conocer el comportamiento de las componentes normales. Conociendo el rotacional de un campo se puede conocer el comportamiento de las componentes tangenciales. 
+
+
+\section{Componentes normales de $\mathbf{A}$.}
+
+
+Por convención se elige la normal $\mathbf{\hat{n}}$ del medio 1 al medio 2, como se ilustra en \ref{g_DirVecNor}.
+\begin{figure}[ht]
+	\centering
+		\includegraphics{6g2.2}
+	\caption{El vector normal: del medio 1 al medio 2.}
+	\label{g_DirVecNor}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics{6g3.3}
+	\caption{Volumen $V$ encerrado por las superficies de control.}
+	\label{g_VolCamMed}
+\end{figure}
+
+Se conoce la divergencia de $\mathbf{A}$;
+\begin{equation}
+	\nabla\cdot\mathbf{A}=d(\mathbf{r})\;.
+\end{equation}
+
+Sea $V$ el volumen encerrado por $S_1+S_2+S_{LAT}$, como se ilustra en la figura \ref{g_VolCamMed}, entonces:
+\begin{equation}
+	\iiint\limits_{V}{\nabla\cdot\mathbf{A}\,dV}=\iiint\limits_{V}{d(\mathbf{r})\,dV}\;.
+\end{equation}
+
+Por el teorema de la divergencia, la primera integral es:
+\begin{equation}
+	\iiint\limits_{V}{\nabla\cdot\mathbf{A}\,dV}=\oiint\limits_{S}{\mathbf{A}\cdot d\mathbf{S}}=
+	\iint\limits_{S_1}{\mathbf{A}\cdot d\mathbf{S}}+
+	\iint\limits_{S_2}{\mathbf{A}\cdot d\mathbf{S}}+
+	\iint\limits_{S_{LAT}}{\mathbf{A}\cdot d\mathbf{S}}\;.
+\end{equation}
+
+Cuando $\Delta h \to 0$ ocurre que $S_1\to S$, $S_2\to S$, $S_{LAT}\to S$, $\mathbf{\hat{n}_1}\to-\mathbf{\hat{n}}$, $\mathbf{\hat{n}_2}\to\mathbf{\hat{n}}$. Luego:
+\begin{equation}
+\begin{gathered}
+	\iint\limits_{S_1}{\mathbf{A}\cdot d\mathbf{S}}\to-
+			\iint\limits_{S}{\mathbf{A_1}\cdot \mathbf{\hat{n}}\,dS}\medskip  \\
+	\iint\limits_{S_2}{\mathbf{A}\cdot d\mathbf{S}}\to 
+			\iint\limits_{S}{\mathbf{A_2}\cdot \mathbf{\hat{n}}\,dS}\medskip  \\		
+	\iint\limits_{S_{LAT}}{\mathbf{A}\cdot d\mathbf{S}}\to 0\;.	
+\end{gathered}
+\end{equation}
+
+$\mathbf{A_1}$ y $\mathbf{A_2}$ son lo valores del campo en los medios 1 y 2, respectivamente. 
+\begin{equation}
+	\boxed{
+	\oiint\limits_{S}{\mathbf{A}\cdot d\mathbf{S}} =
+	\iint\limits_{S}{\mathbf{\hat{n}}\cdot \left(\mathbf{A_2}-\mathbf{A_1}\right)\, d\mathbf{S}} =
+	\lim\limits_{\Delta h\to 0}{\iiint\limits_{V}{\left(\nabla\cdot\mathbf{A}\right)\,dV}}
+	}
+\end{equation}
+
+
+\subsection{Para el campo eléctrico.}
+
+
+\begin{equation}
+	\iint\limits_{S}{\mathbf{\hat{n}}\cdot\left(\mathbf{E_2}-\mathbf{E_1}\right)\,dS}=
+	\lim\limits_{\Delta h \to 0}{\iiint\limits_{V}{\left(\nabla\cdot\mathbf{E}\right)\,dV}}=
+	\lim\limits_{\Delta h \to 0}{\iiint\limits_{V}{\frac{\rho}{\epsilon_0}\,dV}}\;.
+\end{equation}
+
+$\rho$ es la densidad de carga y $\iiint\limits_{V}{\rho\,dV}$ es la carga alojada en el volumen $V$. A medida que $\Delta h$ tiende a cero, el volumen $V$ se asemeja cada vez más a la superficie $S$. Se supone entonces que toda la carga del volumen $V$ está alojada sobre la superficie $S$ ($\rho=\delta(z)\,\sigma$), suponiendo el eje $z$ como eje del cilindro. Así,
+\begin{equation}
+\begin{gathered}
+	\iint\limits_{S}{\mathbf{\hat{n}}\cdot\left(\mathbf{E_2}-\mathbf{E_1}\right)\,dS}=
+		\lim\limits_{\Delta h \to 0}{\iiint\limits_{V}{\frac{\delta(z)\,\sigma}{\epsilon_0}\,dV}}=
+		\lim\limits_{\Delta h \to 0}{\iint\limits_{S}{\frac{\sigma}{\epsilon_0}\,dS}}\medskip \\
+	\iint\limits_{S}{\mathbf{\hat{n}}\cdot\left(\mathbf{E_2}-\mathbf{E_1}\right)\,dS}=	
+		\iint\limits_{S}{\frac{\sigma}{\epsilon_0}\,dS}\medskip \\
+\end{gathered}
+\end{equation}
+
+Como la superficie $S$ es totalmente arbitraria en la interfase, entonces:
+\begin{equation}
+	\boxed{
+	\mathbf{\hat{n}}\cdot\left(\mathbf{E_2}-\mathbf{E_1}\right)=\frac{\sigma}{\epsilon_0}
+	\quad \text{ó}	\quad
+	E_{2n}-E_{1n}=\frac{\sigma}{\epsilon_0}\;.
+	}
+\end{equation}
+
+
+\subsection{Para el desplazamiento eléctrico.}
+
+
+\begin{equation}
+	\iint\limits_{S}{\mathbf{\hat{n}}\cdot\left(\mathbf{D_2}-\mathbf{D_1}\right)\,dS}=
+	\lim\limits_{\Delta h \to 0}{\iiint\limits_{V}{\left(\nabla\cdot\mathbf{D}\right)\,dV}}=
+	\lim\limits_{\Delta h \to 0}{\iiint\limits_{V}{\rho_f\,dV}}\;.
+\end{equation}
+
+$\rho_f$ es la densidad de carga libre y $\iiint\limits_{V}{\rho_f\,dV}$ es la carga libre alojada en el volumen $V$. Con $\rho_f=\delta(z)\,\sigma_f$ se obtiene:
+\begin{equation}	
+\begin{gathered}
+	\iint\limits_{S}{\mathbf{\hat{z}}\cdot\left(\mathbf{D_2}-\mathbf{D_1}\right)\,dS}=
+		\iint\limits_{S}{\sigma_f\,dS}\medskip \\
+	\boxed{\mathbf{\hat{n}}\cdot\left(\mathbf{D_2}-\mathbf{D_1}\right)=\sigma_f 
+	\qquad\text{ó}\qquad
+	D_{2n}-D_{1n}=\sigma_f}
+\end{gathered}
+\end{equation}
+
+
+\section{Componentes tangenciales de $\mathbf{A}$.}
+
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics{6g4.4}
+	\caption{Componentes tangenciales.}
+	\label{g_ComTan}
+\end{figure}
+
+Ahora se conoce el rotacional de $\mathbf{A}$:
+\begin{equation}
+	\nabla\times\mathbf{A}=\mathbf{c}\;.
+\end{equation}
+
+Según la figura \ref{g_ComTan}, siendo $S$ la superficie limitada por $L_1$, $L_2$ y $L_{LAT}$, y siendo  $C=L_1+L_2+L_{LAT}$:
+\begin{equation}
+\begin{gathered}
+	\iint\limits_{S}{\left(\nabla\times\mathbf{A}\right)\cdot d\mathbf{S}}=
+		\oint\limits_{C}{\mathbf{A}\cdot d\mathbf{r}}\bigskip \\ 
+	\oint\limits_{C}{\mathbf{A}\cdot d\mathbf{r}}=
+		\int\limits_{L_1}{\mathbf{A}\cdot d\mathbf{r}}+
+		\int\limits_{L_2}{\mathbf{A}\cdot d\mathbf{r}}+
+		\int\limits_{L_{LAT}}{\mathbf{A}\cdot d\mathbf{r}}\;.
+\end{gathered}
+\end{equation}
+
+Si $\Delta h \to 0$, se tiene que $L_2 \to L$, $L_1 \to -L$, $L_{LAT} \to 0$:
+\begin{equation}
+\begin{gathered}
+		\int\limits_{L_1}{\mathbf{A}\cdot d\mathbf{r}}=
+			-\int\limits_{L}{\mathbf{A_1}\cdot \mathbf{\hat{t}}\,dr}\bigskip \\ 
+		\int\limits_{L_2}{\mathbf{A}\cdot d\mathbf{{r}}}=
+			\int\limits_{L}{\mathbf{A_2}\cdot \mathbf{\hat{t}}\,dr}\bigskip \\
+		\int\limits_{L_{LAT}}{\mathbf{A}\cdot d\mathbf{r}}=0
+\end{gathered}
+\end{equation}
+
+Entonces:
+\begin{equation}
+\begin{gathered}
+	\oint\limits_{C}{\mathbf{A}\cdot\mathbf{r}} \to 
+		\int\limits_{L}{(\mathbf{A_2}-\mathbf{A_1})\cdot\mathbf{\hat{t}}\,dr} \to
+		\iint\limits_{S}{(\nabla\times\mathbf{A})\cdot d\mathbf{S}} \medskip \\ 
+	\boxed{\int\limits_{L}{(\mathbf{A_2}-\mathbf{A_1})\cdot\mathbf{\hat{t}}\,dt} =
+			\lim_{\Delta h\to0}\iint\limits_{S}{(\nabla\times\mathbf{A})\cdot d\mathbf{S}}}
+\end{gathered}
+\end{equation}
+
+
+\subsection{Para el campo eléctrico.}
+
+
+\begin{equation}
+\begin{gathered}
+	\int\limits_{L}{(\mathbf{E_2}-\mathbf{E_1})\cdot\mathbf{\hat{t}}\,dr} =
+			\lim_{\Delta h\to0}\iint\limits_{S}{(\nabla\times\mathbf{E})\cdot d\mathbf{S}}=0\;.
+\end{gathered}
+\end{equation}
+
+Como el resultado es para cualquier $L$ sobre $S$, entonces:
+\begin{equation}
+	(\mathbf{E_2}-\mathbf{E_1})\cdot\mathbf{\hat{t}}=0\;,
+\end{equation}
+
+donde $\mathbf{\hat{t}}$ es un vector tangente a $L$ y a su vez a $S$. Así, 
+\begin{equation}
+	E_{2l}-E_{1l}=0\quad\Rightarrow\quad \boxed{E_{2l}=E_{1l}}
+\end{equation}
+
+Lo anterior implica que las componentes tangenciales del campo eléctrico son continuas al cambia de medio. 
+
+
+\subsection{Para el desplazamiento eléctrico.}
+
+
+\begin{equation}
+\begin{gathered}
+	\int\limits_{L}{(\mathbf{D_2}-\mathbf{D_1})\cdot\mathbf{\hat{t}}\,dt} =
+			\lim_{\Delta h\to0}\iint\limits_{S}{(\nabla\times\mathbf{D})\cdot d\mathbf{S}}=
+			\lim_{\Delta h\to0}\iint\limits_{S}{(\nabla\times\mathbf{P})\cdot d\mathbf{S}}=
+\end{gathered}
+\end{equation}
+
+Si:
+\begin{equation}
+	\int\limits_{L}{(\mathbf{D_2}-\mathbf{D_1})\cdot\mathbf{\hat{t}}\,dt} =
+		\int\limits_{L}{(\mathbf{P_2}-\mathbf{P_1})\cdot\mathbf{\hat{t}},dt}\;,
+\end{equation}
+
+entonces:
+\begin{equation}
+	\boxed{D_{2l}-D_{1l}=P_{2l}-P_{1l}}
+\end{equation}
+
+
+\section{Resumen.}
+
+
+A continuación se presenta una tabla de las ecuaciones de componentes recurrentes para el cálculo de las variables electromagnéticas. A partir de las ecuaciones diferenciales, aplicando un procedimiento similar al visto anteriormente, puede llegarse fácilmente a las ecuaciones de componentes. 
+
+\begin{table}[ht]
+	%\renewcommand{\arraystretch}{2.2}
+	\centering
+		\begin{tabular}{|c|c|}\hline
+			Ecuación diferencial & Ecuación de componentes\\ \hline
+			$\nabla\cdot\mathbf{E}=\dfrac{\rho}{\epsilon_0}$ & 
+					$\mathbf{\hat{n}}\cdot(\mathbf{E_2}-\mathbf{E_1})=\dfrac{\sigma}{\epsilon_0}$\\ \hline
+			$\nabla\times\mathbf{B}
+							=\mu_0\,\mathbf{J}+\mu_0\epsilon_0\dfrac{\partial\mathbf{E}}{\partial t}$ & 
+					$\mathbf{\hat{n}}\times(\mathbf{B_2}-\mathbf{B_1})=\mu_0\,\mathbf{K}$\\ \hline
+			$\nabla\times\mathbf{E}=-\,\dfrac{\partial\mathbf{B}}{\partial t}$ & 
+					$\mathbf{\hat{n}}\times(\mathbf{E_2}-\mathbf{E_1})=\textbf{0}$ \\ \hline
+			$\nabla\cdot\mathbf{B}=0$ &
+					$\mathbf{\hat{n}}\cdot(\mathbf{B_2}-\mathbf{B_1})=\textbf{0}$\\ \hline
+			$\nabla\cdot\mathbf{D}=\rho_f$ &
+					$\mathbf{\hat{n}}\cdot(\mathbf{D_2}-\mathbf{D_1})=\sigma_f$\\ \hline
+			$\nabla\times\mathbf{H}=\mathbf{J_f}+\dfrac{\partial\mathbf{D}}{\partial t}$ & 
+					$\mathbf{\hat{n}}\times(\mathbf{H_2}-\mathbf{H_1})=\mathbf{K_f}$\\ \hline
+			$\nabla\times\mathbf{D}=-\,\epsilon_0\dfrac{\partial\mathbf{B}}{\partial t}
+							+\nabla\times\mathbf{P}$ & 
+					$\mathbf{\hat{n}}\times(\mathbf{D_2}-\mathbf{D_1})=
+							\mathbf{\hat{n}}\times(\mathbf{P_2}-\mathbf{P_1})$\\ \hline
+			$\nabla\cdot\mathbf{H}=-\nabla\cdot\mathbf{M}$ & 
+					$\mathbf{\hat{n}}\cdot(\mathbf{H_2}-\mathbf{H_1})=
+							-\mathbf{\hat{n}}\cdot(\mathbf{M_2}-\mathbf{M_1})$\\ \hline
+			$\nabla\cdot\mathbf{J}+\dfrac{\partial\rho}{\partial t}=0$ & 
+					$\mathbf{\hat{n}}\cdot\left
+							[\mathbf{J_2}+\epsilon_0\dfrac{\partial\mathbf{E_2}}{\partial t} 
+							-\mathbf{J_1}-\epsilon_0\dfrac{\partial\mathbf{E_1}}{\partial t}\right]=0$\\ \hline
+		\end{tabular}
+	\caption{Ecuaciones de componentes según ecuaciones diferenciales.}
+	\label{tab_ec_comp1}
+\end{table}

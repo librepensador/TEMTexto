@@ -1,0 +1,942 @@
+\chapter{Energía eléctrica y magnética}
+
+\section{Energía electrostática.}
+
+
+El trabajo necesario para conformar una distribución de carga se almacena como energía potencial en el campo eléctrico, porque si se liberan las cargas, este trabajo se podría recuperar.
+
+
+\subsection{Trabajo necesario para conformar una distribución de cargas puntuales.}
+
+
+Supóngase que se construye un sistema de $n$ cargas puntuales, trayendo cada carga desde el infinito hasta su posición en la distribución, como se ilustra en la figura \ref{g_DisCar}.
+
+\begin{figure}[hb]
+	\centering
+		\includegraphics{7g1.1}
+	\caption{Distribución de cargas en un universo de permitividad $\epsilon$.}
+	\label{g_DisCar}
+\end{figure}
+
+Sea $W_i$ el trabajo necesario para traer la carga $q_i$. $W_1=0$ y $W_i=q_i\,\phi_i$ :
+\begin{equation}
+	W_i=q_i\,\sum\limits_{j=1}^{i-1}{\frac{q_j}{4\pi\epsilon r_{ij}}}
+	\quad\text{con}\quad
+	r_{ij}=|\mathbf{r_i}-\mathbf{r_j}|\;.
+\end{equation}
+
+$\phi_i$ es el potencial en $i$ debido a las $i-1$ cargas existentes. El trabajo total para formar la distribución será:
+\begin{equation}
+	W=\sum\limits_{i=1}^{n}{W_i}=
+	\sum\limits_{i=1}^{n}{q_i\,\sum\limits_{j=1}^{i-1}{\frac{q_j}{4\pi\epsilon r_{ij}}}}\;,
+\end{equation}
+
+que se puede escribir así:
+\begin{equation}
+	\sum\limits_{i=1}^{n}{\sum\limits_{j=1}^{i-1}{\frac{q_i\,q_j}{4\pi\epsilon r_{ij}}}}=
+	\sum\limits_{j=1}^{n}{\sum\limits_{i=1}^{j-1}{\frac{q_i\,q_j}{4\pi\epsilon r_{ij}}}}\;.
+\end{equation}
+
+Luego:
+\begin{equation}\label{ec_Trab1}
+	2W=	\sum\limits_{i=1}^{n}{\sum\limits_{j=1}^{i-1}{\frac{q_i\,q_j}{4\pi\epsilon r_{ij}}}}+
+	\sum\limits_{j=1}^{n}{\sum\limits_{i=1}^{j-1}{\frac{q_i\,q_j}{4\pi\epsilon r_{ij}}}}\;.
+\end{equation}
+
+De la ecuación \eqref{ec_Trab1}, la primera suma representa la suma de los términos de una matriz triangular inferior con $i$ creciendo horizontalmente y $j$ creciendo verticalmente. Cada término sería $\frac{q_i\,q_j}{4\pi\epsilon r_{ij}}$, la segunda es la suma de los términos de la matriz triangular superior que completa la matriz cuadrada para el arreglo.
+
+Luego:
+\begin{equation}
+		W=\frac{1}{2}\sum\limits_{\substack{i=1\\i\neq j}}^{n}\sum\limits_{\substack{j=1\\j\neq i}}^{n}
+		\frac{q_i\,q_j}{4\pi\epsilon r_{ij}}\;.
+\end{equation}
+
+El salto al mundo continuo es inmediato.
+\begin{equation}
+	W=\frac{1}{2}\iiint\limits_{V}{\iiint\limits_{V'}
+		{\frac{dq\,dq'}{4\pi\epsilon|\mathbf{r}-\mathbf{r'}|}}}=
+		\frac{1}{2}\iiint\limits_{V}{\iiint\limits_{V'}
+		{\frac{\rho\,dV\,\rho'\,dV'}{4\pi\epsilon|\mathbf{r}-\mathbf{r'}|}}}\;.
+\end{equation}
+
+Tomando la definición del potencial electrostático, se puede escribir así:
+\begin{equation}
+\begin{gathered}
+		W=\frac{1}{2}\iiint\limits_{V}{\rho\left[\iiint\limits_{V'}
+			{\frac{\rho'\,dV'}{4\pi\epsilon|\mathbf{r}-\mathbf{r'}|}}\right]\,dV} \medskip \\
+		W=\frac{1}{2}\iiint\limits_{V}{\rho\,\phi\,dV}\;,
+\end{gathered}
+\end{equation}
+
+siendo $\phi$ el potencial de la distribución. Como por definición la energía electrostática es el trabajo realizado necesario para conformar la distribución de carga, entonces:
+\begin{equation}
+	\boxed{U=\frac{1}{2}\iiint\limits_{V}{\rho\,\phi\,dV}}
+\end{equation}
+
+$U$ : Energía electrostática.
+
+Un poco de malabares algebraicos arrojan los siguientes resultados:
+\begin{equation}
+	\nabla\cdot\left(\phi\,\mathbf{D}\right)=\phi\nabla\cdot\mathbf{D}
+			+\left(\nabla\phi\right)\cdot\mathbf{D}=\phi\,\rho_{f}+(-\mathbf{E})\cdot\mathbf{D}\;.
+\end{equation}
+
+Integrando sobre un volumen $V$ y aplicando el teorema de Stokes:
+\begin{equation}
+\begin{gathered}
+	\iiint\limits_{V}{\nabla\cdot\left(\phi\,\mathbf{D}\right)\,dV}=
+				\iiint\limits_{V}{\phi\,\rho_{f}}
+				-\iiint\limits_{V}{\mathbf{E}\cdot\mathbf{D}\,dV} \medskip \\
+	\oiint\limits_{S}{\phi\,\mathbf{D}\cdot d\mathbf{S}}=
+				\iiint\limits_{V}{\phi\,\rho_{f}\,dV}
+				-\iiint\limits_{V}{\mathbf{E}\cdot\mathbf{D}\,dV}\;.
+\end{gathered}
+\end{equation}
+
+Por la condición de regularidad en infinito para $\phi$ y $\mathbf{D}$, si el volumen $V$ tiende a ser el universo, entonces $S$ sería la superficie límite del universo en donde el producto $\phi\,\mathbf{D}$ es un vector que decrece a razón de $\frac{1}{r^3}$, mientras el diferencial de superficie crece al ritmo de $r^2$. Se sigue que la integral en $S$ es nula:
+\begin{equation}
+		\iiint\limits_{All}{\phi\,\rho_{f}\,dV}=
+		\iiint\limits_{All}{\mathbf{E}\cdot\mathbf{D}\,dV}\;.
+\end{equation}
+
+Finalmente,
+\begin{equation}
+	\boxed{U=\frac{1}{2}\iiint\limits_{All}{\rho_f\,\phi\,dV}=
+	\frac{1}{2}\iiint\limits_{All}{\mathbf{E}\cdot\mathbf{D}\,dV}}
+\end{equation}
+
+Nótese que $All$ denota todo el espacio.
+
+
+\subsection{Energía almacenada en un condensador.}
+
+
+\begin{figure}[hb]
+	\centering
+		\includegraphics{7g2.2}
+	\caption{Circuito eléctrico de un condensador cargándose.}
+	\label{g_ConCar}
+\end{figure}
+
+La fuente de voltaje $V_{DC}$ realiza un trabajo para depositar carga positiva en $b$ mientras retira carga de $a$. El trabajo realizado entre el momento en que se conecta el condensador descargado y el momento en que está completamente cargado es $W=q V$, donde $q$ es la carga suministrada por la fuente y $V$ la diferencia de potencial instantanea que varía desde $0 V$ hasta $V_{DC}$. El trabajo diferencial realizado cuando se ha suministrado una carga $dq$ es $dW=dq V$. Dado que la capacitancia es constante $C=Q/\Delta \phi$, la carga diferencial suministrada por la fueste se puede escribir en términos del potencial instantáneo de la fuente así: $dq=CdV$. En consecuencia el trabajo realizado por la fuente es:
+\begin{equation}
+W=\int\limits_{0}^{V_{DC}} C V dV=\frac{C V_{DC}^2}{2}.
+\end{equation}
+
+Rápidamente se puede demostrar que:
+\begin{equation}
+	U=\frac{Q^2}{2C}=\frac{1}{2}\,Q\,\phi=\frac{1}{2}\,C\,\phi^2\;.
+\end{equation}
+donde $Q$ es la carga de la placa positiva del condensador, $\phi$ es la diferencia de potencial positiva entre las placas y $C$ la capacitancia, naturalmente.
+\subsection{Energía de ligadura de un átomo.}
+
+
+Si logramos simplificar el átomo y considerarlo como una nube de electrones esférica, uniformemente cargada con una carga puntual (núcleo) en el origen, como se observa en la gráfica \ref{g_SimAt}, entonces para encontrar la energía, por superposición, primero se encontrará la energía de la nube, luego se añadirá el núcleo.
+
+\begin{figure}[hb]
+	\centering
+		\includegraphics{7g3.3}
+	\caption{Simplificación del átomo. La nube de electrones y núcleo con cargas $-Q$ y $Q$ respectivamente.}
+	\label{g_SimAt}
+\end{figure}
+
+Para la nube:
+\begin{equation}
+	\mathbf{E_-}=\left\{
+\begin{aligned}
+	\frac{-Q}{4\pi\epsilon_0r^2}\,\mathbf{\hat{r}}\quad,\quad\text{si}\quad r>R\,.\medskip \\
+	\frac{-Q\,r}{4\pi\epsilon_0R^3}\,\mathbf{\hat{r}}\quad,\quad\text{si}\quad r<R\,.\medskip \\
+\end{aligned}
+	\right.
+\end{equation}
+
+Luego, la energía almacenada en la nube de electrones es:
+\begin{equation}
+\begin{gathered}
+	U_-=\frac{1}{2}\,\iiint\limits_{All}{\mathbf{E}\cdot\mathbf{D}\,dV}=\frac{1}{2}\,\epsilon_0\,
+		\int\limits_{r=0}^{\infty}\int\limits_{\theta=0}^{\pi}\int\limits_{\varphi=0}^{2\pi}\
+		{E^2r^2\sen\theta\,d\theta\,d\varphi\,dr}\medskip \\
+	\boxed{U_-=\frac{3Q^2}{20\pi\epsilon_0R}}
+\end{gathered}
+\end{equation}
+
+Luego se determina el trabajo necesario para colocar el núcleo en el centro del volumen:
+\begin{equation}
+\begin{gathered}
+	W_{\infty\to r=0}=-Q\,\int\limits_\infty^0{\mathbf{E}\cdot d\mathbf{l}}=
+				Q\,\int\limits^\infty_0{\mathbf{E}\cdot dr\,\mathbf{\hat{r}}}=U_+\medskip \\
+	U_+=Q\,\left[\int\limits_0^R{\frac{-Q\,r}{4\pi\epsilon_0R^3}
+			\mathbf{\hat{r}}\cdot dr\,\mathbf{\hat{r}}}+
+		\int\limits_R^\infty{\frac{-Q}{4\pi\epsilon_0r^2}\mathbf{\hat{r}}\cdot dr\,\mathbf{\hat{r}}}
+		\right]\medskip \\
+	U_+=\frac{-3Q}{8\pi\epsilon_0R}\;.
+\end{gathered}
+\end{equation}
+
+La energía total es $U=U_-+U_+$, luego:
+\begin{equation}
+	U=\frac{-9Q^2}{40\pi\epsilon_0R}
+\end{equation}
+
+Y ¡obsérvese que esta energía es negativa!
+
+
+\subsection{Fuerzas sobre conductores.}
+
+
+Imagínese una porción de un conductor como se muestra en la figura \ref{g_PorCon}.
+
+\begin{figure}[hb]
+	\centering
+		\includegraphics{7g4.4}
+	\caption{Porción de un conductor.}
+	\label{g_PorCon}
+\end{figure}
+
+El diferencial de superficie $dS$ genera un campo $\mathbf{E_{dso}}$ fuera del conductor y $\mathbf{E_{dsi}}$ dentro del conductor. El resto de la carga produce un campo $\mathbf{E_{resto}}$.
+
+Si el conductor está en condiciones electrostáticas, el campo en su interior es nulo:
+\begin{equation}
+	\mathbf{E_{resto}}=-\mathbf{E_{dsi}}\quad\text{y}\quad
+	\mathbf{E_{dso}}=-\mathbf{E_{dsi}}=\frac{\sigma}{2\epsilon}\,\mathbf{\hat{n}}\;.
+\end{equation}
+
+El campo total justo fuera del conductor es:
+\begin{equation}
+	\mathbf{E_T}=\mathbf{E_{dso}}+\mathbf{E_{resto}}=2\,\mathbf{E_{resto}}\;.
+\end{equation}
+
+La fuerza sobre el $dS$ es $d\mathbf{F}=\mathbf{E_{resto}}\,\sigma\,dS$, luego:
+\begin{equation}
+\begin{gathered}
+	\mathbf{F}=\iint\limits_{S}{\mathbf{E_{resto}}\,\sigma\,dS}\medskip \\
+	\boxed{\mathbf{F}=\frac{1}{2}\,\iint\limits_{S}{\frac{\sigma^2}{\epsilon}\,d\mathbf{S}}}
+\end{gathered}
+\end{equation}
+
+
+\subsection{Relación fuerza energía.}
+
+
+Se sabe que la energía electrostática es el trabajo necesario para formar la distribución de carga. Entonces:
+\begin{equation}
+	U=W=\int\limits_{C}{\mathbf{F_a}\cdot\,d\mathbf{r}}=
+	-\int\limits_{C}{q\,\mathbf{E}\cdot\mathbf{r}}\;,
+\end{equation}
+
+donde $\mathbf{F_a}$ es la fuerza del agente externo que realiza trabajo. Luego $dU=-\mathbf{F}\cdot d\mathbf{r}$.
+
+Pero $dU=\nabla U\cdot d\mathbf{r}=-\mathbf{F}\cdot d\mathbf{r}$ y como la igualdad se sostiene sin importar la curva:
+\begin{equation}
+	\boxed{\mathbf{F}=-\nabla U}
+\end{equation}
+
+Aquí $\mathbf{F}$ es la fuerza generada por el campo.
+
+
+\subsection{Ilustración.}
+
+
+Se desea calcular la fuerza en un condensador de placas paralelas, como se ilustra en la figura \ref{g_FuerConPla}.
+
+\begin{figure}[hb]
+	\centering
+		\includegraphics{7g5.5}
+	\caption{Condensador de placas paralelas de área $A$.}
+	\label{g_FuerConPla}
+\end{figure}
+
+Se considera el condensador cargado con una carga $Q$. Para la placa inferior:
+\begin{equation}\label{ec_FuerAtrac}
+		\mathbf{F}=\frac{1}{2}\,\iint\limits_{S}{\frac{\left(Q/A\right)^2}{\epsilon}\,d\mathbf{S}}=
+		\frac{1}{2}\,\frac{Q^2}{A^2\epsilon}\,\iint\limits_{S}{d\mathbf{S}}=
+		\frac{1}{2}\,\frac{Q^2}{A^2\epsilon}\,A\,\mathbf{\hat{x}}\;.
+\end{equation}
+
+La ecuación \eqref{ec_FuerAtrac} da a entender que es una fuerza de atracción. Por el lado de la energía:
+\begin{equation}\label{ec_FuerPla}
+\begin{gathered}
+	U=\frac{1}{2}\,\frac{Q^2}{C}\quad,\quad
+		C=\frac{A\epsilon}{x}\quad\Rightarrow\quad
+		U=\frac{1}{2}\,\frac{Q^2}{A\epsilon}\,x \medskip \\
+	\mathbf{F}=-\nabla U \quad\Rightarrow\quad
+		\mathbf{F}=-\frac{1}{2}\,\frac{Q^2}{A\epsilon}\,\mathbf{\hat{x}}\;.
+\end{gathered}
+\end{equation}
+
+La última expresión de la ecuación \eqref{ec_FuerPla} se interpreta como la fuerza sobre la placa superior.
+
+El signo negativo en $	\mathbf{F}=-\nabla U$ expresa la tendencia natural que tiene el sistema eléctrico a tratar de disminuir su energía potencial, luego sí se presenta confusión en el signo de la fuerza; éste de ser elegido según el criterio anterior.
+
+\section{Energía Magnética}
+
+Es el trabajo ``irreversible'' realizado por un agente externo para establecer las corrientes en un circuito.
+\begin{equation}\label{ec_trabajom_en}
+	V=\frac{W}{q}\quad\text{y de manera diferencial}\quad dW=V dq
+\end{equation}
+
+Con las siguientes consideraciones:
+\begin{equation}\label{ec_trabajom_consideraciones}
+	V=-\mathscr{E}\quad\text{;}\quad i=\frac{dq}{dt}
+\end{equation}
+Se sigue el siguiente desarrollo, donde se considera que $U_B$ es la energía magnética:
+\begin{equation}\label{ec_trabajom1}
+	dW=dU_B=\mathscr{E}idt
+\end{equation}
+\begin{equation}\label{ec_trabajom2}
+	dU_B=id\Phi_B\quad\text{con}\quad L=\frac{\Phi_B}{i}\quad\text{Autoinductancia}
+\end{equation}
+\begin{equation}\label{ec_trabajom3}
+	dU_B=iLdi
+\end{equation}
+\begin{equation}\label{ec_trabajom5}
+	U_B=\int\limits_0^I Lidi=\frac{LI^2}{2}
+\end{equation}
+Y finalmente:
+\begin{equation}\label{ec_trabajom6}
+	\boxed{U_B=\frac{LI^2}{2}.}
+\end{equation}
+
+La ecuación \ref{ec_trabajom6} es la energía magnética almacenada en un circuito que tiene la corriente de establecimiento $I$ y que tiene por autoinductancia $L$. Existen otras dos expresiones equivalentes a \ref{ec_trabajom6}, si se hacen los reemplazos convenientes al utilizar la relación entre flujo magnético enlazado y corriente.
+
+\begin{equation}\label{ec_flujom1}
+	\Phi_B\,=LI\quad\text{Donde L es la autoinductancia}
+\end{equation}
+
+De allí se pueden obtener las siguientes igualdades:
+\begin{equation}\label{ec_flujom2}
+	U_B=\frac{LI^2}{2}=\frac{I\Phi_B}{2}
+\end{equation}
+
+\subsection{Energía magnética de una distribución volumétrica de corriente}
+
+
+El flujo magnético que atraviesa una superficie $S$ es:
+\begin{equation}\label{ec_flujom3}
+	\Phi_B=\iint\limits_{S}\bm {B}\cdot d\bm S
+\end{equation}
+Aprovechando que todo campo magnético es el rotacional del potencial vectorial magnético ($\bm B=\bm\nabla\times\bm A$) y haciendo uso del teorema del rotacional de Stokes
+\begin{equation}\label{ec_flujom4}
+	\Phi_B=\iint\limits_{S}\bm{\nabla}\times\bm{A}\cdot d\bm S = \oint\limits_{C}\bm{A}\cdot d\bm{r}
+\end{equation}
+
+Y para la energía magnética:
+\begin{equation}\label{ec_flujom6}
+	\boxed{U_B=\frac{I}{2}\oint\limits_{C}\bm{A}\cdot\,d\bm{r}}
+\end{equation}
+
+Los elementos diferenciales de corriente son equivalentes entre sí, tal como se ilustra en \ref{ec_flujom7}
+\begin{equation}\label{ec_flujom7}
+ Id\bm{r}=\bm{I}dr=\bm{K}dS=\bm{J}dv
+\end{equation}
+
+La versión de \ref{ec_flujom6} para el caso de una distribución volumétrica de corriente es  así:
+\begin{equation}\label{ec_flujom8}
+ U_B=\frac{1}{2} \iiint\limits_{V}\bm{A}\cdot\bm{J}dv
+\end{equation}
+Ahora, considerando la ley de Ampere para el integrando de \ref{ec_flujom8} se puede llegar a la siguiente expresión:
+\begin{equation}\label{ec_flujom9}
+	\bm{A}\cdot\bm{J}=\frac{1}{\mu_0}\bm{A}\cdot\bm{\nabla}\times\bm{B}=
+	\frac{1}{\mu_0}\big(\bm{B}\cdot\bm{\nabla}\times\bm{A}-\bm{\nabla}\cdot(\bm{A}\times\bm{B})
+	\big)
+\end{equation}
+
+Remplazando lo anterior en \eqref{ec_flujom8} e integrando sobre todo el universo se tiene:
+\begin{equation}\label{ec_flujom10}
+\begin{aligned}
+	\boxed{U_B=\frac{1}{2\mu_0}\iiint\limits_{All}B^2dv}\quad \\
+	&U_B=\iiint\limits_{All}\frac{\bm{H}\cdot\bm{B}}{2}dv
+\end{aligned}
+\end{equation}
+
+\subsection{Ilustración}
+Encontrar la inductancia por unidad de longitud de un cable coaxial.
+%Imagen de el cable coaxial
+%Imagen de el cable coaxial
+%Imagen de el cable coaxial
+%Imagen de el cable coaxial
+%Imagen de el cable coaxial
+
+Se supone una corriente uniformemente distribuida $I_0$ en $\hat {z}$ en el conductor interno, e $I_0$ en $-\hat {z}$ en el conductor externo.
+
+La estrategia es la siguiente: aprovechando que el sistema tiene las suficientes simetrías, se puede calcular tanto $\bm B$ como $\bm H$ en todo punto. Con estos resultados se puede averiguar cómo es la energía magnética almacenada en una porción de cable de longitud $h$. Finalmente, teniendo en cuenta la ecuación \eqref{ec_flujom10} que relaciona la energía magnética almacenada en una inductacia y su autoinductancia, se puede obtener la variable pedida.
+
+\begin{equation}\label{eq_ilust1}
+\begin{aligned}
+	\bm{\nabla}\times\bm{H}=\bm{J}_f\quad \rightarrow
+	\iint\limits_{S}\bm{\nabla}\times\bm{H}\cdot\,d\bm{s}=\iint\limits_{S}\bm{J}_F\cdot d\bm{s}
+\end{aligned}
+\end{equation}
+
+De donde es claro que:
+\begin{equation}\label{ec_ejercicio1}
+ \oint\limits_C\bm{H}\cdot d\bm{r}=I\quad\text{Forma integral de la ley de Ampere para H}\quad
+\end{equation}
+
+$\bullet$ Calculando para $\rho<a$:
+%Grafico del corte transversal
+%Grafico del corte transversal
+\begin{equation}\label{ec_1}
+	2\pi\rho H =I'\quad\text{Con}\quad I'=I_0\left(\frac{\rho}{a}\right)^2\quad \rightarrow \bm{H}=\frac{I_0\rho}{2\pi\,a^2}\hat{\bm\varphi}
+\end{equation}
+
+$\bullet$ Calculando para $a<\rho<b$:
+\begin{equation}\label{ec_2}
+	2\pi\rho H=I_0\quad\bm{H}=\frac{I_0}{2\pi\rho}\hat{\bm\varphi}
+\end{equation}
+
+$\bullet$ Calculando para $b<\rho<c$:
+\begin{equation}\label{ec_3}
+	\oint\limits_{C'}\bm{H}\cdot\,d\bm{r}=I_0\frac{\rho^2-b^2}{c^2-b^2}\quad
+	\bm{H}=\frac{I_0\,(\rho^2-b^2)}{2\pi\rho\,(c^2-b^2)}\hat{\bm\varphi}
+\end{equation}
+
+En este todos los medios son similares al vacío, luego $\bm{B}=\mu_0\bm{H}$. La energía magnética se puede escribir como:
+\begin{equation}\label{ec_4}
+	U_B=\iiint\limits_{V}\frac{\mu_0\,H^2}{2}dv
+\end{equation}
+
+Utilizando esta ecuación junto con los resultados anteriores, se llega luego de integrar a:
+\begin{equation}\label{ec_5}
+\boxed{\frac{L}{h}=\frac{\mu_0}{8\pi}+\frac{\mu_0}{2\pi}\ln\left(\frac{b}{a}\right)+\frac{\mu_0}{2\pi(c^2-b^2)^2}\left[c^4\ln\left(\frac{c}{b}\right)-c^2(c^2-b^2)+\frac{c^4-b^4}{4}\right]}
+\end{equation}
+
+La inductancia se puede dividir en inductancia interna e inductancia externa. La primera mide la capacidad de almacenar energía en forma de campo magnético en el interior de los conductores que forman el inductor. La segunda hace lo propio pero con el la energía almacenada fuera de los conductores.
+
+Para el caso del cable coaxial, la inductancia externa mide la capacidad de almacenar energía en forma de campo magnético en la región exterior a ambos conductores, es decir en $a<\rho<b$.
+\begin{equation}\label{ec_6}
+	L_{ext}=\frac{\mu_0\,h}{2\pi}\ln\left(\frac{b}{a}\right).
+\end{equation}
+
+La inductancia interna del conductor interno es $\displaystyle\frac{\mu_0}{8\pi}$, y no depende del radio de éste. Algo que podría ser sospechoso a primera vista pero que no guarda mayores dificultades si se considera que a mayor inductancia, mayor capacidad de almacenar energía en forma de campo magnético. Ello implica que, para propósitos de comparación, dos inductores con autoinductancias $L_1$ y $L_2$ que satisfagan la relación $L_1<L_2$; a igual corriente la energía magnética almacenada por el primero es mayor que la correspondiente almacenada por el segundo (siguiendo a \ref{ec_trabajom6}).
+
+\section{Potencia electromagnética}
+
+Considérese un volumen cargado, sometido a la presencia de los campos $\bm{E}$ y $\bm{B}$.
+%Imagen del volumen con las lines de campos
+%Imagen del volumen con las lines de campos
+%Imagen del volumen con las lines de campos
+%Imagen del volumen con las lines de campos
+%Imagen del volumen con las lines de campos
+%Imagen del volumen con las lines de campos
+
+La fuerza realizada por los campos cuando un agente externo mueve un diferencial de carga $dq$ es
+\begin{equation}\label{ec_6}
+	d\bm{F}=dq(\bm{E}+\bm{\upsilon}\times\bm{B}).
+\end{equation}
+Dado que el diferencial de trabajo debido al movimiento diferencial $d\bm{r}$ es $dW=\bm{F}\cdot d\bm{r}$, se puede expresar el trabajo diferencial realizado por los campos cuando un agente externo mueve el $dq$ un diferencial de línea $d\bm{r}$ así:
+\begin{equation}\label{ec_7}
+  \begin{split}
+	d^2 W &=dq(\bm{E}+\bm{v}\times\bm{B})\cdot d\bm{r}\\
+	&=dq\bm{E}\cdot d\bm{r}+dq(\bm{v}\times\bm{B}\cdot d\bm{r})\\
+	&=\rho_f dV\bm{E}\cdot\bm{v}dt+dq\frac{d\bm{r}}{dt}\times\bm{B}\cdot dr\\
+	&=\rho_f\bm{v}\cdot\bm{E}dVdt+id\bm{r}\cdot d\bm{r}\times\bm{B}\\
+	&=\bm{J}_f\cdot\bm{E}dVdt
+  \end{split}
+\end{equation}
+
+% \begin{align}
+% 	d^2 W &=dq(\bm{E}+\bm{v}\times\bm{B})\cdot d\bm{r}\\ \nonumber
+% 	&=dq\bm{E}\cdot d\bm{r}+dq(\bm{v}\times\bm{B}\cdot d\bm{r})\\ \nonumber
+% 	&=\rho_f dV\bm{E}\cdot\bm{v}dt+dq\frac{d\bm{r}}{dt}\times\bm{B}\cdot\,dr\\ \nonumber
+% 	&=\rho_f\bm{v}\cdot\bm{E}dVdt+id\bm{r}\cdot d\bm{r}\times\bm{B}\\ \nonumber
+% 	&=\bm{J}_f\cdot\bm{E}dVdt
+% \end{align}
+
+En \ref{ec_7} debe tenerse en cuenta la relación existente entre la densidad volumetrica de corriente libre y la velocidad $\bm{J}_f=\rho_f\bm{V}$, así como la propiedad del producto triple $\bm{A}\cdot\bm{B}\times\bm{C}=\bm{A}\times\bm{B}\cdot\bm{C}$.
+
+Finalmente se obtiene \ref{ec_8}, donde se observa que el campo magnético \emph{NO HACE TRABAJO} sobre las cargas en movimiento.
+\begin{equation}
+ \label{ec_8}
+	\frac{d^2W}{dt}=dP=\bm{J}_f\cdot\bm{E}dV
+\end{equation}
+
+que naturalmente implica:
+\begin{equation}\label{ec_potencia}
+	\boxed{P=\iiint\limits_{V}\bm{J}_f\,\cdot\bm{E}dv}
+\end{equation}
+
+La interpretación que se realiza para la ecuación \ref{ec_potencia} es la siguiente:
+\begin{equation}\label{ec_potencia2}
+ \bm{J}_f\cdot\bm{E}=\left\{
+ \begin{array}{cl}
+ >0 \ ; &P\text{ \ se disipada en forma de calor.}\\
+ <0 \ ; &P\text{ \ es suministrada y se transforma en potencia electromagnética.}
+ \end{array}\right.
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% aquí voy
+%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%
+
+\subsection{Teorema de Poynting}
+
+Independiente de si la potencia en \ref{ec_potencia} es mayor o menor que cero, se puede escribir su integrando con ayuda de la ley de Ampere para $\bm H$ así:
+\begin{equation}\label{ec_9}
+\begin{split}
+  \bm{\nabla}\times\bm{H}&=\bm{J}_f\,+\frac{\partial\bm{D}}{\partial\,t}\\
+  \bm{J}_f\cdot\bm{E}=\left(\bm{\nabla}\times\bm{H}-\frac{\partial\bm{D}}{\partial t}\right)\cdot\bm{E}&=\bm{H}\left(\frac{-\partial\bm{B}}{\partial\,t}\right)-\bm{\nabla}\cdot(\bm{E}\times\bm{H})-\frac{\partial\bm{D}}{\partial\,t}\cdot\bm{E}
+\end{split}
+\end{equation}
+Integrando sobre un volumen arbitrario $V$:
+\begin{equation}\label{ec_10}
+\iiint\limits_{V}\bm{J}_f\cdot\bm{E}= P =-\iiint\limits_{V}\bm{\nabla}\cdot(\bm{E}\times\bm{H})dV-\iiint\limits_{V}\,\left(\bm{H}\cdot\frac{\partial\bm{B}}{\partial t}+\bm{E}\cdot\frac{\partial\bm{D}}{\partial t}\right)dV
+\end{equation}
+Se puede demostrar fácilmente que
+\begin{equation}\label{ec_11}
+% \frac{\partial\bm{H}\bm{B}}{\partial\,t}=\frac{\partial\bm{H}}{\partial\,t}\cdot\bm{B}+\frac{\partial\bm{B}}{\partial\,t}\cdot\bm{H}\quad\text{;}\quad\bm{B}=\mu\bm{H}\\
+\bm{H}\frac{\partial\bm{B}}{\partial t}=\frac{1}{2}\frac{\partial\bm H\cdot\bm B}{\partial t}\quad\text{y}\quad\bm{E}\frac{\partial\bm{D}}{\partial\,t}=\frac{1}{2}\frac{\partial \bm{E}\cdot\bm{D}}{\partial t}
+\end{equation}
+Se llega a la siguiente expresión:
+\begin{equation}\label{ec_potencia3}
+P+\oiint\limits_{S}\bm{E}\times\bm{H}\cdot\,d\bm{s}+\iiint\limits_{V}\frac{\partial}{\partial\,t}[\frac{\bm{H}\cdot\bm{B}}{2}+\frac{\bm{D}\cdot\bm{E}}{2}]=0
+\end{equation}
+De esta expresión tomamos un par de valores importantes:
+\begin{equation}\label{ec_potencia4}
+\begin{aligned}
+	\boxed{\mu_E=\iiint\limits_{AU}\frac{\bm{E}\cdot\bm{D}}{2}dv}\quad\text{Densidad de energía eléctrica}\\
+	&\boxed{\mu_B=\iiint\limits_{AU}\frac{\bm{H}\cdot\bm{B}}{2}dv}\quad\text{Densidad de energía magnética}\\
+	&\boxed{\bm{S}=\bm{E}\times\bm{H}}\quad\text{Vector de Poynting}\\
+	&\mu_EB=\mu_E\,+\mu_B\quad\text{Densidad de energía electromagnética}\\
+	&\iiint\limits_{V}\,U_EB\,dv\equiv\text{Emergía electromagnética de V}
+\end{aligned}
+\end{equation}
+
+Finalmente, tenemos la siguiente expresión $\emph{IMPORTANTISIMA}$:
+\begin{equation}\label{ec_potencia5}
+	\boxed{P+\oiint\limits_{S}\bm{S}\cdot\,d\bm{s}+\frac{d}{dt}\,[U_EB\,]=0}\quad\text{Teorema de Poynting}
+\end{equation}
+
+\subsection{6.3.2 Ilustración}
+El siguiente ejercicio muestra la perdida de la energía en el sistema.
+%Circuitico de dos capacitores
+%Circuitico de dos capacitores
+%Circuitico de dos capacitores
+%Circuitico de dos capacitores
+Se tiene $U_0=\frac{Q^2}{2C}$, y $U_f=\frac{Q^2}{2(2C)}=\frac{Q^2}{4C}$
+De esto, se tiene:
+\begin{equation}\label{ec_12}
+	\Delta\,U_E=\frac{Q^2}{4C}-\frac{Q^2}{2C}=\frac{-Q^2}{4C}
+\end{equation}
+\begin{equation}
+	U_0=2U_f\Rightarrow\,U_0\,>U_F
+\end{equation}
+
+Entonces, $?$Que pasó con la energía magnética$?$
+\begin{equation}\label{ec_13}
+\begin{aligned}
+	P=0\quad\text{;}\quad\frac{dU_EB}{dt}\approx\frac{U_f\,-U_0}{\Delta\,t}<0\\
+	&\oiint\limits_{S}\bm{S}\cdot\,d\bm{s}\,>0\quad\bm{S}\text{: densidad de potencia radiada[=]}\frac{W}{m^2}
+\end{aligned}
+\end{equation}
+
+\subsection{6.3.3 Disipación de potencia en una resistencia.}
+
+%Dibujo de una resistencia
+%Dibujo de una resistencia
+%Dibujo de una resistencia
+%Dibujo de una resistencia
+%Dibujo de una resistencia
+Se tienen las siguientes consideraciones:
+	$\ast$Supongase que un agente externo inyecta una corriente que se distribuye uniformemente en el volumen.
+	$\ast$L$>>$R
+
+$\bullet$Entienda $\sigma$ como la conductividad del material: $R=\frac{L}{\sigma\,A}$
+
+Comenzemos con el análisis deseado:
+
+	Se supone que $\bm{E}=E_0\hat {z}$, y por lo tanto, $\bm{J}_f=\sigma\,E_0\hat {z}$; si ahora aplicamos \eqref{ec_ejercicio1} 			para una espira de radio $\rho\,<R$ obtenemos lo siguiente:
+\begin{equation}\label{ec_14}
+	\bm{H}=\frac{I_0\rho}{2\pi\,R^2}\hat{\varphi}
+\end{equation}
+
+	Ahora ulitizamos \eqref{ec_potencia4} para encontrar el valor de $\bm{S}$; así:
+\begin{equation}\label{ec_15}
+\begin{aligned}
+	\bm{S}=\bm{E}\times\bm{H}=E_0\hat{z}\times\frac{I_0\rho}{2\pi\,R^2}\hat{\varphi}\\
+	&\bm{S}=\frac{-E_0\,I_0\rho}{2\pi\,R^2}\hat{\rho}
+\end{aligned}
+\end{equation}
+
+%Dibujito del vector de poynting entrando a la resistencia(corte)
+%Dibujito del vector de poynting entrando a la resistencia(corte)
+
+	Calculando la integral cerrada sobre la superficie de la resistencia, tal como se muestra en \eqref{ec_potencia5}:
+\begin{equation}\label{ec_16}
+\begin{aligned}
+\oiint\limits_{S}\bm{S}\cdot\,d\bm{s}=\frac{-E_0\,I_0}{2\phi\,R^2}\iint\limits_{S'}\rho\cdot\,d\bm{s}\hat{\rho}\quad\text{Solo se evalúa la frontera latera ya}\\
+	&=\frac{-E_0\,I_0}{2\phi\,R}\iint\limits_{S'}\,ds\hat{\rho}\cdot\hat{\varphi}\qquad\text{ que $\bm{S}\cdot\,d\bm{s}$ es 0 en las tapas.}
+	&\oiint\limits_{S}\bm{S}\cdot\,d\bm{s}=-E_0\,I_0\,L
+\end{aligned}
+\end{equation}
+
+	Es claro que no se tienen campos $\bm{E}$ y $\bm{B}$ variables en el tiempo en este ejercicio, por tanto con \eqref{ec_potencia5} podemos encontrar el valor de P.
+\begin{equation}\label{ec_17}
+	P=E_0\,I_0\,L
+\end{equation}
+	Ahora, a modo de prueba, vamos a partir de la ecuación de potencia trabajada en los circuitos eléctricos:
+\begin{equation}\label{ec_18}
+	P=IV=I^2\,R=\frac{V^2}{R}
+\end{equation}
+	Y expresando la resistencia del cilindro en terminos de su conductividad como $R=\frac{L}{\sigma\pi\,R^2}$, tenemos:
+\begin{equation}\label{ec_19}
+	P=\frac{I_0\,^2\,L}{\sigma\pi\,R^2}=(I_0\,L)\frac{I_0}{\sigma\pi\,R^2}
+\end{equation}
+	Pero $J_f$ se define como la corriente por unidad de área, es decir $\frac{I_0}{\pi\,R^2}$, de allí que:
+\begin{equation}\label{ec_20}
+	P=\frac{I_0\,LJ_f}{\sigma}=\frac{I_0\,L\sigma\,E_0}{\sigma}=E_0\,I_0\,L
+\end{equation}
+
+Lo cual es consecuente con lo que predice el Teorema de Poynting.
+
+
+\chapter{Campo eléctrico de movimiento}
+
+En este capítulo, vamos a estudiar lo que acontece cuando se cambia el sistema de referencia sobre un fenómeno electromagnético.
+%Echar mas carreta
+%Echar mas carreta
+%Echar mas carreta
+
+%Todo estudiante de teoría electromagnétiga sabe que:
+%\begin{equation}
+%	\bm{F}=q[\bm{E}+\bm{V}\times\bm{B}];.
+%\end{equation}
+
+Definimos ahora un nuevo sistema de referencia inercial, que se mueve con una carga, con velocidad $Vo\hat{x}$
+
+%Imagen de los sistemas de referencia
+%Imagen de los sistemas de referencia
+%Imagen de los sistemas de referencia
+
+Para un punto , se tiene que Z=Z' y Y=Y', además que en $t=0$ los centros de coordenadas de ambos sistemas coinciden.
+
+$\bullet$Como los dos sistemas de referencia son inerciales:
+\begin{equation}\label{ec_21}
+	\bm{a}=\frac{d^2\bm{r}}{dt^2}=\frac{d\bm{v}}{dt}=\frac{d\bm{v'}}{dt}
+\end{equation}
+
+$\bullet$ Supongamos $\bm{F}_EB=q[\bm{E}+\bm{V}\times\bm{B}]$ como un invariante Galileano\footnote{Derivado del principio de la relatividad, según el cual las leyes fundamentales de la física son las mismas en todos los sistemas de referencia inerciales.}.
+
+\section{7.1. Ilustración.}
+
+Supongamos un campo magnético en $\hat{-x}$, y una carga que se mueve con velocidad $V_0\hat{y}$, como muestra la figura.
+%La figurita "animada" de la carga
+%La figurita "animada" de la carga
+%La figurita "animada" de la carga
+Para la carga, se tiene la siguiente fuerza debida a los efectos magnéticos:
+\begin{equation}\label{ec_22}
+	\bm{F}=qV_0\,B_0\hat{z}
+\end{equation}
+
+Ahora tomemos un marco de referencia diferente, así:
+%La figurita "animada" de la carga2
+%La figurita "animada" de la carga2
+%La figurita "animada" de la carga2
+En este caso, el sistema de coordenadas se mueve con la carga, y por tanto $\bm{V}=0$. Esto trae como consecuencia, que la fuerza debida al campo magnético sea 0; pero como ya se había mencionado, los efectos de fuerza sobre la carga no pueden cambiar entre los diferentes sistemas de referencia inerciales. Es por esto, que se debe asociar una fuerza $\bm{F'}$ a la carga, que responda a la fuerza debida al campo magnético.
+\begin{equation}\label{ec_23}
+	\bm{F'}=\bm{F}_B
+\end{equation}
+Suponemos un campo magnético $\bm{E'}$:
+\begin{equation}\label{ec_24}
+\begin{aligned}
+	\bm{F'}=\bm{F}_B\\
+	&q[\bm{V}\times\bm{B}]=q\bm{E'}
+\end{aligned}
+\end{equation}
+De donde finalmente:
+\begin{equation}\label{ec_25}
+	\bm{E}=V_0\,B_0\hat{z}
+\end{equation}
+
+Este es el campo eléctrico de movimiento.
+
+\subsection{7.1.1. Efecto Hall.}
+
+El efecto hall, es el fenómeno que ocurre en un conductor por el que circula una corriente, en presencia de un campo magnético perpendicular al movimiento de las cargas.
+
+Al pasar las cargas, estas se ven afectadas por el campo magnético, y se van acumulando de uno de los lados del conductor; a medida que se acumulan cargas, se inducen otras de signo opuesto en el otro extremo del conductor produciendo finalmente un campo eléctrico en la zona afectada por el campo magnérico.
+Cuando el fenómeno se ha estabilizado, las cargas que pasan por la zona afectada por el campo magnético, no sienten fuerza alguna, ya que la fuerza magnética es compensada con la fuerza eléctrica.
+%Figuritas del efeto hall
+%Figuritas del efeto hall
+%Figuritas del efeto hall
+%Figuritas del efeto hall
+
+De lo anterior se obtiene lo siguiente, analizando el fenómeno desde un sistema de referencia estático:
+\begin{equation}\label{ec_26}
+\begin{aligned}
+	\bm{F}_E=q\bm{E}\quad\\bm{F}_B=q\bm{V}\times\bm{B}\\
+	&\bm{F}_EB=\bm{0}=\bm{F}_E\,+\bm{F}_B\\
+	&\bm{F}_E=-\bm{F}_B\\
+	&\bm{E}=-\bm{V}\times\bm{B}=V_0\,B_0\hat{x};.
+\end{aligned}
+\end{equation}
+
+Ahora haciendo el analisis desde un sistema de referencia centrado en la carga, y con velocidad igual a esta:
+\begin{equation}\label{ec_27}
+	\bm{E'}=\bm{V}\times\bm{B}=-V_0\,B_0\hat{x}
+\end{equation}
+
+Calculando el campo eléctrico total:
+\begin{equation}\label{ec_28}
+	\bm{E}_T=\bm{E}+\bm{E'}=\bm{0}
+\end{equation}
+
+%?Nombre del capitulo?
+%?Nombre del capitulo?
+%?Nombre del capitulo?
+\chapter{Campos electromagnéticos y la ecuación de onda}
+
+\section{Corriente de desplazamiento}
+Cuando recién se planteó, la ley de Ampere arrojaba resultados ilógicos, al abordar ciertos problemas.
+Por ejemplo con el caso de un condensador.
+$?`$Porqué?
+%Dibujo de un condensador
+%Dibujo de un condensador
+%Dibujo de un condensador
+Aplicando la ley de Ampere sobre una circunferencia alrededor del alambre, se obtiene lo siguiente:
+\begin{equation}\label{ec_29}
+\begin{aligned}
+	\oint\bm{B}\cdot\,d\bm{r}=\mu_0\,I\\
+	&\bm{B}=\frac{\mu_0\,I_0}{2\pi\rho}\hat{\varphi}
+\end{aligned}
+\end{equation}
+
+Pero ahora, si aplicamos la misma ecuación en otra linea de integración, así:
+%Imagen del corte del condensador
+%Imagen del corte del condensador
+%Imagen del corte del condensador
+\begin{equation}\label{ec_30}
+\oint\limits_{C}\bm{B}\cdot\,d\bm{r}=0\quad
+\end{equation}
+Lo cual, esta claramente mal.
+
+Tiempo después llegó el británico James Clerk Maxwell e hizo el siguiente análisis sobre la ley de Ampere:
+\begin{equation}\label{ec_31}
+\begin{aligned}
+ 	\bm{\nabla}\times\bm{B}=\mu_0\bm{J}\\
+	&\bm{\nabla}\cdot\,[\bm{\nabla}\times\bm{B}]=0=\mu_0\bm{\nabla}\cdot\bm{J};.
+\end{aligned}
+\end{equation}
+De la ley de continuidad se tiene lo siguiente:
+\begin{equation}\label{ec_32}
+	\bm{\nabla}\cdot\bm{J}=\frac{-\partial\rho}{\partial\,t};.
+\end{equation}
+
+Suponiendo que la corriente es continua aún en el condensador, y continuando con el análisis:
+\begin{equation}\label{ec_33}
+\begin{aligned}
+	\bm{\nabla}\times\bm{H}=\bm{J}_f+\bm{J}_d\\
+	&\bm{\nabla}\cdot\,(\bm{J}_f+\bm{J}_d)\\
+	&\bm{\nabla}\cdot\bm{D}=\rho_f\\
+	&\bm{J}_d=\frac{\partial\bm{D}}{\partial\,t}\\
+	&\boxed{\bm{\nabla}\times\bm{H}=\bm{J}_f+\frac{\partial\bm{D}}{\partial\,t}}\quad\text{Ley de Ampere-Maxwell para $\bm{H}$}\\
+	&\boxed{\bm{\nabla}\times\bm{B}=\mu_0\bm{J}_f+\mu\epsilon\frac{\partial\bm{E}}{\partial\,t}}\quad\text{Ley de Ampere-Maxwell para $\bm{B}$}
+\end{aligned}
+\end{equation}
+
+Volviendo ahora al ejercicio del condensador
+%Otra vista del condensador
+%Otra vista del condensador
+%Otra vista del condensador
+
+Como la corriente debe ser continua, se sabe que $I_d=I_0$, pero a continuación se hará una breve demostración de ello, y de otros valores importantes.
+
+Para encontrar $I_d$ debemos conocer primero cuanto vale $\bm{D}$:
+\begin{equation}\label{ec_34}
+\begin{aligned}
+	\oiint\bm{D}\cdot\,d\bm{s}=Q_fenc\\
+	&Q=\int\limits_{0}^{t}\,Idt=I_0\,t\\
+	&\bm{D}=\frac{I_0\,t}{A}\hat{z}\\
+	&\frac{\partial\bm{D}}{\partial\,t}=\frac{\partial}{\partial\,t}[\frac{I_0\,t}{A}]\hat{z}=\frac{I_0\,\hat{z}}{A}\\
+	&T_d=\iint\limits_{S}\frac{I_0\hat{z}\cdot\,ds\hat{z}}{A}=I_0;.
+\end{aligned}
+\end{equation}
+
+Ahora, para calcular $\bm{H}$
+\begin{equation}\label{ec_35}
+\begin{aligned}
+	\bm{\nabla}\times\bm{H}=\bm{J}_f+\frac{\partial\bm{D}}{\partial\,t}\\
+	&\bm{\nabla}\times\bm{H}=\frac{\partial\bm{D}}{\partial\,t}\quad\text{Dentro del condensador.}\\
+	&\oint\bm{H}\cdot\,d\bm{r}=\iint\limits_{S}\frac{\partial\bm{D}}{\partial\,t}\,d\bm{s}\\
+	&\bm{H}=\bm{I_0\rho}{2A}\hat{\varphi};.
+\end{aligned}
+\end{equation}
+
+Y finalmente para el cálculo de $\bm{S}$
+\begin{equation}\label{ec_36}
+\begin{aligned}
+	\bm{S}=\bm{E}\times\bm{H}=\frac{I_0\,t}{\epsilon_0\,A}\hat{z}\times\frac{I_0\rho}{2A}\hat{\varphi}\\
+	&=\frac{-I_0\,^2\,t\rho}{2\epsilon\,A^2}\hat{\rho}\\
+	&\bm{S}=\frac{-|\bm{J}_d\,|^2\,t\rho}{2\epsilon_0}\hat{\rho};.
+\end{aligned}
+\end{equation}
+
+\section{Los campos electromagnéticos y la ecuación de onda.}
+
+%Carreta
+%Carreta
+%Carreta
+\begin{equation}\label{ec_37}
+\begin{aligned}
+	\bm{\nabla}\times\,(\bm{\nabla}\times\bm{E})=\frac{-\partial}{\partial\,t}\bm{\nabla}\times\bm{B}\\
+\bm{\nabla}\,(\bm{\nabla}\cdot\bm{E})-\nabla\,^2\bm{E}=\frac{-\partial}{\partial\,t}[\mu_0\bm{J}+\mu\epsilon\frac{\partial\bm{E}}{\partial\,t}];.
+\end{aligned}
+\end{equation}
+
+Si asumimos las condiciones en el vacio:
+\begin{equation}\label{ec_39}
+	\bm{\nabla}\cdot\bm{E}=\frac{\rho}{\epsilon_0}=0\quad\bm{J}\quad\mu=\mu_0\quad\epsilon=\epsilon_0;.
+\end{equation}
+
+Finalmente se obtiene la siguiente ecuación
+\begin{equation}\label{ec_ondas1}
+	\boxed{\nabla^2\bm{E}=\mu_0\epsilon_0\frac{\partial^2\bm{E}}{\partial\,t^2}}
+\end{equation}
+
+Claramente, la ecuación anterior satisface la ecuación de onda, para la cual
+\begin{equation}\label{ec_ondas2}
+	\bm{V}_prop=\frac{1}{\sqrt{\mu_0\epsilon_0}};.
+\end{equation}
+
+Para el vacio, se sabe que $\bm{V}_prop=c$, donde c es la velocidad de la luz.
+
+''La luz es un caso particular de las ondas electromagnéticas''
+
+\subsection{Solución de la ecuación de onda.}
+
+Partiendo de la ecuación \eqref{ec_ondas1}, se estudia el caso de una onda con simetrías en $\hat{x}$ y en $\hat{y}$, es decir:
+\begin{equation}\label{ec_40}
+	\bm{E}=\bm{E}_x\,(z,t)+\bm{E}_y\,(z,t)+\bm{E}_z\,(z,t)
+\end{equation}
+Ademas, se supone que las ecuaciones que describen el comportamiento del campo son independientes entre sí:
+\begin{equation}\label{ec_41}
+	\bm{E}\,(z,t)=\Psi\,(z)T(t)
+\end{equation}
+Reemplazando este resultado en \eqref{ec_ondas1}:
+\begin{equation}\label{ec_42}
+	T\frac{d^2\Psi}{dz^2\,}=\mu_0\epsilon_0\Psi\frac{d^2\,T}{dt^2}
+\end{equation}
+\begin{equation}\label{ec_43}
+	\frac{1}{\Psi}\frac{d^2\,\Psi}{dz^2\,}=\frac{\mu_0\epsilon_0}{T}\frac{d^2\,T}{dt^2}
+\end{equation}
+De donde quedan finalmente las siguientes ecuaciones diferenciales, en donde K es una constante positiva
+\begin{equation}\label{ec_44}
+	\ast\frac{1}{\Psi}\frac{d^2\Psi}{dz^2}=-K^2\\
+	\ast\frac{\mu_0\epsilon_0}{T}\frac{d^2\,T}{dt^2}
+\end{equation}
+Con solución:
+\begin{equation}\label{ec_ondas3}
+	\Psi=A_z\,e^ikz+B_z\,e^-ikz\quad\,T=A_t\,e^i\omega\,z+B_z\,e^-i\omega\,z
+\end{equation}
+Donde:
+\begin{equation}\label{ec_45}
+	\omega=K^2\,V^2
+\end{equation}
+
+Finalmente, el campo será la suma de todas las posibles soluciones:
+\begin{equation}\label{ec_46}
+	E(z,t)=\sum\limits_K{(A_z\,e^ikz+B_z\,e^-ikz\,)(A_t\,e^i\omega\,z+B_z\,e^-iwz\,)}
+\end{equation}
+Al desarrollar los productos de los paréntesis, se toman solo dos de las soluciones\footnote{Convención para el electromagnetismo}
+\begin{equation}\label{ec_47}
+	E(z,t)=\sum\limits_K{(A\,e^i(kz+\omega\,t)\,)+(B\,e^i(kz-\omega\,t)\,)}
+\end{equation}
+
+\subsection{Solución fasorial}
+
+\begin{equation}\label{ec_48}
+\hookrightarrow\bm{E}\,(\bm{r}\,,t)=R_e\,{\underline{\bm{E}}\,(\bm{r})\,e^-iwt\,}\quad\text{Donde $\underline{\bm{E}}\,(\bm{r})$ es el fasor de $\bm{E}$}
+\end{equation}
+\begin{equation}\label{ec_fasor0}
+	\bm{E}_c\,(\bm{r}\,,t)=\underline{\bm{E}}\,(\bm{r})\,e^-i\omega\,t
+\end{equation}
+Aplicando la ecuación \eqref{ec_ondas1} a la expresión anterior, se obtiene el siguiente resultado:
+\begin{equation}\label{ec_fasor1}
+\frac{\partial\,^2\,\underline{\bm{E}}\,(\bm{r})}{\partial\,z^2}=-\omega\,^2\mu_0\,\epsilon_0\,\underline{\bm{E}}\,(\bm{r})
+\end{equation}
+
+Se definen otros valores importantes:\\
+	$\ast$ La fase del campo eléctrico: $\varphi_E\,=Kz+\omega\,t+\varphi_A$\\
+	$\ast$ La velocidad de fase\footnote{La velocidad de un punto con fase constante}: $V_ph\,=\frac{dz}{dt}=\frac{-\omega\,}{K}<0$\\
+	$\ast$ La constante de propagación ''K''
+
+\subsection{Ilustraciones}
+
+Vamos a analizar en esta parte del documento, la propagación de una onda electromagnética plana\footnote{Onda de frecuencia constante, cuyos frentes de onda son planos paralelos de amplitud constante}, en un medio conductor.
+
+Para el analisis se tiene la siguiente solución de onda:
+\begin{equation}\label{ec_fasor2}
+\frac{\partial^2\,\bm{E}}{\partial\,z^2}=\mu\sigma\frac{\partial\bm{E}}{\partial\,t}+\mu\epsilon\frac{\partial^2\,\bm{E}}{\partial\,t^2}
+\end{equation}
+
+Reemplazando \eqref{ec_fasor0} en la ecuación anterior, se obtiene:
+\begin{equation}\label{ec_49}
+\frac{d^2\,\underline{\bm{E}}\,(z)}{dz^2}=-\emph{i}\mu\sigma\omega\underline{\bm{E}}\,(z)-\mu\epsilon\omega^2\,\underline{\bm{E}}\,(z)
+\end{equation}
+
+	Si la onda solo fuese incidente, entonces $\underline{\bm{E}}\,(z)=\underline{\bm{E}}_0\,e^iKz$\\.
+	Y si $\bm{E}_0$ no dependiera de z, entonces $\frac{d^2\,\underline{\bm{E}}\,(z)}{dz^2}=-K^2\,\bm{E}_0$
+\begin{equation}\label{ec_50}
+	\Rightarrow\,K^2\,\underline{\bm{E}}\,(z)=(\mu\epsilon\omega^2\,+\emph{i}\mu\sigma\omega\,)\underline{\bm{E}}\,(z)
+\end{equation}
+En donde $K^2\,=\mu\epsilon\omega\,^2\,+\emph{i}\mu\sigma\omega$ y $K=\alpha\,+\emph{i}\beta$
+De esto se tiene que:
+\begin{equation}\label{ec_51}
+	\mu\epsilon\omega^2\,=\alpha^2\,-\beta^2\,\qquad\mu\sigma\omega=2\alpha\beta
+\end{equation}
+
+Y finalmente se obtiene la siguiente solución:
+\begin{equation}\label{ec_fasor3}
+	\boxed{\alpha=\sqrt{\frac{\mu\epsilon}{2}}\omega\,(1+\sqrt{1+(\frac{\sigma}{\omega\epsilon})^2\,})^\frac{1}{2}\,}
+\end{equation}
+\begin{equation}\label{ec_fasor4}
+	\boxed{\beta=\sqrt{\frac{\mu\epsilon}{2}}\omega\,(\sqrt{1+(\frac{\sigma}{\omega\epsilon})^2\,}-1)^\frac{1}{2}\,}
+\end{equation}
+
+
+Ahora consideremos una onda plana propagandose en un semiespacio infinito bien conductor:
+%Semiespacio infinito bien conductor
+%Semiespacio infinito bien conductor
+%Semiespacio infinito bien conductor
+%Semiespacio infinito bien conductor
+%Semiespacio infinito bien conductor
+
+
+
+\subsection{El factor de calidad}
+
+Se introduce el valor Q, como el factor de calidad, definido así:
+\begin{equation}\label{ec_52}
+	Q=\frac{||J_d||}{||J_f||}=\frac{||\partial\bm{D}/\partial\,t||}{||\sigma\bm E||}=\frac{\epsilon\omega}{\sigma}
+\end{equation}
+
+$\ast$Si estamos en un medio parecido al vacio, entonces $\sigma\rightarrow\,0$ y por tanto $Q\gg1$, y para $\alpha$ y $\beta$ se tiene lo siguiente:
+\begin{equation}\label{ec_52}
+	\alpha\rightarrow\omega\sqrt{\mu\epsilon}\Rightarrow\,V=\frac{\omega}{\alpha}
+\end{equation}
+\begin{equation}\label{ec_53}
+	\beta\rightarrow\,0
+\end{equation}
+
+$\ast$Si estamos en un medio buen conductor, entonces $\sigma\rightarrow\infty$ y por tanto Q$<<$1, y para $\alpha$ y $\beta$ se tiene lo siguiente:
+\begin{equation}\label{ec_54}
+	\alpha=(\frac{\mu\sigma\omega}{2})^{1/2}(1+\frac{Q}{2})
+\end{equation}
+\begin{equation}\label{ec_55}
+	\beta=(\frac{\mu\sigma\omega}{2})^{1/2}(1-\frac{Q}{2})
+\end{equation}
+\begin{equation}\label{ec_56}
+	V=(\frac{2\omega}{\mu\sigma})^{1/2}(1-\frac{Q}{2})
+\end{equation}
+
+
+
+
+
+
+
+

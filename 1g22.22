@@ -1,0 +1,134 @@
+%!PS
+%%BoundingBox: -43 -29 109 100 
+%%HiResBoundingBox: -42.76968 -28.16911 108.21953 99.46259 
+%%Creator: MetaPost 0.901
+%%CreationDate: 2007.07.22:1523
+%%Pages: 1
+%*Font: cmmi10 9.96265 9.96265 68:8004e
+%*Font: cmr10 9.96265 9.96265 01:800000000000000000000000000008
+%*Font: cmr7 6.97385 6.97385 31:e
+%%BeginProlog
+%%EndProlog
+%%Page: 1 1
+ 0 0.5 dtransform truncate idtransform setlinewidth pop [] 0 setdash
+ 1 setlinecap 1 setlinejoin 10 setmiterlimit
+newpath 0 0 moveto
+-42.51968 -9.92122 lineto stroke
+newpath -39.26868 -7.59076 moveto
+-42.51968 -9.92122 lineto
+-38.573 -10.5722 lineto
+ closepath
+gsave fill grestore stroke
+newpath 0 0 moveto
+85.03935 -19.84242 lineto stroke
+newpath 81.09267 -20.49341 moveto
+85.03935 -19.84242 lineto
+81.78835 -17.51196 lineto
+ closepath
+gsave fill grestore stroke
+ 0.5 0 dtransform exch truncate exch idtransform pop setlinewidth
+newpath 0 0 moveto
+0 99.21259 lineto stroke
+ 0 0.5 dtransform truncate idtransform setlinewidth pop
+newpath 1.53061 95.51744 moveto
+0 99.21259 lineto
+-1.53061 95.51744 lineto
+ closepath
+gsave fill grestore stroke
+-40.4197 -16.31071 moveto
+(x) cmmi10 9.96265 fshow
+77.69746 -26.23192 moveto
+(y) cmmi10 9.96265 fshow
+2.09999 92.82309 moveto
+(z) cmmi10 9.96265 fshow
+ 0 1 dtransform truncate idtransform setlinewidth pop
+newpath 34.01566 22.67725 moveto
+29.36986 9.91315 16.97066 1.64697 3.40157 2.26773 curveto stroke
+newpath 7.06848 3.86624 moveto
+5.89322 3.26122 4.66946 2.72623 3.40157 2.26773 curveto
+4.62231 1.69537 5.8659 1.20833 7.12476 0.80508 curveto
+ closepath
+gsave fill grestore stroke
+newpath 34.01566 22.67725 moveto
+52.95325 29.57004 74.05035 26.9329 90.70856 15.59064 curveto stroke
+newpath 86.76863 16.27998 moveto
+88.08408 16.09283 89.39801 15.86322 90.70856 15.59064 curveto
+89.97464 16.71008 89.20792 17.80154 88.41011 18.86406 curveto
+ closepath
+gsave fill grestore stroke
+newpath 34.01566 22.67725 moveto
+27.12286 41.61484 29.76 62.71194 41.10226 79.37015 curveto stroke
+newpath 40.41292 75.43022 moveto
+40.60007 76.74567 40.82968 78.0596 41.10226 79.37015 curveto
+39.98282 78.63623 38.89136 77.8695 37.82884 77.0717 curveto
+ closepath
+gsave fill grestore stroke
+36.10016 83.86456 moveto
+(u) cmr10 9.96265 fshow
+41.63496 82.37016 moveto
+(3) cmr7 6.97385 fshow
+-1.60054 -5.02177 moveto
+(u) cmr10 9.96265 fshow
+3.93427 -6.51617 moveto
+(1) cmr7 6.97385 fshow
+92.80855 19.18503 moveto
+(u) cmr10 9.96265 fshow
+98.34335 17.69063 moveto
+(2) cmr7 6.97385 fshow
+ 0 0.5 dtransform truncate idtransform setlinewidth pop
+newpath 34.01566 22.67725 moveto
+30.299 12.46593 21.62013 5.1333 11.34984 2.92657 curveto stroke
+newpath 34.01566 22.67725 moveto
+49.16579 28.1915 65.69801 27.60655 80.23392 21.34471 curveto stroke
+newpath 34.01566 22.67725 moveto
+28.5014 37.82738 29.08635 54.3596 35.34819 68.89551 curveto stroke
+newpath 80.23392 21.34471 moveto
+76.51726 11.13339 67.8384 3.80077 57.5681 1.59404 curveto stroke
+newpath 35.34819 68.89551 moveto
+31.63153 58.68419 22.95267 51.35156 12.68237 49.14484 curveto stroke
+newpath 81.56645 67.56297 moveto
+77.8498 57.35165 69.17093 50.01903 58.90063 47.8123 curveto stroke
+newpath 11.34984 2.92657 moveto
+26.49997 8.44083 43.0322 7.85588 57.5681 1.59404 curveto stroke
+newpath 35.34819 68.89551 moveto
+50.49832 74.40976 67.03055 73.82481 81.56645 67.56297 curveto stroke
+newpath 12.68237 49.14484 moveto
+27.8325 54.65909 44.36473 54.07414 58.90063 47.8123 curveto stroke
+newpath 11.34984 2.92657 moveto
+5.83559 18.0767 6.42053 34.60893 12.68237 49.14484 curveto stroke
+newpath 80.23392 21.34471 moveto
+74.71967 36.49484 75.30461 53.02707 81.56645 67.56297 curveto stroke
+newpath 57.5681 1.59404 moveto
+52.05385 16.74417 52.6388 33.2764 58.90063 47.8123 curveto stroke
+57.37549 74.46051 moveto
+(h) cmmi10 9.96265 fshow
+63.11559 72.96611 moveto
+(1) cmr7 6.97385 fshow
+67.58488 74.46051 moveto
+(\001) cmr10 9.96265 fshow
+75.88719 74.46051 moveto
+(u) cmmi10 9.96265 fshow
+81.59029 72.96611 moveto
+(1) cmr7 6.97385 fshow
+79.53532 41.22504 moveto
+(h) cmmi10 9.96265 fshow
+85.27542 39.73064 moveto
+(3) cmr7 6.97385 fshow
+89.74472 41.22504 moveto
+(\001) cmr10 9.96265 fshow
+98.04703 41.22504 moveto
+(u) cmmi10 9.96265 fshow
+103.75012 39.73064 moveto
+(3) cmr7 6.97385 fshow
+71.03131 1.54018 moveto
+(h) cmmi10 9.96265 fshow
+76.77141 0.04578 moveto
+(2) cmr7 6.97385 fshow
+81.2407 1.54018 moveto
+(\001) cmr10 9.96265 fshow
+89.54301 1.54018 moveto
+(u) cmmi10 9.96265 fshow
+95.24611 0.04578 moveto
+(2) cmr7 6.97385 fshow
+showpage
+%%EOF

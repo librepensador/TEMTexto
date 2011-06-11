@@ -1,0 +1,341 @@
+\chapter{Carga y corriente.}\label{cap1}
+
+\section{Carga eléctrica.}
+La carga eléctrica es una propiedad intrínseca de la materia. Es ampliamente conocido que cargas del mismo signo se repelen y de signos contrarios se atraen. Ese comportamiento está cuantificado por la ley de Coulomb. 
+\begin{equation}
+	\mathbf{F}=\frac{q_1\,q_2}{4\pi\epsilon_0}\,\frac{\mathbf{r_1}-\mathbf{r_2}}{|\mathbf{r_1}-\mathbf{r_2}|^3}\;.
+\end{equation}
+
+\subsection{Características experimentales.}
+Solamente aquello que cumpla estas cuatro características listadas a continuación puede considerarse una carga eléctrica.
+
+\begin{enumerate}
+%\subsubsection{Dualidad de la carga.}
+\item \textbf{Dualidad. }
+La carga eléctrica se presenta en dos variedades llamadas convencionalmente positiva y negativa.
+%\subsubsection{Conservación de la carga.}
+\item \textbf{Conservación.} 
+La carga se conserva en todo sistema donde no haya transferencia de masa por sus fronteras. Este hecho se explicita en la ley de Ampère-Maxwell[HACER referencia cruzada a la ley de Ampère-Maxwell], que es una de las ecuaciones de Maxwell que se estudiarán más adelante. 
+
+%\subsubsection{Cuantización de la carga.}
+\item \textbf{Cuantización. }
+La carga está cuantizada, es decir, la carga de un objeto siempre es múltiplo entero de una carga elemental, convencionalmente elegida como la carga del electrón \footnote{Existen cargas de valores fraccionarios de la carga del electrón, por ejemplo, los quarks, con cargas de $\frac{e}{3}$ o $\frac{-2e}{3}$. Sin embargo, en la naturaleza las combinaciones de quarks que son estables siempre se presentan en múltiplos enteros de e.}.  Aun hoy (18 de septiembre de 2007) no hay una justificación de por qué todas las distribuciones de carga son discretas y múltiplos de una carga ``unitaria". Un intento muy imaginativo es la solución de Dirac que sigue sin verificarse experimentalmente, pues aun no se detectan los monopolos magnéticos\footnote{"Modern Quantum Mechanics" by J.J. Sakuray, 140-143.}.
+
+%\subsubsection{Invariabilidad relativista de la carga.}
+\item \textbf{Invariabilidad relativista. }
+La carga es un invariante relativista, es decir, la medida de la carga no cambia desde diferentes sistemas de referencia en movimiento.
+\end{enumerate}
+
+\subsection{Distribuciones continuas de carga.}
+El electromagnetismo es un área muy basta de la física. Internamente se puede dividir de múltiples maneras. Una de ellas es considerar los sistemas cargados como distribuciones continuas o discretas. 
+
+La realidad muestra que todas las distribuciones de carga son discretas. Sin embargo, en algunos casos, es mucho más sencillo considerarlas continuas. Esta aproximación sólo funciona para conglomerados de muchas partículas, donde la distancia promedio entre cargas es despreciable respecto de la distancia de observación. A tales distribuciones de carga se les asocia una densidad volumétrica.
+
+Una construcción teórica del electromagnetismo se puede realizar suponiendo que todos los objetos cargados a estudiar son distribuciones volumétricas. Ello exige que exista un mecanismo para entender como volúmenes cualquier distribución superficial, lineal o discreta. 
+
+\subsubsection{Distribuciones volumétricas de carga.} 
+La distribución volumétrica de carga se define como
+\begin{equation}
+	\rho(\mathbf{r})=\frac{dQ}{dV}\;, 
+\end{equation}
+
+siendo $V$ el volumen del sistema y $Q$ la carga neta contenida en el volumen. $\rho$ se conoce también como la densidad volumétrica de carga.
+
+Primero que nada, hay que explicar en el contexto de estas aproximaciones, qué se entenderá por distribución superficial, lineal o puntual de carga.
+
+\subsubsection{Distribuciones superficiales de carga.} 
+Por definición, se acepta que una distribución superficial es un volumen cargado donde una dimensión es despreciable respecto de la distancia de observación y se le asocia una densidad superficial de carga $\sigma$ definida como:
+\begin{equation}\label{3ec1.3}
+	\sigma(\mathbf{r})=\frac{dQ}{dS}\;, 
+\end{equation}
+
+siendo $S$ la superficie del sistema y $Q$ la carga neta contenida en esa superficie. 
+
+\subsubsection{Distribuciones lineales de carga.} 
+De igual forma, una distribución lineal de carga es un volumen cargado donde dos dimensiones son despreciables respecto de la distancia de observación. La densidad lineal $\lambda$ es la que determina cómo se distribuye la carga y se define como
+\begin{equation}
+	\lambda(\mathbf{r})=\frac{dQ}{dr}\;, 
+\end{equation}
+
+siendo $\mathbf{r}$ la forma paramétrica de la línea y $Q$ su carga.
+
+\subsubsection{Distribuciones discretas de carga.} 
+
+Son distribuciones volumétricas de carga con todas sus dimensiones despreciables respecto a la distancia de observación. Un ejemplo de éstas es la carga puntual, considerada como un volumen cargado con las tres dimensiones despreciables.
+ 
+\subsection{Asociación de densidades volumétricas de carga a distribuciones no volumétricas.}\label{AsoDenVolCar}
+Normalmente se realiza este tipo de asociación buscando un conjunto más compacto de ecuaciones, así se puede hablar solo de distribuciones volumétricas y como casos particulares: distribuciones discretas, lineales y superficiales. Esto se realiza utilizando la función delta de Dirac. 
+
+\subsubsection{La función delta de Dirac.}
+Se designa con la letra griega minúscula $\delta$ y por definición, es:
+\begin{equation}\label{ec1.5}
+	\int_{a}^{b}{\delta(x)\,dx}=\left\{
+	\begin{aligned}
+	&1 & &\text{si $0\in (a,b)$}.\\
+	&0 & &\text{si $0\notin (a,b)$}.
+	\end{aligned}
+	\right.
+\end{equation}
+
+Se puede demostrar, a partir de \eqref{ec1.5} que:
+\begin{equation}
+	\int_{a}^{b}{\delta(x-x_0)\,dx}=\left\{
+	\begin{aligned}
+	&1 & &\text{si $x_0\in(a,b)$}.\\
+	&0 & &\text{si $x_0\notin(a,b)$}.
+	\end{aligned}
+	\right.
+\end{equation}
+
+Otras propiedades son: 
+\begin{gather}
+	\int_{a}^{b}{f(x)\,\delta(x-x_0)\,dx}=\left\{\begin{aligned}f(&x_0) & &\text{si $x_0\in(a,b)$}.\\
+		&0 & &\text{si $x_0\notin(a,b)$}.\end{aligned}\right.\label{2ec1.6} \\
+		\int_{a}^{b}{f(x)\,\delta'(x-x_0)\,dx}=\left\{\begin{aligned}-f'&(x_0) & &\text{si $x_0\in(a,b)$}.\\
+		&0 & &\text{si $x_0\notin(a,b)$}.\end{aligned}\right. \\
+		\int_{a}^{b}{f(x)\,\delta^{(n)}(x-x_0)\,dx}=\left\{\begin{aligned}(-1)^{n}&\,f^{(n)}(x_0) & 
+		&\text{si $x_0\in(a,b)$}.\\
+		&0 & &\text{si $x_0\notin(a,b)$}.\end{aligned}\right.
+\end{gather}
+
+\subsubsection{Asociar una densidad volumétrica de carga a una distribución superficial de carga.}
+Sea una superficie genérica definida por $\mathbf{r}=\mathbf{r}(u_i,u_j)$, siendo $u_k=u_{k0}$ (una constante). Si la densidad de carga es $\sigma=\sigma(u_i,u_j)$, y se requiere hallar una distribución volumétrica de carga equivalente, se puede decir que 
+\[
+Q=\iint\limits_{S}\sigma\,dS=\iiint\limits_{V}{\rho\,dV}\;, 
+\]
+donde el volumen $V$ contiene completamente a la superficie $S$. Luego, la integral de volumen se puede reescribir como sigue:
+\begin{equation*}
+\iint\limits_{S}\sigma\,dS=\iiint\limits_{V}{\rho\,h_k\,du_k\,dS}=
+	\iint\limits_{S}\left[\int\limits_{u_k}\rho\,h_k\,du_k\right]\,dS
+\end{equation*}
+
+Finalmente, para que se sostenga la igualdad debe ocurrir que, 
+\begin{equation*}
+	\rho=\frac{\sigma\,\delta(u_k-u_{k0})}{h_k}\;.
+\end{equation*}
+
+\subsubsection{Asociar una densidad volumétrica de carga a una distribución lineal.}
+Considérese una línea genérica cuya forma paramétrica es $\mathbf{r}=\mathbf{r}(u_i)$, siendo $u_j=u_{j0}$ y $u_k=u_{k_0}$. Si la densidad de carga es $\lambda=\lambda(u_i)$, la densidad volumétrica asociada es:
+\begin{equation*}
+	\rho=\frac{\lambda\,\delta(u_j-u_{j0})\,\delta(u_k-u_{k0})}{h_j\,h_k}\;.
+\end{equation*}
+
+
+\subsubsection{Asociar una densidad volumétrica a una carga puntual.}
+
+
+Supóngase una carga puntual $q_0$. 
+\begin{figure}[ht]
+  \centering
+		\includegraphics{3g1.1}
+	\caption{La carga puntual.}
+	\label{fig:3g1}
+\end{figure}
+
+La densidad asociada está en la ecuación \eqref{ec10}, donde $\delta{\left(\,\mathbf{r}-\mathbf{r_0}\right)}$ es la función delta de Dirac con argumento vectorial, para el caso $\mathbf{r_0}=x_0\,\mathbf{\hat{x}}+y_0\,\mathbf{\hat{y}}+z_0\,\mathbf{\hat{z}}$.
+\begin{equation}\label{ec10}
+\rho=q_0\,\delta(x-x_{0})\,\delta(y-y_{0})\,\delta(z-z_{0})=q_0\,\delta{\left(\,\mathbf{r}-\mathbf{r_0}\right)}\;.
+\end{equation}
+
+
+\section{La corriente eléctrica.}
+La corriente eléctrica se define como el flujo de carga transversal en la unidad de tiempo.
+\begin{equation}\label{ec2.1}
+	\mathbf{I}=\frac{dQ}{dt}\;.
+\end{equation}
+
+En la ecuación \eqref{ec2.1} no se observa explícitamente la transversalidad. Ésta queda manifiesta en la definición de la densidad de corriente.
+
+\subsection{Distribuciones de corriente.}
+En el capítulo anterior se utilizó la aproximación continua de los sistemas cargados para asociarles densidades volumétricas. Cuando estos sistemas entran en movimiento, generan corrientes eléctricas volumétricas con sus respectivos casos particulares. Teniendo en cuenta el esquema usado para la carga eléctrica, en la corriente se considerará también que todas las distribuciones son volumétricas. 
+
+\subsubsection{Distribución volumétrica de corriente.}
+Una corriente volumétrica es una distribución volumétrica de carga en movimiento y se le asocia una densidad representada con el vector $\mathbf{J}$ que se define en la ecuación \eqref{ec_DefDenCor}. Allí el vector $\mathbf{\hat{n}}$ es el vector normal unitario a la superficie $S$ cuyo elemento diferencial es $dS$.
+
+\begin{equation}\label{ec_DefDenCor}
+\mathbf{\hat{n}}\cdot\mathbf{J}=\frac{dI}{dS}\,		\quad , \quad \mathbf{J}\,[=]\frac{A}{m^2}\;.
+\end{equation}
+
+Utilizando la ecuación \eqref{ec_DefDenCor} se puede dar una definición de la corriente donde queda explícito su carácter transversal \eqref{ec_DefCorVol}.
+
+\begin{equation}\label{ec_DefCorVol}
+	\mathbf{I}=\iint\limits_{S}{\mathbf{J}\cdot d\mathbf{S}}\;.
+\end{equation}
+
+\subsubsection{Distribución superficial de corriente.}
+
+Cuando una distribución volumétrica de carga entra en movimiento, genera una corriente volumétrica. Si la distribución de carga tiene una dimensión despreciable, su movimiento puede generar una corriente superficial. Ésto sólo ocurre cuando $\mathbf{v}\cdot\mathbf{\hat{n}}=0$, siendo $\mathbf{v}$ la velocidad de un punto de la superficie cargada y $\mathbf{\hat{n}}$ el vector unitario normal a la superficie en ese mismo punto. 
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics{3g2.2}
+	\caption{Corriente superficial. El vector $\mathbf{v}$ siempre es perpendicular al vector normal a la superficie $\mathbf{\hat{n}}$.}
+	\label{g_CorSup}
+\end{figure}
+
+A la distribución superficial de corriente se le asocia una densidad superficial $\mathbf{K}$, definida en la ecuación \eqref{ec_DefCorSup}, donde $\hat{\mathbf{t}}$ es un vector tangente unitario a la superficie y perpendicular a la curva $C$, cuya forma paramétrica es $\mathbf{r}=\mathbf{r}(u)$, tiene por elemento diferencial $dr=|d\mathbf{r}|$ y está contenida en la superficie. Ver gráfico (\ref{g_DefK}).
+\begin{equation}\label{ec_DefCorSup}
+\hat{\mathbf{t}}\cdot\mathbf{K}=\frac{dI}{dr}\quad,\quad \mathbf{K}\,[=]\frac{A}{m}\;.
+\end{equation}
+ 
+\begin{figure}[ht]
+	\centering
+		\includegraphics{3g3.3}
+	\caption{Definición de $\mathbf{K}$.}
+	\label{g_DefK}
+\end{figure}
+
+\subsubsection{Distribución lineal de corriente.}
+
+Una distribución lineal de carga en movimiento puede generar una corriente filamental. Ésto ocurre cuando $\mathbf{v}\times\mathbf{\hat{t}}=\textbf{0}$, siendo $\mathbf{v}$ la velocidad de la carga y $\mathbf{\hat{t}}$ el vector tangente unitario a la línea. 
+
+A la corriente filamental se le asocia una densidad lineal $\mathbf{I}$, definida en la ecuación \eqref{ec_DefCorLin}, donde $\mathbf{\hat{t}}$ es el vector tangente a la curva y va en la dirección del movimiento de la carga positiva.  
+\begin{equation}\label{ec_DefCorLin}
+\mathbf{I}=I\,\mathbf{\hat{t}}\quad,\quad \mathbf{I}\,[=]A\;.
+\end{equation}
+
+\subsection{Asociar distribuciones volumétricas de corriente a una distribución no volumétrica.}
+
+Aplicando un procedimiento similar al utilizado en la sección \ref{AsoDenVolCar}, se pueden asociar distribuciones volumétricas de corriente a distribuciones no volumétricas, como se ilustra a continuación. 
+
+\subsubsection{Asociar una distribución volumétrica de corriente a una distribución superficial de corriente.}
+
+A una superficie genérica definida por $\mathbf{r}=\mathbf{r}(u_i,u_j)$, siendo $u_k=u_{k0}$ (una constante), con una densidad superficial de corriente $\mathbf{K}=\mathbf{K}(u_i,u_j)$, se le puede asociar una distribución volumétrica de corriente equivalente de la forma
+\begin{equation*}
+\mathbf{J}=\frac{\mathbf{K}\,\delta(u_k-u_{k0})}{h_k}\;.
+\end{equation*}
+
+\subsubsection{Asociar una distribución volumétrica de corriente a una distribución lineal de corriente.}
+
+Siendo $\mathbf{r}=\mathbf{r}(u_i)$ una línea genérica con $u_j=u_{j0}$ y $u_k=u_{k_0}$, con una densidad lineal de corriente $\mathbf{I}=\mathbf{I}(u_i)$, se le puede asociar una densidad volumétrica de corriente de la forma
+\begin{equation*}
+\mathbf{I}=\frac{\mathbf{I}\,\delta(u_j-u_{j0})\,\delta(u_k-u_{k0})}{h_j\,h_k}\;.
+\end{equation*}
+
+
+\subsubsection{Relación entre la densidad de corriente y la velocidad.}
+
+
+Considérese un flujo volumétrico de carga con velocidad $\mathbf{v}$. Siendo consistente con las aproximaciones usadas, para un volumen $\Delta V$ se pueden considerar las variaciones de la velocidad despreciables (un campo constante de velocidades). Ver figura (\ref{g_RelDenCorVel}). 
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics{3g4.4}
+	\caption{Relación entre densidad de corriente y velocidad.}
+	\label{g_RelDenCorVel}
+\end{figure}
+
+Utilizando la definición de densidad volumétrica de corriente
+\begin{equation}\label{ec_CorVol}
+	\mathbf{\hat{n}}\cdot\mathbf{\hat{J}}=\frac{dI}{dS}=\frac{\Delta I}{\Delta S}
+		=\frac{\Delta Q}{\Delta s \, \Delta t} \;.
+\end{equation}
+
+El volumen abstracto formado por el tránsito de carga a través de $\Delta S$ en un tiempo $\Delta t$ se llamará $\Delta V$. 
+\begin{equation}
+	\Delta V = \mathbf{v}\Delta t \cdot\Delta S \,\mathbf{\hat{n}}\;.
+\end{equation}
+
+La carga alojada en $\Delta V$ que ha pasado por $\Delta S$ en un tiempo $\Delta t$ es:
+\begin{equation}
+	\Delta Q=\rho\,\Delta V = \rho\,\mathbf{v}\cdot\mathbf{\hat{n}}\,\Delta t \, \Delta S\;.
+\end{equation}
+
+Reemplazando en \eqref{ec_CorVol}:
+\begin{equation}\label{ec_Dem}
+	\mathbf{\hat{n}}\cdot\mathbf{\hat{J}}=
+	\frac{\rho\,\mathbf{v}\cdot\mathbf{\hat{n}}\,\Delta t \, \Delta S}{\Delta t \, \Delta S}
+	=\rho\,\mathbf{v}\cdot\mathbf{\hat{n}}\;.
+\end{equation}
+
+La ecuación \eqref{ec_Dem} se sostiene para cualquier normal $\mathbf{\hat{n}}$, luego 
+\begin{equation}
+	\boxed{\mathbf{J}=\rho\,\mathbf{v}}\;.
+\end{equation}
+
+Mediante un procedimiento similar se puede demostrar que:
+\begin{equation}
+	\boxed{\mathbf{K}=\sigma\,\mathbf{v}}\qquad,\qquad
+	\boxed{\mathbf{I}=\lambda\,\mathbf{v}} \;.
+\end{equation}
+
+\subsubsection{Ilustraciones}
+
+\paragraph{Primera ilustración.}
+
+
+Calcular la corriente que atraviesa el semiplano $XZ\,(x>0)$ de una esfera cargada con una densidad de carga $\sigma=\sigma_0\cos\frac{\theta}{2}$ si ésta gira sobre su propio eje a una velocidad $\boldsymbol{\omega}=\omega_0\,\mathbf{\hat{z}}$, como se ilustra en la figura \ref{g_EsfCar}. %\large{$ultimate.$}
+\begin{figure}[ht]
+	\centering
+		\includegraphics{E3g1.1}
+	\caption{Esfera cargada con movimiento rotacional.}
+	\label{g_EsfCar}
+\end{figure}
+
+La corriente buscada es de la forma:
+\begin{equation}\label{ec_DefCor}
+	\mathbf{I}=\int\limits_{c}{\mathbf{K}\cdot\mathbf{\hat{t}}\,dr}\;.
+\end{equation}
+
+La esfera tiene una velocidad $\mathbf{\omega}=\omega_0\mathbf{\hat{z}}$. El movimiento de esta esfera cargada genera una corriente en la misma dirección, cuya densidad de corriente es $\mathbf{K}=\sigma\,\mathbf{v}$, tal que $\mathbf{v}=\mathbf{\omega}\times\mathbf{r}$, en donde $\mathbf{r}$ es la forma paramétrica de la esfera ($\mathbf{r}=a\mathbf{\hat{r}}$). Luego, 
+\begin{equation}
+	\mathbf{v}=\omega_0\mathbf{\hat{z}}\times a\,\mathbf{\hat{r}}=\omega_0\,a\,\sen\theta\,\mathbf{\hat{\varphi}}
+\end{equation}
+
+y la densidad de corriente queda:
+\begin{equation}
+	\mathbf{K}=\sigma\,\omega_0\,a\,\sen\theta\,\mathbf{\hat{\varphi}}
+		=\sigma_0\cos\frac{\theta}{2}\,\,\omega_0\,a\,\sen\theta\,\mathbf{\hat{\varphi}}
+\end{equation}
+
+Volviendo a la ecuación \eqref{ec_DefCor}: $\mathbf{\hat{t}}$ es el vector unitario perpendicular a la curva de integración y tangente a la superficie que porta la corriente, $dr$ es el elemento diferencial de la curva de integración y $\mathbf{K}$ es la densidad superficial de corriente. Para el caso de estudio $\mathbf{\hat{t}}=\mathbf{\hat{y}}$ y $dr=a\,d\theta$. Reemplazando estos valores en \eqref{ec_DefCor}, se obtiene que:
+\begin{equation}\label{ec_SolCor1}
+\mathbf{I}=\int\limits_{0}^{\pi}{\left(\sigma_0\cos\frac{\theta}{2}\,\,\omega_0\,a\,\sen\theta\,\mathbf{\hat{y}}\right)
+	 \cdot \mathbf{\hat{y}}\,a\,d\theta}=\frac{4}{3}\,a^2\omega_0\,\sigma_0 \;.
+\end{equation}
+
+Nótese que $\varphi$ en la superficie de integración es nulo, luego $\mathbf{\hat{\varphi}}=-\sen\varphi\,\mathbf{\hat{x}}+\cos\varphi\,\mathbf{\hat{y}}=\mathbf{\hat{y}}$.
+
+
+\paragraph{Segunda ilustración.}
+
+
+Calcular la corriente que atraviesa la superficie $\varphi=\frac{\pi}{4}$ de un cono con densidad de carga $\sigma=\sigma_0\,\frac{r}{R}$ que gira sobre su eje con velocidad angular $\mathbf{\omega}=\omega_0\,\mathbf{\hat{z}}$, como se ilustra en la figura \ref{g_ConCar}. 
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics{E3g2.2}
+	\caption{Cono cargado con movimiento rotacional.}
+	\label{g_ConCar}
+\end{figure}
+
+La corriente buscada es:
+\begin{equation}\label{ec_DefCor2}
+		\mathbf{I}=\int\limits_{c}{\mathbf{K}\cdot\mathbf{\hat{t}}\,dr}\;.
+\end{equation}
+
+La densidad de corriente superficial es:
+\begin{equation}\label{ec_DefK}
+	\mathbf{K}=\sigma\,\mathbf{v}.
+\end{equation}
+
+La velocidad lineal de cualquier punto de la superficie es:
+\begin{equation}\label{ec_DefV}
+	 \mathbf{v}=\mathbf{\omega}\times\mathbf{r}=
+	 	\left.\omega_0\,\mathbf{\hat{z}}\times r\,\mathbf{\hat{r}}\right|_{\theta=\theta_0}=
+	 		\omega_0\,r\sen\theta_0\,\hat{\mathbf{\varphi}}\;.
+\end{equation}
+
+Reemplazando \eqref{ec_DefV} y el valor de $\sigma$ en \eqref{ec_DefK}, se obtiene que:
+\begin{equation}\label{ec_DefK2}
+	\mathbf{K}=\frac{\sigma_0\,\omega_0\,r^2}{R}\,\sen\theta_0\,\hat{\mathbf{\varphi}}\;.
+\end{equation}
+
+En \eqref{ec_DefCor2}, $\mathbf{\hat{t}}=\hat{\mathbf{\varphi}}$ y el elemento diferencial de línea es $dr$. Reemplazando \eqref{ec_DefK2} y lo anterior en \eqref{ec_DefCor2},
+\begin{equation}\label{ec_SolCor2}
+		\mathbf{I}=\int\limits_{0}^{R}{\frac{\sigma_0\,\omega_0}{R}\,\sen\theta_0\,r^2\,dr}=
+		\frac{\sigma_0\,\omega_0\,R^2\,\sen\theta_0}{3}\;.
+\end{equation}
+
+
+

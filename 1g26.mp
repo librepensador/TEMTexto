@@ -1,0 +1,95 @@
+beginfig(26);
+
+u=1cm;
+pair o,x,y,z,oo,u[];
+path p[],q[];
+numeric t[],d;
+
+%--- sistema coordenado ---%
+o=(0,0);
+z=(0,3.5u);
+y=(3u,-0.7u);
+x=0.5*(-3u,-0.7u);
+
+drawarrow o--x; 
+drawarrow o--y; 
+drawarrow o--z; 
+
+label.lrt(btex $x$ etex, 1[o,x]);
+label.llft(btex $y$ etex, 1[o,y]);
+label.lrt(btex $z$ etex, 1[o,z]);
+
+
+% ---nuevo sistema--- %
+
+oo=(1.2u,0.8u);
+
+u3=(xpart oo + 0.25u,ypart oo + 2u);
+u2=(xpart oo + 2u,ypart oo - 0.25u);
+u1=((xpart oo / 6),(ypart oo / 6));
+
+%--- vectores principales ---%
+p1=oo{dir(250)}..u1;
+p2=oo{dir(20)}..u2;
+p3=oo{dir(110)}..u3;
+
+drawarrow p1 withpen pencircle scaled 0.5;
+drawarrow p2 withpen pencircle scaled 0.5;
+drawarrow p3 withpen pencircle scaled 0.5;
+
+label.top(btex u$_3$ etex,u3);
+label.top(btex u$_1$ etex,u1);
+label.urt(btex u$_2$ etex,u2);
+
+%--- vectores desplazados ---%
+t0=3/4;
+t2=t0*length(p2);
+t3=t0*length(p3);
+
+p222=subpath (0,t2) of p2 ;
+p333=subpath (0,t3) of p3 ;
+
+q4=p222;
+q1=p333;
+q2=p222 shifted ((point(t3) of p3) - oo);
+q3=p333 shifted ((point(t2) of p2) - oo);
+
+
+d=0.15u;
+q5=buildcycle(q1 shifted (2d,0),q2 shifted (0,-2d),q3 shifted (-2d,0),q4 shifted (0,2d));
+q6=buildcycle(q1 shifted (d,0),q2 shifted (0,-d),q3 shifted (-d,0),q4 shifted (0,d));
+
+draw q1 withpen pencircle scaled 0.5;
+draw q2 withpen pencircle scaled 0.5;
+draw q3 withpen pencircle scaled 0.5;
+draw q4 withpen pencircle scaled 0.5;
+
+draw q5;
+
+drawarrow subpath(1/20length(q6),0) of q6;
+drawarrow subpath(3/10length(q6),1/10length(q6)) of q6;
+
+drawarrow subpath(5.7/10length(q6),3.3/10length(q6)) of q6;
+drawarrow subpath(8.3/10length(q6),7/10length(q6)) of q6;
+
+
+label.rt("3",(point(t3) of p3 shifted (point(t2) of p2) - oo));
+draw (point(t3) of p3 shifted (point(t2) of p2) - oo) withpen pencircle scaled 3;
+
+label.bot("2",(point(t2) of p2));
+draw (point(t2) of p2) withpen pencircle scaled 3;
+
+label.lft("1",oo);
+draw oo withpen pencircle scaled 3;
+
+label.lft("4",(point(t3) of p3));
+draw (point(t3) of p3) withpen pencircle scaled 3;
+
+%drawarrow subpath(0,1/3*length(p2)) of p2 withpen pencircle scaled 0.5;
+%drawarrow subpath(length(p3),1/3*length(p3)) of p3 withpen pencircle scaled 0.5;
+%drawarrow (subpath(0,1/3*length(p3)) of p3 shifted ((point(t2) of p2) - oo)) withpen pencircle scaled 0.5;
+%drawarrow (subpath(length(p2),1/3*length(p2)) of p2 shifted ((point(t3) of p3) - oo)) withpen pencircle scaled 0.5;
+
+
+endfig;
+end;

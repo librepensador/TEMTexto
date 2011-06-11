@@ -1,0 +1,698 @@
+\chapter{Interacción clásica de los campos con con la materia.}
+
+
+\section{Interacción del campo eléctrico con un dieléctrico.}
+
+
+Cuando un campo eléctrico interactúa con la materia dieléctrica, ésta responde con un nuevo campo eléctrico que, en la mayoría de los casos, va en la dirección contraria al campo inicial. Para entender cómo es este proceso se estudiará a continuación el fenómeno de la polarización, que es el nombre con el que se asocian las respuestas eléctricas de un aislante a la existencia de un campo eléctrico externo con intensidad menor a la intensidad de ruptura. 
+
+\subsection{Mecanismo físicos de la polarización.}\label{c_MecFispol}
+
+
+En la interacción de un campo eléctrico con un aislante ocurren varios procesos que se pueden resumir en tres: polarización electrónica, polarización iónica y polarización orientacional.
+
+
+\paragraph{Polarización electrónica.}
+
+
+Suponga que un átomo neutro dieléctrico se sumerge en un campo eléctrico con variaciones temporales y espaciales despreciables a escala atómica. Al interactuar con el campo, el átomo se deforma ya que se ejerce una fuerza sobre la nube de electrones que la desplaza, induciendo un momento dipolar por la aparición de una distancia no nula entre los centros efectivos de carga positiva (núcleo) y negativa (nube de electrones), como se ilustra en la figura \ref{g_PolElec}.
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics{4g7.7}
+	\caption{Separación de los centros efectivos de carga. CEN: centro efectivo de carga negativa. CEP: centro efectivo de carga positiva.}
+	\label{g_PolElec}
+\end{figure}
+
+El momento dipolar inducido es paralelo al campo eléctrico polarizante. 
+
+
+\paragraph{Polarización iónica.}
+
+
+Se presenta en moléculas polares (moléculas con momento dipolar intrínseco no nulo) cuando interactúan con un campo eléctrico de variaciones espacio-temporales despreciables a escala molecular. A toda molécula polar se le asocia una distancia del enlace ($d$) definida como
+\begin{equation}
+	d=\frac{p}{Q_+}\;,
+\end{equation}
+
+siendo $p$ la magnitud del momento dipolar y $Q_+$ la carga del ion positivo de la molécula. 
+
+Cuando una molécula polar se encuentra ante la presencia de un campo eléctrico con su momento dipolar intrínseco paralelo a él, se produce una fuerza sobre el ion positivo que va en dirección contraria a la fuerza ejercida sobre el ion negativo. Esto genera un aumento en la distancia del enlace y en consecuencia un aumento del momento dipolar que se puede interpretar como la aparición de un momento dipolar inducido que se suma al momento dipolar intrínseco. 
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics{4g8.8}
+	\caption{Molécula de ácido clorhídrico (HCl). El momento dipolar inducido es $p_{ind}=\Delta d\,Q_+$.}
+	\label{g_MomDipInd}
+\end{figure}
+
+
+
+\paragraph{Polarización orientacional.}
+
+
+Supóngase una distribución de moléculas polares interactuando con un campo eléctrico externo. Sobre cada molécula aparecerá un torque debido a su momento dipolar intrínseco igual a $\mathbf{\tau}=\mathbf{p}\times\mathbf{E}$, que intenta alinear el momento dipolar con el campo eléctrico. El efecto macroscópico sobre un conglomerado de moléculas polares termina siendo la aparición de un momento dipolar promedio no nulo que se puede interpretar como un momento dipolar inducido. 
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics{4g9.9}
+	\caption{Conglomerado de moléculas polares interactuando con un campo eléctrico. a) Distribución aleatoria con momento dipolar nulo. b) Orientación preferencial de los dipolos en la dirección del campo polarizante.}
+	\label{g_PolIon}
+\end{figure}
+
+
+\subsection{Primer modelo de la polarización de un dieléctrico.}
+
+
+Considerando los tres mecanismos físicos de la polarización descritos en \ref{c_MecFispol} se puede construir un modelo que prediga con muy buena aproximación la interacción clásica de campo eléctricos con los aislantes. Nótese que cada caso en \ref{c_MecFispol} lleva a la aparición de un momento dipolar inducido. Al suponer que la materia es una distribución continua de dipolos, se pueden reproducir en un mismo modelo los efectos de los tres mecanismos ya vistos. 
+
+
+\paragraph{Vector de polarización.}
+
+
+Para la cuantificación del fenómeno de la polarización, se considerará un volumen $V'$ con una distribución continua de dipolos, tal como se muestra en la figura \ref{g_DistrContDip}. El potencial producido por un diferencial de volumen en $\mathbf{r}$ es:
+\begin{equation}\label{ec_DefPotDif}
+	d\phi=\frac{d\mathbf{p}\cdot(\mathbf{r}-\mathbf{r'})}
+				{4\pi\epsilon_0\,|\mathbf{r}-\mathbf{r'}|^3}\;.
+\end{equation}
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics{4g10.10}
+	\caption{Distribución continua de dipolos.}
+	\label{g_DistrContDip}
+\end{figure}
+
+
+Se define el \textbf{vector polarización} como el momento dipolar por unidad de volumen:
+\begin{equation}\label{ec_DefVecPol}
+	\mathbf{P}=\frac{d\mathbf{p}}{dV'}\;.
+\end{equation}
+ 
+Con la definición \eqref{ec_DefPotDif} y \eqref{ec_DefVecPol} se obtiene el potencial del volumen polarizado en $\mathbf{r}$:
+\begin{equation}\label{ec_DefPotVol}
+	\phi(\mathbf{r})=\frac{1}{4\pi\epsilon_0}\iiint\limits_{V'}
+			{\frac{\mathbf{P}\cdot(\mathbf{r}-\mathbf{r'})}{|\mathbf{r}-\mathbf{r'}|^3}}\,dV'\;.
+\end{equation}
+ 
+Se acostumbra procesar la integral de \eqref{ec_DefPotVol} de forma tal que se expliciten las cargas superficiales y volumétricas inducidas, así:
+\begin{equation}
+	\nabla'\cdot\left( \frac{\mathbf{P}}{|\mathbf{r}-\mathbf{r'}|} \right)=
+		\frac{\nabla'\cdot\mathbf{P}}{|\mathbf{r}-\mathbf{r'}|}+
+			\mathbf{P}\cdot\nabla'\left( \frac{1}{|\mathbf{r}-\mathbf{r'}|} \right)\;,
+\end{equation}
+
+pero 
+\begin{equation}\label{ec_Tall1}
+	\nabla'\left( \frac{1}{|\mathbf{r}-\mathbf{r'}|} \right)
+		=\frac{\mathbf{r}-\mathbf{r'}}{|\mathbf{r}-\mathbf{r'}|^3}\;.
+\end{equation}
+
+El procedimiento para calcular \eqref{ec_Tall1} se analiza en el taller de Análisis vectorial.
+
+En consecuencia,
+\begin{equation}\label{ec_Num}
+	\iiint\limits_{V'}{\frac{\mathbf{P\cdot(\mathbf{r}-\mathbf{r'})}}{|\mathbf{r}-\mathbf{r'}|^3}\,dV'}=
+	\iiint\limits_{V'}{\nabla'\cdot\frac{\mathbf{P}}{|\mathbf{r}-\mathbf{r'}|}\,dV'}\,+\,
+	\iiint\limits_{V'}{\frac{-\nabla'\cdot\mathbf{P}}{|\mathbf{r}-\mathbf{r'}|}\,dV'}\;.
+\end{equation}
+
+Se definen las siguientes cantidades:
+\begin{itemize}
+	\item $\rho_p\equiv-\nabla\cdot\mathbf{P}\equiv$ densidad volumétrica de carga de polarización. 
+	
+	\item $\sigma_p\equiv\mathbf{P}\cdot\mathbf{\hat{n}}\equiv$ densidad superficial de carga de polarización.
+\end{itemize}
+
+Con lo anterior y utilizando el teorema de la divergencia en \eqref{ec_Num} se obtiene:
+\begin{equation}\label{ec_PotSupVolPol}
+	\phi(\mathbf{r})=\frac{1}{4\pi\epsilon_0}\oiint\limits_{S'}
+		{\frac{\sigma_p\,dS'}{|\mathbf{r}-\mathbf{r'}|}}\,+\,
+	\frac{1}{4\pi\epsilon_0}\iiint\limits_{V'}
+		{\frac{\rho_p\,dV'}{|\mathbf{r}-\mathbf{r'}|}}\;.
+\end{equation}
+
+
+\paragraph{Interpretación de $\sigma_p$ y $\rho_p$.}
+
+
+Considérese que una distribución \textbf{homogénea} de dipolos representa un material polarizado. Cuando ocurra la interacción con el campo eléctrico, se puede considerar en una primera aproximación que todos los dipolos se orientan en la dirección del campo eléctrico total. En este escenario ocurre un fenómeno que aparece explícito en \eqref{ec_PotSupVolPol}. Una carga inducida se aloja en la superficie fruto de la orientación de dipolos en la frontera (ver figura \ref{g_CarSupVolPol}). 
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics{4g11.11}
+	\caption{a) Distribución homogénea de dipolos orientados. b) Distribución superficial de carga de polarización.}
+	\label{g_CarSupVolPol}
+\end{figure}
+
+
+Téngase en cuenta que cada dipolo representa un arreglo de dos cargas puntuales: una positiva y otra negativa. Cuando ocurre la orientación global y teniendo en cuenta que la distribución es continua, hay un efecto de cancelación entre dipolos próximos (la carga positiva de un dipolo se yuxtapone con la carga negativa del dipolo inmediatamente superior) que no ocurre en la frontera, pues allí termina la distribución. 
+
+Haciendo uso del modelo se tiene que: 
+
+\begin{itemize}
+	\item La densidad volumétrica del iésimo dipolo es:
+
+\begin{equation}
+	\rho_i(\mathbf{r})=q\,\delta(\mathbf{r'}-\mathbf{r_i}-\mathbf{l})-
+		q\,\delta(\mathbf{r'}-\mathbf{r_i})\;\medskip.
+\end{equation} 
+
+	\item La densidad volumétrica del volumen será:
+	
+\begin{equation}
+	\rho(\mathbf{r'})=\sum\limits_{i=1}^{N}
+	{q\,\left[\delta(\mathbf{r'}-\mathbf{r_i}-\mathbf{l})-
+		\delta(\mathbf{r'}-\mathbf{r_i})\right]}\;\medskip.
+\end{equation}
+
+	\item El momento dipolar del volumen es:
+	
+\begin{equation}
+\begin{aligned}
+	\mathbf{p}=&\iiint\limits_{V'}{\rho(\mathbf{r'})\,\,\mathbf{r'}\,dV'}=\medskip \\
+	&\iiint\limits_{V'}{\sum\limits_{i=1}^{N}
+		{q\,\left[\delta(\mathbf{r'}-\mathbf{r_i}-\mathbf{l})-
+		\delta(\mathbf{r'}-\mathbf{r_i})\right]}\,\mathbf{r'}\,dV'}=\medskip \\
+	&\sum\limits_{i=1}^{N}
+		{\left[q\,\delta(\mathbf{r_i}+\mathbf{l})-q\,(\mathbf{r_i})\right]}=\medskip\\
+	&\sum\limits_{i=1}^{N}{q\,\mathbf{l}}=N\,\mathbf{p_0}\;.\medskip
+\end{aligned}
+\end{equation}
+\end{itemize}
+
+Siendo $\mathbf{p_0}=q\,\mathbf{l}$ el momento dipolar de un solo dipolo. 
+
+Como se supone una distribución homogénea de dipolos orientados, la densidad volumétrica de dipolos se puede definir como el número de dipolos por unidad de volumen:
+\begin{equation}
+	n=\frac{N}{V}\;.
+\end{equation}
+
+Así, $\mathbf{p}=n\,V\,\mathbf{p_o}$. Luego,
+\begin{equation}
+	\mathbf{P}=\frac{d\mathbf{p}}{dV}=\frac{d}{dV}\left[n\,V\,\mathbf{p_o}\right]=n\,\mathbf{p_0}
+\end{equation}
+es un vector constante. 
+
+Luego $\rho_p=-\nabla\cdot\mathbf{P}=\textbf{0}$, reproduce cuantitativamente la cancelación de la que se hablaba anteriormente. Cuando la distribución de dipolos sea inhomogénea, es posible que $\rho_p$ no sea nulo, de allí se suele afirmar que $\rho_p$ es una medida de la inhomogeneidad dieléctrica del material.
+
+
+\subsection{Vector desplazamiento eléctrico.}
+
+
+La aparición de $\rho_p$ suscita la pregunta natural de qué relación tiene con $\rho$, la densidad volumétrica de carga. La respuesta está inspirada en la clasificación que se puede hacer de la carga, a propósito de la aparición de la carga de polarización. 
+
+Se dice que la carga eléctrica se puede presentar como carga de polarización (carga inducida por el efecto cooperativo de los dipolos orientados en un dieléctrico) y carga libre (carga que es susceptible de ser transportada, en el sentido de migrar de átomo en átomo, tal como lo hacen los electrones de conducción cuando se presenta una corriente directa). 
+
+La anterior información se condensa en la ecuación:
+\begin{equation}\label{ec_DenCarLibPol}
+	\rho=\rho_p+\rho_f\;,
+\end{equation}
+
+donde $\rho_p$ es la conocida densidad volumétrica de carga de polarización y $\rho_f$ se define como la densidad volumétrica de carga libre. 
+
+Existe una forma alternativa para diferenciar la carga libre y la carga de polarización y tiene que ver con la capacidad de trasporte. La carga de polarización no se transporta, es decir, no hay una corriente material asociada a su aparición; mientras la carga libre sí se transporta, de hecho para llegar a donde está colocada tuvo que existir una corriente material. 
+
+Si en \eqref{ec_DenCarLibPol} se usa la ley de Gauss y la definición de la densidad de carga de polarización, se obtiene:
+\begin{equation}\label{ec_PreDespElec}
+\begin{gathered}
+	\epsilon_0\,\nabla\cdot\mathbf{E}=-\nabla\cdot\mathbf{P}+\rho_f \\
+	\nabla\cdot(\epsilon_0\,\mathbf{E}+\mathbf{P})=\rho_f\;.
+\end{gathered}
+\end{equation}
+
+Se define el desplazamiento eléctrico $\mathbf{D}$ como:
+\begin{equation}\label{ec_DefDespElec}
+	\mathbf{D}=\epsilon_0\,\mathbf{E}+\mathbf{P}\;,
+\end{equation}
+
+y la ecuación \eqref{ec_PreDespElec} se transforma en:
+\begin{equation}\label{ec_PostDespElec}
+	\nabla\cdot\mathbf{D}=\rho_f\;.
+\end{equation}
+
+La aparición del vector $\mathbf{D}$ tiene su justificación por la ecuación \eqref{ec_PostDespElec} que recibe el nombre de la ley de Gauss para el Desplazamiento Eléctrico. \eqref{ec_PostDespElec} informa que una de las fuentes de $\mathbf{D}$ es la carga libre, que es más fácil de manipular en el laboratorio que la carga de polarización.
+
+
+\paragraph*{Ley constitutiva para los medios dieléctricos.}
+
+
+Una de las dificultades del modelo que se está utilizando para la polarización, es que descarga la ``responsabilidad'' del comportamiento eléctrico del medio en el vector $\mathbf{P}$. Para conocer cómo es la polarización en un medio particular hay que apelar a la física estadística, cuestión que se sale del propósito de estas notas de clase. Sin embargo, para la mayoría de los materiales, existe una relación lineal entre la polarización y el campo eléctrico.
+\begin{equation}\label{ec_RelPolE}
+	\mathbf{P}=\mathbf{P}(\mathbf{E})=\epsilon_0\,\chi_e\,\mathbf{E}\;,
+\end{equation}
+
+donde $\chi_e$ es la susceptibilidad eléctrica, que es una cantidad adimensional y mide la capacidad que tiene un medio de evitar ser penetrado por el campo polarizante: a mayor valor de $\chi_e$, menor campo eléctrico total.
+
+Utilizando \eqref{ec_RelPolE} en \eqref{ec_DefDespElec} se obtiene:
+\begin{equation}
+	\mathbf{D}=\epsilon_0\,\mathbf{E}+\epsilon_0\,\chi_e\,\mathbf{E}=
+	\epsilon_0\,(1+\chi_e)\,\mathbf{E}=\epsilon_0\,\epsilon_r\,\mathbf{E}=\epsilon\,\mathbf{E}\;,
+\end{equation}
+
+de donde se establece por definición que:
+\begin{itemize}
+	\item $\epsilon_r \equiv 1+\chi_e$; permitividad relativa.
+	\item $\epsilon \equiv \epsilon_0\,\epsilon_r$; permitividad. 
+\end{itemize}
+
+La ecuación $\mathbf{D}=\epsilon\,\mathbf{E}$ se conoce como la ecuación constitutiva para los medios dieléctricos.
+
+
+\section{Interacción del campo eléctrico con un buen conductor.} 
+
+
+Modelo de electrones libres para los metales: aproximación clásica. 
+
+Un primer modelo aproximado de cómo se entiende un conductor desde la perspectiva de la conducción eléctrica tiene los siguientes elementos: 
+
+El conductor se considera como la yuxtaposición de una red cristalina y un gas de electrones. La red está formada por los iones positivos fruto de considerar cada átomo sin sus electrones de conducción y el gas de electrones está constituido por todos los electrones de conducción (electrones libres) del metal, que pueden ``vagar'' por el conductor pero no abandonarlo. 
+
+Se puede demostrar a partir de la mecánica estadística que la rapidés promedio de los electrones en un metal es del orden de $10^6\,m/s$. Cuando un campo eléctrico externo es inyectado en un conductor, sobre los electrones libres aparece una fuerza que los mueve en dirección contraria al campo. La trayectoria de los electrones no es recta; en ausencia de campo eléctrico los electrones se mueven de forma completamente aleatoria. 
+
+Al existir un campo eléctrico aparece una dirección de preferencia en sentido contrario al mismo campo aplicado. Se puede aproximar la interacción entre electrones libres e iones como un choque inelástico. La distancia promedio recorrida por los electrones entre colisiones recibe el nombre de \emph{longitud libre media} $\lambda$, y el tiempo promedio entre colisiones se denomina \emph{tiempo libre medio} $\tau$. 
+
+En realidad la interacción electrón-ion no es una colisión; se parece más al movimiento sugerido en el gráfico \ref{g_TraIon}. 
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics{4g12.12}
+	\caption{Trayectorias de un electrón al interactuar (línea continua) o no (línea punteada) con un ion.}
+	\label{g_TraIon}
+\end{figure}
+
+
+Si el ion se considera un objeto puntual, se puede despreciar la trayectoria curva cerca de él y aproximar el movimiento del electrón como se muestra en el gráfico \ref{g_TraNIon}
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics{4g13.13}
+	\caption{Trayectoria con ion puntual.}
+	\label{g_TraNIon}
+\end{figure}
+
+
+El movimiento de los electrones en la dirección contraria al campo, genera una corriente eléctrica con una densidad asociada:
+\begin{equation}\label{ec_DefDenAso}
+	\mathbf{J}=\rho\,\mathbf{v_d}=n\,e\,\mathbf{v_d}\;,
+\end{equation}
+
+donde $n$ es el número de electrones libres por unidad de volumen, $e$ es la carga del electrón y $\mathbf{v_d}$ es la velocidad de deriva: velocidad promedio con que se transporta una hipotética carga positiva $-e$ moviéndose en dirección del campo. 
+
+El transporte de carga en la dirección del campo se puede entender como una carga que se mueve a ``saltos'', en tramos de longitud $\lambda$ demorándose $\tau$ segundos, partiendo del reposo y llegando a una velocidad terminal $\mathbf{v_d}$ por acción del campo:
+\begin{equation}
+	e\,\mathbf{E}=m\,a\,\Rightarrow\,a=\frac{e\,\mathbf{E}}{m}
+	\quad,\quad \text{pero}\;\mathbf{v_d}=a\,\tau\;.
+\end{equation}
+
+Reemplazando lo anterior en \eqref{ec_DefDenAso} se obtiene:
+\begin{equation}
+	\mathbf{J}=n\,e\,a\,\tau
+	=n\,e\,\tau\,\left(\frac{e\,\mathbf{E}}{m}\right)
+	=\frac{n\,e^2\,\tau}{m}\,\mathbf{E}\;.
+\end{equation}
+Luego
+\begin{equation}\label{ec_DefDenCor}
+	\mathbf{J}=\sigma\,\mathbf{E}\quad,\quad\text{con}\quad\sigma=\frac{n\,e^2\,\tau}{m}\;.
+\end{equation}
+
+$\sigma$ en \eqref{ec_DefDenCor} se conoce como la conductividad y tiene unidades de $\mho/m$. Este primer modelo explica un comportamiento experimental del conductor ampliamente conocido: la relación $V/I$ permanece constante en un amplio rango de valores. 
+\begin{equation}
+	V=R\,I\quad\text{con}\quad\frac{\partial R}{\partial V}=\frac{\partial R}{\partial I}=0\;.
+\end{equation}
+
+Entendiéndose $V$ como la diferencia de potencial a la que se somete el dispositivo e $I$ la corriente que circula por los bornes. 
+
+ 
+\section{Interacción del campo magnético con la materia.}
+
+
+La \textbf{magnetización} es el fenómeno que ocurre en la materia cuando ésta interactúa con un campo magnético \textit{externo}. Al igual que en el caso de la polarización, la magnetización tiene varios mecanismos que sustentan el modelo utilizado para su explicación, como se verá en la sección \ref{sec_MecPol1}. 
+
+
+\subsection{Modelo físico de la magnetización.}
+
+
+Para predecir el comportamiento de la materia cuando interactúa con un campo magnético, se supone que ella es una distribución continua de dipolos magnéticos. Supóngase que el volumen $V'$ mostrado en la gráfica \ref{g_RtaMagVolMag1} ha sido magnetizado por un campo que no aparece explícito en el dibujo. La respuesta magnética producida por el volumen en el lugar donde está el observador, se puede calcular realizando una suma continua de los aportes de cada diferencial de momento dipolar sobre todo el volumen.
+\begin{figure}[ht]
+	\centering
+		\includegraphics{4g16.16}
+	\caption{Respuesta magnética de un volumen magnetizado.}
+	\label{g_RtaMagVolMag1}
+\end{figure}
+
+Un diferencial de volumen magnetizado genera un potencial vectorial magnético en el observador:
+\begin{equation}\label{ec_mag1}
+	d\mathbf{A}(\mathbf{r})=\frac{\mu_0}{4\pi}\,
+	\frac{d\mathbf{m}\times(\mathbf{r}-\mathbf{r'})}{|\mathbf{r}-\mathbf{r'}|^3}\;.
+\end{equation}
+
+Se define el vector Magnetización cómo el momento dipolar por unidad de volumen, así:
+\begin{equation}\label{ec_mag2}
+	d\mathbf{M}=\frac{d\mathbf{m}}{dV}\;.
+\end{equation}
+
+Al reemplazar \eqref{ec_mag2} en \eqref{ec_mag1} en integrar se obtiene:
+\begin{equation}\label{ec_mag3}
+	\mathbf{A}(\mathbf{r})=\frac{\mu_0}{4\pi}\,\iiint\limits_{V'}{
+	\frac{\mathbf{M}(\mathbf{r'})\times(\mathbf{r}-\mathbf{r'})}{|\mathbf{r}-\mathbf{r'}|^3}\,dV'}\;.
+\end{equation}
+
+La integral en \eqref{ec_mag3} se divide en dos términos, aprovechando la identidad vectorial en \eqref{ec_mag4} y utilizando el teorema de la divergencia de Gauss.
+\begin{equation}\label{ec_mag4}
+	\nabla'\times\left(\frac{\mathbf{M}(\mathbf{r'})}{|\mathbf{r}-\mathbf{r'}|}\right)=
+	\frac{\nabla'\times\mathbf{M}(\mathbf{r'})}{|\mathbf{r}-\mathbf{r'}|}+
+	\frac{\mathbf{M}(\mathbf{r'})\times(\mathbf{r}-\mathbf{r'})}{|\mathbf{r}-\mathbf{r'}|^3}\;.
+\end{equation}
+
+El resultado de esas operaciones matemáticas queda plasmado en \eqref{ec_mag5}. Obsérvese que los numeradores de los integrandos tienen unidades de densidad volumétrica y superficial de corriente, respectivamente. 
+\begin{equation}\label{ec_mag5}
+	\mathbf{A}(\mathbf{r})=\frac{\mu_0}{4\pi}\,\iiint\limits_{V'}{
+	\frac{\nabla'\times\mathbf{M}(\mathbf{r'})}{|\mathbf{r}-\mathbf{r'}|}\,dV'}
+	+
+	\frac{\mu_0}{4\pi}\,\oiint\limits_{S'}{
+	\frac{\mathbf{M}(\mathbf{r'})\times\mathbf{\hat{n'}}}{|\mathbf{r}-\mathbf{r'}|}\,dS'}\;.
+\end{equation}
+
+Por ello se definen las variables: 
+\begin{equation}\label{ec_mag6}
+\begin{gathered}
+		\mathbf{J_m}(\mathbf{r}) \equiv \nabla\times\mathbf{M} \equiv \text{Densidad volumétrica de 					corriente de magnetización.} \medskip \\ 
+		\mathbf{K_m}(\mathbf{r})=\mathbf{M}(\mathbf{r})\times\mathbf{n} \equiv \text{Densidad superficial de corriente de magnetización.}
+\end{gathered}
+\end{equation}
+
+
+Teniendo en cuenta que
+\begin{equation}\label{ec_mag7}
+	\mathbf{B}=\nabla\times\mathbf{A}\;,
+\end{equation}
+
+el cálculo del campo magnético de respuesta producido por el material magnetizado se realiza mediante:
+\begin{equation}\label{ec_mag8}
+	\mathbf{B}(\mathbf{r})=\frac{\mu_0}{4\pi}\,\iiint\limits_{V'}{
+	\frac{\mathbf{J_m}(\mathbf{r'})\times(\mathbf{r}-\mathbf{r'})}
+			{|\mathbf{r}-\mathbf{r'}|^3}\,dV'}
+	+
+	\frac{\mu_0}{4\pi}\,\oiint\limits_{S'}{
+	\frac{\mathbf{K_m}(\mathbf{r'})\times(\mathbf{r}-\mathbf{r'})}
+			{|\mathbf{r}-\mathbf{r'}|^3}\,dS'}\;.
+\end{equation}
+
+La aparición de una corriente de magnetización con su respectiva densidad volumétrica, suscita la pregunta sobre la relación de esta con la densidad volumétrica $\mathbf{J}$ trabajada hasta ahora. La respuesta está mediada por la clasificación convencional que se realiza de las corrientes eléctricas clásicas.
+
+Las corrientes se pueden presentar en tres formas: corriente libre, que es la corriente debida al flujo de cargas libres. Se le asocia una densidad volumétrica de carga libre $\mathbf{J_f}$; corriente de magnetización, corriente que aparece por el efecto cooperativo de los dipolos magnéticos. Se le asocia una densidad $\mathbf{J_m}$ y la corriente de desplazamiento, es aquella que aparece debida a la variación temporal del desplazamiento eléctrico.
+
+Convencionalmente se asume que
+\begin{equation}\label{ec_mag9}
+	\mathbf{J}=\mathbf{J_m}+\mathbf{J_f}\;,
+\end{equation}
+ 
+dejando fuera de esta definición a la corriente de desplazamiento, dada su importancia en el fenómeno de la radiación. Reemplazando en \eqref{ec_mag9} la definición de densidad de corriente de magnetización \eqref{ec_mag6} y la densidad de corriente total con ayuda de la Ley de Ampere
+\begin{equation}\label{ec_mag10}
+	\nabla\times\mathbf{B}=\mu_0\,\mathbf{J}\;,
+\end{equation}
+
+se obtiene:
+\begin{equation}\label{ec_mag11}
+	\frac{\nabla\times\mathbf{B}}{\mu_0}=\nabla\times\mathbf{M}+\mathbf{J_f}\quad\Rightarrow\quad
+	\nabla\times\left(\frac{\mathbf{B}}{\mu_0}-\mathbf{M}\right)=\mathbf{J_f}\;.
+\end{equation}
+
+Se define el vector Intensidad de Campo Magnético:
+\begin{equation}\label{ec_mag12}
+	\mathbf{H}\equiv \frac{\mathbf{B}}{\mu_0}-\mathbf{M}\;.
+\end{equation}
+
+Así, \eqref{ec_mag11} termina siendo la Ley de Ampere para $\mathbf{H}$.
+
+En la mayoría de los materiales hay una relación de directa proporcionalidad entre la Magnetización y la Intensidad de Campo Magnético. La constante de proporcionalidad mostrada en \eqref{ec_mag13} se denomina susceptibilidad magnética y es adimensional:
+\begin{equation}\label{ec_mag13}
+	\mathbf{M}=\mathbf{M}(\mathbf{H})=\chi_m\,\mathbf{H}\;.
+\end{equation}
+
+Utilizando \eqref{ec_mag13} en \eqref{ec_mag12} y con las definiciones
+\begin{equation}\label{ec_mag14}
+	\mu_r \equiv 1+\chi_m\qquad \mu \equiv \mu_0\,\mu_r\;,
+\end{equation}
+
+se obtiene la ecuación constitutiva para los medios magnéticos:
+\begin{equation}\label{ec_mag15}
+	\mathbf{B}=\mu\,\mathbf{H}\;.
+\end{equation}
+ 
+
+\subsection{Mecanismos físicos de la magnetización.} \label{sec_MecPol1}
+
+
+\subsubsection{Momento magnético orbital de los electrones.}
+
+
+Los electrones que no tienen completo algún nivel y subnivel tienen un momento magnético asociado a su momentum angular. La idea consiste en considerar esos electrones como pequeños circuitos de corriente, y el momento magnético como el momento dipolar del circuito. 
+
+Debido a la mecánica cuántica, los electrones que llenen \textit{por completo} el grupo de estados con $n$ y $l$ prefijados (siendo $n$ el número cuántico principal, y $l$ el momentum angular) tienen un momento nulo, tanto orbital como de espín. 
+
+\subsubsection{Momento magnético de espín de los electrones.}
+Los electrones es sí mismos pueden considerarse como pequeños imanes, dotados de un momento dipolar magnético. En el caso que un estado esté semilleno, siempre se debe considerar el efecto magnético del espín. 
+
+\subsubsection{Momento magnético total del núcleo.}
+Aunque con los nucleones se puede realizar la misma diferenciación que se realizó para los electrones (es decir, magnetismo orbital y magnetismo se espín), no será tomado en consideración acá, ya que para \textbf{casi todos} los propósitos prácticos el magnetismo nuclear se puede despreciar\footnote{Naturalmente en la Resonancia Nuclear Magnética no se desprecia.}.
+
+Para intentar aclarar el asunto se dan a continuación las relaciones de momento magnético para los nucleones:
+\begin{equation}
+	\frac{m_p}{m_e} \cong 1.3\times10^{-3} \qquad \frac{m_n}{m_e} \cong 1\times10^{-3}\;,
+\end{equation}
+
+donde $m_p$ y $m_n$ son los momentos magnéticos para el protón y el neutrón respectivamente. $m_e$ presenta el momento magnético del electrón. 
+
+\subsection{Interacción átomo y campo magnético.} 
+Los átomos, según su comportamiento ante un campo magnético externo, se pueden clasificar así:
+\begin{equation*}
+	\text{Átomos: }\left\{ 
+	\begin{aligned}
+	&\text{Diamagnéticos: Átomos con momento dipolar magnético total nulo.}\\
+	&\text{Paramagnéticos: Átomos con momento dipolar magnético total no nulo.}\\
+	&\text{Ferromagnéticos: Átomos con momento dipolar magnético total "grande``.}
+	\end{aligned}
+	\right.
+\end{equation*}
+
+\subsubsection{El átomo diamagnético.} 
+Una representación del átomo diamagnético más simple (el helio) es considerar dos electrones orbitando alrededor del núcleo en direcciones contrarias. 
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics{4g1.1}
+	\caption{Átomo diamagnético atravesado por un campo magnético entrante.}
+	\label{4g1}
+\end{figure}
+
+Si el sistema interactúa con un campo magnético $\mathbf{B}$ entrando a la página, como se ilustra en la figura \ref{4g1}, sobre cada electrón aparecerá una fuerza que intenta sacarlo de su órbita. Suponiendo que esta fuerza \textbf{no} es lo suficientemente intensa para cambiar el momentum angular de los electrones, la única forma en que la órbita seguirá siendo estable es introduciendo una aceleración centrípeta adicional. 
+
+Nótese que sobre el electrón que gira en dirección antihoraria aparece una fuerza magnética de la forma $\mathbf{F}=e\,\mathbf{v}\times\mathbf{B}$, y también una fuerza $\mathbf{F}=-e\,\mathbf{v}\times\mathbf{B}$ para el que gira en dirección horaria.
+
+La aceleración centrípeta adicional del primer electrón será:
+\begin{equation*}
+	e\,v\,B=m_e\,a \,\Rightarrow\, a=\frac{e\,v\,B}{m_e}\;.
+\end{equation*}
+
+Esta aceleración es la responsable de un cambio en la rapidez
+\begin{equation*}
+	a=\frac{v_a^2}{R}=\frac{e\,v\,B}{m_e}\,\Rightarrow\,v_a^2=\frac{e\,v\,B\,R}{m_e}\;.
+\end{equation*}
+
+Naturalmente la rapidez total del electrón antihorario disminuye, por el efecto de $v_a$. El caso para el electrón horario es análogo, sólo que en este caso la velocidad aumenta al intentar conservar la órbita. 
+
+Llamando $i_h$ la corriente asociada al electrón horario e $i_a$ a la corriente del electrón antihorario, la corriente total es 
+\begin{equation*}
+	i=i_h+i_a\;.
+\end{equation*}
+
+En ausencia de campo magnético se tiene que $i_h=-i_a\,\Rightarrow\, i=0$. Cuando $B\neq0$, $i_a$ disminuye e $i_h$ aumenta, con lo cual $i\neq0$, y finalmente aparece una corriente inducida que es responsable del momento magnético inducido. 
+
+Es importante recalcar que la corriente inducida va en la dirección antihoraria, produciendo un momento magnético \textbf{que se opone al campo externo}.
+
+¿Qué pasa si $\mathbf{B}$ no entra sino que sale de la página? 
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics{4g2.2}
+	\caption{Átomo diamagnético atravesado por un campo magnético que sale.}
+	\label{4g2}
+\end{figure}
+
+La velocidad del electrón antihorario ahora aumenta mientras que la velocidad del horario disminuye. Con la consabida aparición de una corriente total en sentido horario que es la responsable del momento inducido en oposición al campo externo. 
+
+A resultados similares se llega si se utiliza la ley de inducción de Faraday. Para el caso del campo entrante, el flujo magnético pasa de ser nulo a un valor negativo, si se considera la curva límite de la superficie orientada en dirección antihoraria. 
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics{4g3.3}
+	\caption{Campo magnético $\mathbf{B}$ entrante.}
+	\label{4g3}
+\end{figure}
+
+De la figura \ref{4g3}, se aprecia que 
+\begin{equation*}
+\begin{gathered}
+	\phi_0=\text{ Flujo magnético inicial}\\
+	\phi_f=\text{ Flujo magnético final}\\
+	\phi_0=0\;,\;\phi_f\cong-B\,A\;,\\
+  E_{ind}\cong-\frac{\Delta\phi_B}{\Delta t}>0\;.
+\end{gathered}
+\end{equation*}
+
+En consecuencia, aparece una corriente inducida en dirección antihoraria, como era de esperarse. 
+
+En el caso contrario,
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics{4g4.4}
+	\caption{Campo magnético $\mathbf{B}$ saliendo.}
+	\label{4g4}
+\end{figure}
+
+De la figura \ref{4g4}, se aprecia que
+\begin{equation*}
+\begin{gathered}
+	\phi_0=0\;,\;\phi_f\cong B\,A\;,\\
+  E_{ind}\cong-\frac{\Delta\phi_B}{\Delta t}<0\;.
+\end{gathered}
+\end{equation*}
+
+Aparece una corriente inducida en dirección horaria. 
+
+En todos los casos descritos, el momento dipolar inducido va en una dirección tal que se opone al campo que lo produce. En una situación completamente general se puede modelar el comportamiento diamagnético como la precesión del momento dipolar alrededor del campo magnético externo. Cuando un material diamagnético se magnetiza, el campo magnético total es menor que el campo magnetizante (campo externo) debido a que el material responde con un nuevo campo que se opone al campo externo.
+
+\subsubsection{Paramagnetismo atómico.} 
+
+Como se dijo ya, cuando el estado con $n$ y $l$ prefijados no está completamente lleno, el átomo como un todo tiene un momento dipolar no nulo. 
+
+En presencia de un campo magnético externo, sobre el átomo aparece un torque que intenta alinear el momento magnético con el campo: $\mathbf{T}=\mathbf{m}\times\mathbf{B}$. Considérese una muestra de átomos paramagnéticos. En ausencia de un campo magnético externo, la orientación de los átomos es aleatoria produciendo un momento magnético promedio nulo. Cuando un campo interactúa con la muestra, sobre cada átomo aparece un torque que intenta alinear $\mathbf{m}$ con $\mathbf{B}$. Es apenas obvio que no se logra el alineamiento perfecto si se considera la energía térmica asociada a cada átomo, que se manifiesta por su vibración mecánica. 
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics{4g5.5}
+	\caption{Alineación de dipolos magnéticos por un campo magnético externo.}
+	\label{4g5}
+\end{figure}
+
+En la ecuación constitutiva:
+\begin{equation*}
+	\mathbf{B}=\mu\,\mathbf{H}=\mu_0\,\mu_r\,\mathbf{H}=\mu_0\,(1+\chi_m)\,\mathbf{H}\;. 
+\end{equation*}
+
+Donde $\chi_m$ es la susceptibilidad magnética. 
+
+Cuando el material es diamagnético, $\chi_m<0$; si el paramagnético, $\chi_m>0$. Normalmente la susceptibilidad magnética de un material paramagnético es mucho mayor que la de uno diamagnético. El efecto diamagnético produce cambios fraccionales en $\mu$ del orden de $10^{-8}$ a $10^{-5}$. 
+
+La respuesta diamagnética es opacada en materiales que tienen momentos dipolares magnéticos naturales. Tales materiales tienen una respuesta paramagnética, como se sabe, que proviene del momento dipolar de átomos, moléculas, defectos cristalinos y electrones de conducción. Los momentos dipolares, de nuevo, tienden a alinearse con el campo magnético pero no logran un alineamiento perfecto por la actividad térmica. 
+
+Se puede demostrar que la magnitud de la magnetización puede ser expresada en términos de la intensidad de campo magnético que actúa sobre los dipolos elementales y la temperatura absoluta:
+\begin{equation*}
+	M=N\,m_0\,\left[\coth{\left(\frac{m_0\,\mu_0\,H_i}{K_B\,T}\right)}-\frac{K_B\,T}{m_0\,\mu_0\,H_i}\right]\;,
+\end{equation*}
+
+donde
+\begin{itemize}
+	\item $N$: número de dipolos por unidad de volumen.
+	\item $m_0$: momento dipolar de un dipolo elemental. 
+	\item $K_B$: constante de Boltzman. 
+\end{itemize}
+
+En estos materiales $\mathbf{M}$ es paralelo a $\mathbf{H_i}$ y el campo molecular $\mathbf{H_i}$ es prácticamente igual al campo macroscópico $\mathbf{H}$. Luego, para $\mathbf{H}$ no muy intenso y temperaturas no muy bajas,
+\begin{equation*}
+	\mathbf{M}=\chi_m\,\mathbf{H}\;.
+\end{equation*}
+
+Así,
+\begin{equation}
+	\chi_m\cong\frac{N\,\mu_0\,m_0^2}{3\,K_B\,T}\quad;\quad\chi_m\approx10^{-5}\;.
+\end{equation}
+
+
+\subsubsection{Medios isotrópicos no lineales.}
+
+
+Si la temperatura de una substancia paramagnética es reducida por debajo de cierto valor que depende de cada material, la magnetización $\mathbf{M}$ puede ser suficiente para producir el campo necesario para mantener los dipolos alineados, aunque un campo externo no esté presente. El campo molecular $\mathbf{H_i}$ producido por la magnetización es:
+\begin{equation*}
+	\mathbf{H_i}=K\,\mathbf{M}\;.
+\end{equation*}
+
+De la ecuación para la magnetización se obtiene la condición para la magnetización espontánea, despejando $M$:
+\begin{equation*}
+	M=N\,m_0\,\left[\coth{\left(\frac{m_0\,\mu_0\,K\,M}{K_B\,T}\right)}-\frac{K_B\,T}{m_0\,\mu_0\,K\,M}\right]\;.
+\end{equation*}
+
+La temperatura debajo de la cual tales materiales exhiben una magnetización espontánea se llama \textit{temperatura de Curie}. Se ha encontrado experimentalmente que $K$, el factor de medida de la interacción de los dipolos vecinos, es del orden de $10^{3}$. Si la interacción fuese causada únicamente por interacciones magnéticas, $K$ sería del orden de $\frac{1}{3}$. Otra vez el comodín de la ignorancia; el valor observado de $K$ se explica desde la mecánica cuántica, ya que hay una interacción eléctrica entre moléculas, debido a la distorsión de las distribuciones de carga en ellas. 
+
+En algunos materiales es energéticamente probable que los dipolos magnéticos se orienten paralelamente a sus vecinos. En estos casos se denomina el comportamiento como \textit{ferromagnético}. En otras substancias es favorable energéticamente que los dipolos asuman una orientación antiparalela. Este caso se llama \textit{antiferromagnetismo}. En los materiales \textit{ferrimagnéticos} (ferritas) los dipolos vecinos se alinean antiparalelamente, pero hay diferentes tipos de átomos y los dipolos no se cancelan. 
+
+Es también energéticamente favorable que un material de estos (ferro, antiferro o ferri) se subdivida en regiones llamadas dominios magnéticos, donde todos sus dipolos son paralelos o antiparalelos. Esta subdivisión minimiza la energía total del cristal. Una cantidad macroscópica de materiales contiene un gran número de cristalitas (dominios) con orientación aleatoria, dando un efecto macroscópico de isotropía. Cuando un campo magnético es aplicado aparece un torque sobre cada dominio que intenta alinearlo con el campo externo. Este proceso es no lineal y en consecuencia $\mathbf{B}$ no es proporcional a $\mathbf{H}$. 
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics{4g6.6}
+	\caption{Alineación de dipolos magnéticos por un campo magnético externo.}
+	\label{4g6}
+\end{figure}
+
+De la figura \ref{4g6} se aprecia que:
+\begin{itemize}
+	\item $B_{sat}$: inducción magnética de saturación (aunque aumente la intensidad de campo magnético, la inducción magnética de la muestra no supera $B_{sat}$). 
+	\item $B_r$: inducción magnética de remanencia (después de una magnetización es el campo remanente luego de anular $H$). 
+	\item $H_c$: intensidad de campo coercitiva (intensidad de campo magnético que debe ser colocado para anular la magnetización de la muestra).
+\end{itemize}
+
+Algunas aplicaciones de los materiales ferromagnéticos son:
+\begin{itemize}
+	\item Imanes permanentes. 
+	\item Grabado de señales.
+	\item Apantallamiento magnético.
+	\item Núcleos para electroimanes, transformadores, motores eléctricos y generadores.
+\end{itemize}
+
+Los materiales ferromagnéticos pueden ser:
+\begin{itemize}
+	\item \textbf{Duros}: cuando el campo aplicado es removido, el material queda con una fuerte magnetización.
+	\item \textbf{Suaves}: en una circunstancia similar al material duro, el suave queda con una débil magnetización. 
+\end{itemize}
+
+Algunas valores típicos para los materiales duros son:
+\begin{equation*}
+\begin{aligned}
+	&\text{Acero} & &B_r\approx0.6\,T & &H_c\approx0.0765\,A/m \\
+	&\text{Acero cobalto} & &B_r\approx1.08\,T & &H_c\approx0.0980\,A/m
+\end{aligned}
+\end{equation*}
+
+En los materiales suaves es normal que se presente una inducción de saturación grande, pequeña fuerza coercitiva, alta permeabilidad inicial, alta permeabilidad máxima y pequeñas pérdidas por histéresis. Un material que se pretende usar como escudo magnético debe tener una permeabilidad inicial alta como criterio determinante. 
+
+Algunos valores típicos para los materiales duros son:
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}\hline
+	 & Material    & Composición    & \multicolumn{1}{m{2.3cm}|}{Permeabilidad\,\,\,\, inicial} & 				
+	 						\multicolumn{1}{m{2.3cm}|}{Permeabilidad\,\,\,\, máxima} \\\hline\hline
+	1 & Acero          & 99 Fe          & $2\times10^{2}$       & $6\times10^{3}$ \\ \hline
+	2 & Acero puro     & 99.9 Fe        & $2.5\times10^{4}$     & $3.5\times10^{5}$\\ \hline
+	3 & 78 permalloy   & 78 Ni, 22 Fe   & $4\times10^{3}$       & $1.0\times10^{5}$\\ \hline
+	4 & Superpermalloy & \multicolumn{1}{m{2cm}|}{15 Fe, 79 Ni, 5\,Mo, 0.5\,Mn}  & $9\times10^{4}$       & $1\times10^{6}$ \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|c|c|c|}\hline
+	  & Fuerza coercitiva & Inducción de saturación\\ \hline\hline
+	1 & 0.9 & 2.16 \\ \hline
+	2 & 0.01 & 2.16 \\ \hline
+	3 & 0.05 & 1.05 \\ \hline
+	4 & 0.004 & 0.8 \\\hline
+\end{tabular}
+\end{center}
+
+En metales ferromagnéticos usados cuando el campo magnético cambia en el tiempo (transformadores, generadores), se inducen corrientes de Eddy (corrientes parásitas). 
+
+Si el material tiene alta conductividad, las corrientes son grandes y las pérdidas por efecto Joule pueden ser inaceptables. Para reducir este problema se lamina los núcleos con la dirección de las corrientes inducidas perpendicular a la laminación. Sin embargo, estas pérdidas llegan a ser intolerables para frecuencias de radio y microondas. Es allí donde son importantes las \textbf{ferritas} por su baja conductividad (mucho menor a $10^{-4}\,\frac{\mho}{m}$).
+
+Las ferritas se usan en núcleos de transformadores de alta frecuencia, filtros, etc. 
